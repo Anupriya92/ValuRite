@@ -1,0 +1,39 @@
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12" style="margin-left: 10px; margin-top: 2%;">
+            <legend>Usage Statistics</legend>
+        </div>
+    </div>
+
+    <!--Year DropDown-->
+    <div style="float:left; margin-left:10px; width: 200px;">
+        <label>Year</label>
+        <select [(ngModel)]="year" (change)="getChart()" class="form-control" style="display: block; width: 50%; height: 2.314vw">
+            <option *ngFor="let year1 of years" [ngValue]="year1">{{year1}}</option>
+        </select>
+
+    </div>
+
+    <!--Chart-->
+    <div id="chart" *ngIf="chartFlag">
+        <app-adminbarchart *ngIf="dcChartFlag" (ApplicationTableData)="popupTable($event)" id="dcCharts" style="padding-top: 15px !important;"
+            [jsondata]="chartObject"></app-adminbarchart>
+    </div>
+
+    <!--Error Message-->
+    <div class="row">
+        <p *ngIf="errorMsgFlag" style="color: red; text-align: center;"> Sorry, there are no values to display</p>
+    </div>
+
+
+    <!-- dashboard popup-->
+    <div class="row">
+        <div class="col-lg-12">
+            <admin-sort-table style="overflow-y: auto;position: fixed;right: 0;left: 0;top: 0;bottom: 0;font-weight: bold;padding: 5%;z-index: 145;opacity: 1 !important; display:none;"
+                id="dashboardpopup" [tabledata]="Jsondata"></admin-sort-table>
+        </div>
+
+    </div>
+</div>

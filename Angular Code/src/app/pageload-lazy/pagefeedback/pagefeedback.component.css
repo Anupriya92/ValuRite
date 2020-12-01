@@ -1,0 +1,10 @@
+.contact-form-btn[disabled]{
+    background-color: #98c7db;
+    color: white;
+    cursor: unset;
+}
+
+.contact-form-btn :hover{
+   
+    cursor: pointer;
+}

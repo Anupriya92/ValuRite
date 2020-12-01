@@ -1,0 +1,72 @@
+<div style="height: auto; min-height: 600px !important; padding-top: 60px; padding-bottom:130px;">
+  <div class="breadcrumsec">
+    <div class="wrapper" style="margin: 0;padding: 0;max-width: -webkit-fill-available;">
+      <ol class="breadcrumb breadresize" style="padding-top: 18px;">
+        <li>
+          <a routerLink="/dashboard">Home</a>
+        </li>
+        <li>
+          <a routerLink="/myprofile">Admin</a>
+        </li>
+        <li>
+          <a routerLink="/gobiom_settings">ValuRite Settings</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <b id="noOfrec" style="margin-left: 11px;"> Number of Records : {{pageNumcount}} of {{totalRec}} </b><br><br>
+  <!-- <select style="width:6%;margin-left:0.65%" (change)="MyDropFunOnee($event)">
+    <option value=10>10</option>
+    <option value=20>20</option>
+    <option value=30>30</option>
+    <option value=50>50</option>
+    <option value=100>100</option>
+  </select>
+  <b>Show entries</b><br>
+  <input type="text" class="form-control" id="searchText" placeholder="&#xf002;" (keyup)="onKeyupData($event)" style="width:210px;margin-left:31%;display:inline-block; font-family:FontAwesome; font-size:20px" /> -->
+  <pagination-controls id="listing_pagination" class="ngxpagination" maxSize="5" directionLinks="true" (pageChange)="page = $event" (pageChange)="pageChanged($event)"></pagination-controls>
+  
+
+  <div class="container-fluid" style="margin-left: 30%;margin-top: 2%">
+    <table id="paramTable" style="display: table;">
+      <thead>
+        <th>
+          <input [(ngModel)]="mainCheckbox" name="mainCheckboxName" class="styled parentcheck" id="check1" (change)='checkbx($event)'
+            type="checkbox" />
+        </th>
+        <th>Parameter Name
+          <span style="color:red;">*</span>
+        </th>
+        <th>Parameter Value
+          <span style="color:red;">*</span>
+        </th>
+      </thead>
+      <tbody style="padding-bottom:100%;">
+        <!-- <tr id="rowId{{ind}}" *ngFor="let i of paramRows; let ind = index | paginate: { id: 'listing_pagination', itemsPerPage: 20,currentPage: page,totalItems: totalRec };" style="background-color:#f3f3f3;"> -->
+       
+          <tr style="background-color:#f3f3f3;" id="rowId{{ind}}" *ngFor="let ind = index;let i of paramRows| paginate: { id: 'listing_pagination', itemsPerPage: 10,currentPage: page,totalItems: totalRec }; ">
+            
+          <td>
+            <input type="checkbox" id="chkBox{{ind}}" class="chkGrp" (click)="checkboxloop($event)" />
+          </td>
+          <td>
+            <input type="text" id="paramName{{ind}}" style="width: 226px" (input)="onKey($event)" (change)="onChangeParam($event)" title="{{i.ParamName}}"
+              data-toggle="popover" maxlength="100" class="tempFormContrl paramName" name="paramname" value="{{i.ParamName}}"
+            />
+            <div class="errorClass" style="height:10px;">
+              <h6 id="paramNameText{{ind}}" class="firstNameTxt" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+            </div>
+          </td>
+          <td>
+            <input type="text" id="paramValue{{ind}}" style="width: 226px" (input)="onKey($event)" title="{{i.ParamValue}}" data-toggle="popover"
+              maxlength="100" class="tempFormContrl paramValue" name="paramValue" value="{{i.ParamValue}}" required />
+            <div class="errorClass" style="height:10px;">
+              <h6 id="paramValueText{{ind}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+            </div>
+          </td>
+    </table>
+    <button type="button" (click)="submitParamDetails($event)" id="submitvalue" disabled="true" class="submit-green" style="float:left;width:8%;">Save</button>
+    <button type="button" (click)="onAddParam($event)" id="updatevalue" class="submit-green" style="float:left;width:13%;margin-left: 1%">Add</button>
+    <button type="button" (click)="onloadparam()" id="reset" class="submit-green" style="float:left;width:8%;margin-left: 1%">Cancel</button>
+  </div>
+</div>

@@ -1,0 +1,440 @@
+<div style="height: auto; min-height: 600px !important; padding-top: 60px; padding-bottom:80px;">
+  <div class="breadcrumsec">
+    <div class="wrapper" style="margin: 0;padding: 0;max-width: -webkit-fill-available;">
+      <ol class="breadcrumb breadresize" style="padding-top: 18px;">
+        <li>
+          <a routerLink="/dashboard">Home</a>
+        </li>
+        <li>
+          <a>User Creation</a>
+        </li>
+        <li>
+          <a routerLink="/search">Approval</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <form>
+    <b id="noOfrec" style="margin-left: 11px;"> Number of Records : {{pageNumcount}} of {{totalRec}} </b><br><br>
+    <select style="width:6%;margin-left:0.65%" (change)="MyDropFunOnee($event)">
+      <option value=20>20</option>
+      <option value=30>30</option>
+      <option value=50>50</option>
+      <option value=100>100</option>
+    </select>
+    <b>Show entries</b><br>
+    <pagination-controls id="listing_pagination" class="ngxpagination" maxSize="20" directionLinks="true" (pageChange)="page = $event" (pageChange)="pageChanged($event)"></pagination-controls>
+    
+    <div class="container-fluid " style="border-radius: 5px; padding: 10px;">
+      <table class="table" id="approvaltable">
+        <div class="margin: 0px !important;font-family:Helvetica Neue,Helvetica,Arial,sans-serif; border-collapse: collapse;">
+          <thead style="background-color: #324259;color: white;">
+            <th>
+              <input [(ngModel)]="mainCheckbox" name="mainCheckboxName" class="styled parentcheck" id="checkbox1" (change)='checkbx($event)'
+                type="checkbox" />
+            </th>
+            <th>First Name </th>
+            <th>Last Name</th>
+            <th>Email ID</th>
+            <th>Mobile Number</th>
+            <th>Address Line 1</th>
+            <th>Address Line 2</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Area</th>
+            <th>Land Mark</th>
+            <th>Pin Code</th>
+            <th>Created Date</th>
+            <th>Given Company</th>
+        
+            
+            <th>Company Name
+              <span style="color:red;">*</span>
+            </th>
+            <th>Contract Reference
+              <span style="color:red;">*</span>
+            </th>
+            <th>User Type
+              <span style="color:red;">*</span>
+            </th>
+            <th>User Role
+              <span style="color:red;">*</span>
+            </th>
+            <th>General Alerts </th>
+            <th>Start Date</th>
+            <th>End Date</th>
+
+          </thead>
+          <tbody style="padding-bottom:100%;" *ngIf="!userapprovaldetails?.length">
+            <tr>
+              <td colspan="55" style="text-align:center;">
+                <b>No Records Found</b>
+              </td>
+            </tr>
+          </tbody>
+          <tbody style="padding-bottom:100%" *ngIf="userapprovaldetails?.length">
+            <tr style="background-color:#f3f3f3;" id="rowID{{ind}}" *ngFor="let ind = index;let user of userapprovaldetails| paginate: { id: 'listing_pagination', itemsPerPage: 20,currentPage: page,totalItems: totalRec }; ">
+              <td>
+                <input type="checkbox" class="chkGrp" id="chk{{ind}}" (click)="checkboxloop($event)"> </td>
+              <td>
+                <input type="text" class="form-control firstName" id="firstName{{ind}}" readonly name="firstName" value="{{user.first_name}}"
+                  data-toggle="popover" title="{{user.first_name}}" style="width:160px" />
+
+              </td>
+              <td>
+                <input type="text" class="form-control lastName" id="lastName{{ind}}" readonly name="lastName" value="{{user.last_name}}"
+                  style="width: 160px" data-toggle="popover" title="{{user.last_name}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control emailid" id="emailid{{ind}}" readonly name="emailid" value="{{user.email_id}}"
+                  style="width: 180px" data-toggle="popover" title="{{user.email_id}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control mobileNo" id="phnNo{{ind}}" readonly name="phnNo" value="{{user.mobile_number}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.mobile_number}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control address1" id="adddressline1{{ind}}" readonly name="adddressline1" value="{{user.addressLine1}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.addressLine1}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control address2" id="adddressline2{{ind}}" readonly name="adddressline2" value="{{user.addressLine2}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.addressLine2}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control regCountry" readonly name="regCountry{{ind}}" id="regCountry{{ind}}" value="{{user.country}}"
+                  style="width:160px;display:block;" data-toggle="popover" title="{{user.country}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control state" readonly name="state{{ind}}" id="state{{ind}}" value="{{user.state}}"
+                  style="width:160px;display:block;" data-toggle="popover" title="{{user.state}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control city" readonly name="city{{ind}}" id="city{{ind}}" value="{{user.city}}"
+                  style="width:160px;display:block;" data-toggle="popover" title="{{user.city}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control addressarea" id="addressarea{{ind}}" readonly name="addressarea" value="{{user.area}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.area}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control landMark" id="landMark{{ind}}" readonly name="landMark" value="{{user.landMark}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.landMark}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control pinCode" id="pincode{{ind}}" readonly name="pincode" value="{{user.Pincode}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.Pincode}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control createdDate" id="createdDate{{ind}}" readonly name="areaofinterest" value="{{user.created_date}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.created_date}}" />
+              </td>
+             
+              <td>
+                <input type="text" class="form-control selectFlag" readonly name="cmpnyInstute{{ind}}" id="cmpnyInstute{{ind}}" value="{{user.registered_company}}"
+                  style="width:160px;display:block;" data-toggle="popover" title="{{user.registered_company}}" />
+              </td>
+             
+              <td>
+                <select name="selectedObject" id="companyselected{{ind}}" class="form-control companyselected" (change)="onCompanyselect($event)"
+                  style="width:160px;display:block">
+                  <option selected disabled>--Select--</option>
+                  <option *ngFor="let company of categories|orderBy: 'companyname'" [selected]="company.companyname === user.company_institute"
+                    [value]="company.companyname">{{company.companyname}}</option>
+                </select>
+              </td>
+              <td>
+                <select name="selectedref" id="selectedref{{ind}}" class="form-control selectedref" (change)="onchangereference($event)"
+                  style="width: 110px">
+                  <option *ngFor="let company of Contrefer" [value]="company">{{company}}</option>
+                  <option>--Select--</option>
+                </select>
+              </td>
+              <td>
+                <select id="Usertype{{ind}}" class="form-control Usertype" (change)="ItemSelelect($event)" style="width: 160px;">
+                  <option selected disabled value="">--Select--</option>
+                  <option value="Admin">Admin</option>
+                  <option value="Appraiser">Appraiser</option>
+                  <option value="Borrower">Borrower</option>
+                  <option value="Lender">Lender</option>
+                  <!-- <option *ngFor="let user of roleName|orderBy: 'rolename'" [value]="user.rolename">{{user.rolename}}</option> -->
+                </select>
+              </td>
+              <td>
+                <select id="UserRole{{ind}}" class="form-control Userrole" (change)="ItemSelelect($event)" style="width: auto">
+                  <option value="Admin">Admin</option>
+                  <option value="Comp app without lender">Comp app without lender</option>
+                  <option value="Comp with lender">Comp with lender</option>
+                  <option value="Ind app without lender">Ind app without lender</option>
+                  <option value="Ind with lender">Ind with lender</option>
+                  <option value="User">User</option>
+                </select>
+              </td>
+              <!-- <td>
+                <input type="text" readonly id="limits{{ind}}" class="form-control limits" [(ngModel)]="limits" name="limits" style="width: 80px"
+                />
+              </td> -->
+              <!-- <td>
+                <input type="text" readonly id="exportflag{{ind}}" class="form-control exportflag" [(ngModel)]="exportflag" name="exportflag"
+                  style="width: 80px" />
+              </td> -->
+              <td>
+                <select id="generalflag{{ind}}" class="form-control generalflag" style="width: 80px">
+                  <option value="" selected disabled>--Select--</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </td>
+              <td>
+                <input type="text" disabled (click)="datefetch($event)" [(ngModel)]="startdate" name="startdate" id="startdate{{ind}}" class="form-control onhover startdate"
+                  style="width:120px;background-color: #fff; background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center;">
+              </td>
+              <td>
+                <input type="text" disabled (click)="datefetch($event)" id="enddate{{ind}}" [(ngModel)]="enddate" name="enddate" class="form-control onhover enddate"
+                  style="width:120px; background-color: #fff;background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center;">
+              </td>
+            </tr>
+          </tbody>
+        </div>
+      </table>
+      <button type="button" (click)="submitapprove()" id="approveBtn" [disabled]="true" class="submit-green" style="width: 10%;float:left;margin-left:15px">Approve</button>
+      <button type="button" (click)="reject()" id="rejectBtn" [disabled]="true" class="submit-green" style="width: 10%;float:left;margin-left:5px">Reject</button>
+    </div>
+   
+    <pagination-controls id="listing_pagination" class="ngxpagination" maxSize="5" directionLinks="true" (pageChange)="page = $event" (pageChange)="pageChanged($event)"></pagination-controls>
+  
+  </form>
+ 
+  <div id="myModalpop" class="modal backdrop" [ngStyle]="{'display':display}">
+    <div class="modal-dialog">
+      <div class="modal-content" style="height:210px !important;width:70%; background-color:white !important;">
+        <button type="button" class="close" (click)="modalclose()" style="margin-top: -40px;margin-right:-33px;">&times;</button>
+        <div class="row" style="margin-left:3px">
+          <h4>Enter Comment</h4>
+        </div>
+        <div class="modal-body" style="height:75px !important">
+          <textarea name="comment" id="comment" (input)="onKey($event)" class="form-control comment"></textarea>
+        </div>
+        <div class="modal-footer" style="border-top:0px">
+          <button type="button" (click)="submitreject()" [disabled]="true" class="submit-green" id="sumbitrej" data-dismiss="modal"
+            style="float:right; margin-top:auto;margin-bottom:0%">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>             
+
+
+
+
+
+
+
+
+<!-- <div style="height: auto; min-height: 600px !important; padding-top: 60px; padding-bottom:80px;">
+  <div class="breadcrumsec">
+    <div class="wrapper" style="margin: 0;padding: 0;max-width: -webkit-fill-available;">
+      <ol class="breadcrumb breadresize" style="padding-top: 18px;">
+        <li>
+          <a routerLink="/dashboard">Home</a>
+        </li>
+        <li>
+          <a>User Creation</a>
+        </li>
+        <li>
+          <a routerLink="/search">Approval</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <form>
+    <b id="noOfrec" style="margin-left: 11px;"> Number of Records : {{pageNumcount}} of {{totalRec}} </b>
+    <pagination-controls id="listing_pagination" class="ngxpagination" maxSize="20" directionLinks="true" (pageChange)="page = $event" (pageChange)="pageChanged($event)"></pagination-controls>
+    <div class="container-fluid " style="border-radius: 5px; padding: 10px;">
+      <table class="table" id="approvaltable">
+        <div class="margin: 0px !important;font-family:Helvetica Neue,Helvetica,Arial,sans-serif; border-collapse: collapse;">
+          <thead style="background-color: #324259;color: white;">
+            <th>
+              <input [(ngModel)]="mainCheckbox" name="mainCheckboxName" class="styled parentcheck" id="checkbox1" (change)='checkbx($event)'
+                type="checkbox" />
+            </th>
+            <th>First Name </th>
+            <th>Last Name</th>
+            <th>Email ID</th>
+            <th>Mobile Number</th>
+            <th>Address Line 1</th>
+            <th>Address Line 2</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Area</th>
+            <th>Land Mark</th>
+            <th>Pin Code</th>
+            <th>Created Date</th>
+            <th>Registered Company</th>
+        
+            
+            <th>Company Name
+              <span style="color:red;">*</span>
+            </th>
+            <th>Contract Reference
+              <span style="color:red;">*</span>
+            </th>
+            <th>User Type
+              <span style="color:red;">*</span>
+            </th>
+            <th>User Role
+              <span style="color:red;">*</span>
+            </th>
+            <th>General Alerts </th>
+            <th>Start Date</th>
+            <th>End Date</th>
+
+          </thead>
+          <tbody style="padding-bottom:100%;" *ngIf="!userapprovaldetails?.length">
+            <tr>
+              <td colspan="55" style="text-align:center;">
+                <b>No Records Found</b>
+              </td>
+            </tr>
+          </tbody>
+          <tbody style="padding-bottom:100%" *ngIf="userapprovaldetails?.length">
+            <tr style="background-color:#f3f3f3;" id="rowID{{ind}}" *ngFor="let ind = index;let user of userapprovaldetails| paginate: { id: 'listing_pagination', itemsPerPage: 20,currentPage: page,totalItems: totalRec }; ">
+              <td>
+                <input type="checkbox" class="chkGrp" id="chk{{ind}}" (click)="checkboxloop($event)"> </td>
+              <td>
+                <input type="text" class="form-control firstName" id="firstName{{ind}}" readonly name="firstName" value="{{user.first_name}}"
+                  data-toggle="popover" title="{{user.first_name}}" style="width:160px" />
+
+              </td>
+              <td>
+                <input type="text" class="form-control lastName" id="lastName{{ind}}" readonly name="lastName" value="{{user.last_name}}"
+                  style="width: 160px" data-toggle="popover" title="{{user.last_name}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control emailid" id="emailid{{ind}}" readonly name="emailid" value="{{user.email_id}}"
+                  style="width: 180px" data-toggle="popover" title="{{user.email_id}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control mobileNo" id="phnNo{{ind}}" readonly name="phnNo" value="{{user.mobile_number}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.mobile_number}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control address1" id="adddressline1{{ind}}" readonly name="adddressline1" value="{{user.addressLine1}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.addressLine1}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control address2" id="adddressline2{{ind}}" readonly name="adddressline2" value="{{user.addressLine2}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.addressLine2}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control regCountry" readonly name="regCountry{{ind}}" id="regCountry{{ind}}" value="{{user.country}}"
+                  style="width:160px;display:block;" data-toggle="popover" title="{{user.country}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control state" readonly name="state{{ind}}" id="state{{ind}}" value="{{user.state}}"
+                  style="width:160px;display:block;" data-toggle="popover" title="{{user.state}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control city" readonly name="city{{ind}}" id="city{{ind}}" value="{{user.city}}"
+                  style="width:160px;display:block;" data-toggle="popover" title="{{user.city}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control addressarea" id="addressarea{{ind}}" readonly name="addressarea" value="{{user.area}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.area}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control landMark" id="landMark{{ind}}" readonly name="landMark" value="{{user.landMark}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.landMark}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control pinCode" id="pincode{{ind}}" readonly name="pincode" value="{{user.Pincode}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.Pincode}}" />
+              </td>
+              <td>
+                <input type="text" class="form-control createdDate" id="createdDate{{ind}}" readonly name="areaofinterest" value="{{user.created_date}}"
+                  style="width:160px;" data-toggle="popover" title="{{user.created_date}}" />
+              </td>
+             
+              <td>
+                <input type="text" class="form-control selectFlag" readonly name="cmpnyInstute{{ind}}" id="cmpnyInstute{{ind}}" value="{{user.registered_company}}"
+                  style="width:160px;display:block;" data-toggle="popover" title="{{user.registered_company}}" />
+              </td>
+             
+              <td>
+                <select name="selectedObject" id="companyselected{{ind}}" class="form-control companyselected" (change)="onCompanyselect($event)"
+                  style="width:160px;display:block">
+                  <option selected disabled>--Select--</option>
+                  <option *ngFor="let company of categories|orderBy: 'companyname'" [selected]="company.companyname === user.company_institute"
+                    [value]="company.companyname">{{company.companyname}}</option>
+                </select>
+              </td>
+              <td>
+                <select name="selectedref" id="selectedref{{ind}}" class="form-control selectedref" (change)="onchangereference($event)"
+                  style="width: 110px">
+                  <option *ngFor="let company of Contrefer" [value]="company">{{company}}</option>
+                  <option>--Select--</option>
+                </select>
+              </td>
+              <td>
+                <select id="Usertype{{ind}}" class="form-control Usertype" (change)="ItemSelelect($event)" style="width: 160px;">
+                  <option selected disabled value="">--Select--</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Comp app without lender">Comp app without lender</option>
+                    <option value="Comp with lender">Comp with lender</option>
+                    <option value="Ind app without lender">Ind app without lender</option>
+                    <option value="User">User</option>
+                  </select>
+              </td>
+              <td>
+                <select id="UserRole{{ind}}" class="form-control Userrole" (change)="ItemSelelect($event)" style="width: auto">
+                  <option selected disabled value="">--Select--</option>
+                  <option value="Appraiser">Appraiser</option>
+                  <option value="Borrower">Borrower</option>
+                  <option value="Lender">Lender</option>
+                </select>
+              </td>
+           
+              <td>
+                <select id="generalflag{{ind}}" class="form-control generalflag" style="width: 80px">
+                  <option value="" selected disabled>--Select--</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </td>
+              <td>
+                <input type="text" disabled (click)="datefetch($event)" [(ngModel)]="startdate" name="startdate" id="startdate{{ind}}" class="form-control onhover startdate"
+                  style="width:120px;background-color: #fff; background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center;">
+              </td>
+              <td>
+                <input type="text" disabled (click)="datefetch($event)" id="enddate{{ind}}" [(ngModel)]="enddate" name="enddate" class="form-control onhover enddate"
+                  style="width:120px; background-color: #fff;background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center;">
+              </td>
+            </tr>
+          </tbody>
+        </div>
+      </table>
+      <button type="button" (click)="submitapprove()" id="approveBtn" [disabled]="true" class="submit-green" style="width: 10%;float:left;margin-left:15px">Approve</button>
+      <button type="button" (click)="reject()" id="rejectBtn" [disabled]="true" class="submit-green" style="width: 10%;float:left;margin-left:5px">Reject</button>
+    </div>
+    <pagination-controls id="listing_pagination" class="ngxpagination" maxSize="5" directionLinks="true" (pageChange)="page = $event" (pageChange)="pageChanged($event)"></pagination-controls>
+  </form>
+  <div id="myModalpop" class="modal backdrop" [ngStyle]="{'display':display}">
+    <div class="modal-dialog">
+      <div class="modal-content" style="height:210px !important;width:70%; background-color:white !important;">
+        <button type="button" class="close" (click)="modalclose()" style="margin-top: -40px;margin-right:-33px;">&times;</button>
+        <div class="row" style="margin-left:3px">
+          <h4>Enter Comment</h4>
+        </div>
+        <div class="modal-body" style="height:75px !important">
+          <textarea name="comment" id="comment" (input)="onKey($event)" class="form-control comment"></textarea>
+        </div>
+        <div class="modal-footer" style="border-top:0px">
+          <button type="button" (click)="submitreject()" [disabled]="true" class="submit-green" id="sumbitrej" data-dismiss="modal"
+            style="float:right; margin-top:auto;margin-bottom:0%">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  -->

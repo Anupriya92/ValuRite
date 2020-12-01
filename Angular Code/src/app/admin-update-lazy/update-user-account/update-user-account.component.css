@@ -1,0 +1,112 @@
+/* @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css"; */
+/* .container {
+    padding-top: 4em;
+    border-radius: 4px;
+  }
+  
+  .show-hide.ng-hide-add, 
+  .show-hide.ng-hide-remove {
+      transition: all linear 0.2s;
+      display: block!important;
+      position: absolute;
+  }
+  
+  .show-hide.ng-hide-add.ng-hide-add-active,
+  .show-hide.ng-hide-remove {
+      top: -8px;
+      display: block!important;
+      position: absolute;
+      opacity: 0;
+  }
+   */
+  .submit-green[disabled]{
+    background-color: #9ae6dd;
+    color: white;
+    cursor: unset;
+}
+
+  
+ 
+ 
+
+table {
+    max-width: 60% !important;
+    /* overflow-x: scroll; */
+    background-color: transparent;
+    display: inline-block;
+    margin-bottom: 4px;
+    /* border: 1.2px #129cca solid; */
+}
+ td,th {
+    padding: 8px;
+ }
+ tr:nth-child(even){background-color: #f2f2f2;}
+.tempFormContrl
+{
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.tempFormContrl:focus{
+    border-color:#56aafebd;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px #56aafebd;
+    outline: 0 none;
+ }
+
+
+button.submit-green {font-size: 14px;border: none;font-family: 'ProximaNova-Bold';color: #fff;padding: 5px 20px;margin: 10px auto;background-color: #2fa799;text-align: center;display: block;border-radius: 3px;}
+
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: internal-center;
+    background-color: #129cca;
+    color: white;
+border: 1px solid #129cca;
+            padding: 8px;
+}
+
+   
+
+.onhover:hover{
+    cursor: pointer;
+    }
+
+    .activeDisable[disabled]{
+        background-color: #9ae6dd;
+        color: white;
+        cursor: unset;
+    }
+
+    .activeEnable[disabled]{
+        background-color: #9ae6dd;
+        color: white;
+        cursor: unset;
+    }
+    /* .fa-plus-circle{background-color: #ddd;
+        cursor: pointer;} */
+        .fa-plus-circle{
+           pointer-events: none;
+           cursor: default;
+           opacity: 0.3;
+    }
+  
+.fa-trash:hover{background-color: #ddd;
+          cursor: pointer;}
+
+          .tabledisable {
+            pointer-events: none;
+            cursor: default;
+            opacity: 0.8;
+     }

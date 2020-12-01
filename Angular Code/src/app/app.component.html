@@ -1,0 +1,112 @@
+<!-- <header class="navbar-fixed-top">
+
+</header>
+
+<div id="loginPopup" class="commonPopup" style="display:none;">
+    <app-login (childEvent)="loginevent($event)">
+    </app-login>
+</div>
+
+<div id="registerPopup" class="commonPopup" style="display:none;">
+    <app-new-user (childEvent)="loginevent($event)">
+    </app-new-user>
+</div>
+
+
+
+<div id="resetPopup" class="commonPopup" style="display:none;">
+    <app-reset-password (childEvent)="loginevent($event)">
+    </app-reset-password>
+</div>
+
+<div id="feedbackPopup" class="commonPopup" style="display:none;">
+    <app-feedback (childEvent)="loginevent($event)">
+    </app-feedback>
+</div>
+
+<div id="privacyPopup" class="commonPopup" style="display:none;">
+    <app-content-popup [type]="contenttype" (childEvent)="loginevent($event)">
+    </app-content-popup>
+</div>
+
+<router-outlet>
+
+</router-outlet>
+
+
+<div class="foote navbar-fixed-bottom">
+
+    <div id="pdffooter" style="text-align:right; margin-right:5%;font-size:35px;display:none;color:white;background-color:white;">
+        Excelra Knowledge Solutions, All Rights Reserved.</div>
+    <div class="copyright" style="text-align:center !important;">&copy; {{today| date:'yyyy'}}
+        GOBIOM.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a (click)="termsofuse()" style="cursor: pointer;" >Terms of Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a (click)="privacypolicy()" style="cursor: pointer;" >Privacy Policy</a> 
+    </div>
+</div> -->
+<mainpageheader *ngIf="menuexists" class="navbar-fixed-top">
+    
+    </mainpageheader>
+
+    <!-- <mainpageheader></mainpageheader> -->
+    <!-- <ng4-loading-spinner [threshold]="2000" [template]="template"  [zIndex]="9999"></ng4-loading-spinner>
+    <div id="loginPopup" class="commonPopup" style="display:none;">
+        <app-login (childEvent)="loginevent($event)">
+        </app-login>
+        
+    </div>
+    
+    <div id="registerPopup" class="commonPopup" style="display:none;">
+        <app-new-user (childEvent)="loginevent($event)">
+        </app-new-user>
+    </div>
+    
+    <div id="forgotPopup" class="commonpopup" style="display:none;">
+            <app-forgot-password (childEvent)="loginevent($event)">
+            </app-forgot-password>
+        </div>
+    
+    <div id="resetPopup" class="commonPopup" style="display:none;">
+        <app-reset-password (childEvent)="loginevent($event)">
+        </app-reset-password>
+    </div>
+    
+    <div id="feedbackPopup" class="commonPopup" style="display:none;">
+        <app-feedback (childEvent)="loginevent($event)">
+        </app-feedback>
+    </div>
+    
+    <div id="privacyPopup" class="commonPopup" style="display:none;">
+        <app-content-popup [type]="contenttype" (childEvent)="loginevent($event)">
+        </app-content-popup>
+    </div> -->
+    <!-- <app-login-page *ngIf="loginpopup" (childEvent)="loginevent($event)">
+    </app-login-page>
+     -->
+     <!-- <div id="loginPopup" class="commonPopup" style="display:block;">
+        <app-login (childEvent)="loginevent($event)">
+        </app-login>
+        
+    </div> -->
+
+    <app-login-page *ngIf="loginpopup" (childEvent)="loginevent($event)">
+    </app-login-page>
+    <app-new-user *ngIf="registrationpopup" (childEvent)="loginevent($event)">
+    </app-new-user>
+    <!-- <app-mainpage></app-mainpage> -->
+    <router-outlet>
+    
+    </router-outlet>
+    
+    <!-- <footers class="navbar-fixed-bottom"> -->
+    <div *ngIf="menuexists" class="foote navbar-fixed-bottom">
+    
+        <div id="pdffooter" style="text-align:right; margin-right:5%;font-size:35px;display:none;color:white;background-color:white;">
+            Excelra Knowledge Solutions, All Rights Reserved.</div>
+        <div class="copyright" style="text-align:center !important;">&copy; {{today| date:'yyyy'}}
+            ValuRite.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a (click)="termsofuse()" style="cursor: pointer;" >Terms of Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a (click)="privacypolicy()" style="cursor: pointer;" >Privacy Policy</a> 
+        </div>
+    </div>
+    

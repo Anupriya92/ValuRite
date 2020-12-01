@@ -1,0 +1,42 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+.pagination {
+    display: inline-block;
+    border: 1px ;
+    height: 30px;
+    width:15%;
+    line-height:1.428571429;
+    margin-top: 0%;
+    margin-right:18%;
+    margin-left: 0%; 
+    
+}
+.mainLoginInput{
+
+    border-radius: 0px;
+      font-family: FontAwesome, Open Sans, Verdana, sans-serif; width:40%;display:inline-block
+    }
+.pagination a {
+    color: black;
+    float: left;
+    position: relative;
+     padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.428571429; 
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.pagination a.active {
+    background-color: #344868 !important;
+    border-color:solid #ffffff;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;}
+
+.scroll{
+    overflow-x:scroll;
+}

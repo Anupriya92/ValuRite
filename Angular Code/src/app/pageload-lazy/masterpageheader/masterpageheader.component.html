@@ -1,0 +1,190 @@
+<!-- 
+<div id="pdfheader" style="top:0 !important; display:none; text-align:center;margin-top:2%;">
+    <img _ngcontent-c2="" src="../../assets/img/appslogo_dark.png"></div>
+ 
+<div class="navbar-static-top menu2 firstheader" style="min-height: 55px !important; padding-right:15px !important;background:white">
+    <div class="container-fluid">
+        <div class="logo navbar-header">
+            <a>
+                <img alt="Gobiom" src="../../assets/img/appslogo_dark.png" style="height:50px; width:50px" />
+            </a>
+            <button type="button" data-toggle="collapse" data-target=".bs-navbar-collapse" class="navbar-toggle">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button></div>
+        <div class="myaccount_menus lia" id="profileuser">
+            <div class="dropdown">
+                <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                    <span id="user" style="margin: 6px;">Hi </span> <i class="caret"></i>
+                </button>
+                <ul class="dropdown-menu sli" style="top:35px !important;">
+                    <li><a href="#" id="logoutbutton" (click)="logout();"><span class="glyphicon glyphicon-log-out"></span>
+                            Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="collapse navbar-right navbar-collapse bs-navbar-collapse" style="margin-right: 557px;padding-top: 0px !important" role="navigation">
+            <ul class="nav navbar-nav">
+            <li *ngFor="let a of item1 let indd = index" class="dropdown lia">
+            <span *ngFor="let obj of a | keys" class="spa">
+
+            <a *ngIf="!isobj(obj.value)" (mouseenter)="mainmenuhover(indd)" (mouseleave)="mainmenuLeave(indd)" (click)="load(obj.value)" class="dropdown-toggle" routerLink="/{{obj.value}}"
+            data-toggle="dropdown">{{obj.key}}<span class="caret"></span></a>
+
+            <ul *ngIf="isobj(obj.value)" id="submenu{{indd}}" class="dropdown-menu multi-level sli" style="top:35px !important; left: 0px; width: fit-content; right:auto;">
+            <li *ngFor="let obj1 of obj.value" class="dropdown-submenu sublia">
+
+            <span *ngFor="let obj2 of obj1 | keys let ind = index" class="subspa">
+            <a class="aclass innerlink{{ind}}" (mouseenter)="submenuhover(ind)" (mouseleave)="submenuLeave(ind)"  *ngIf="!isobj(obj2.value)" 
+            (click)="load(obj2.value)" routerLink="/{{obj2.value}}">{{obj2.key}}<span class="right-caret caret{{ind}}"></span></a>
+                                            
+            <ul *ngIf="isobj(obj2.value)" id="supermenu{{ind-1}}" class="dropdown-menu subsli innerlink{{ind-1}}" style="display:none; width: fit-content; right:auto;">
+            <li *ngFor="let obj3 of obj2.value" class="dropdown-submenu sublia">
+
+            <a *ngFor="let obj4 of obj3 | keys" (click)="load(obj4.value)" routerLink="/{{obj4.value}}">{{obj4.key}}</a>
+            </li>
+            </ul>
+            </span>
+            </li>
+            </ul>
+            </span>
+            </li>
+            </ul>
+        </nav>
+    </div>
+</div> -->
+<div id="header-area" class="header_area firstheader">
+    <!-- <div class="header_bottom">
+        <div class="container">
+            <div class="row">  -->
+
+
+<nav role="navigation" class="navbar navbar-default mainmenu order-0">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+</button>
+<!-- <a class="" href="#"> -->
+<img style="height:50px;" src="../../assets/img/appslogo_dark.png" alt="GOBIOM">
+<!-- </a> -->
+</div>
+
+<!-- <div class="myaccount_menus lia" id="profileuser">
+    <div class="dropdown">
+        <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+            <span id="user" style="margin: 6px;">Hi </span> <i class="caret"></i>
+        </button>
+        <ul class="dropdown-menu sli" style="top:35px !important;">
+            <li><a href="#" id="logoutbutton" (click)="logout();"><span class="glyphicon glyphicon-log-out"></span>
+                    Logout</a></li>
+        </ul>
+    </div>
+</div> -->
+
+<!-- 
+<div id="navbarCollapse" class="collapse navbar-collapse navbar-nav navbar-right">
+<ul id="fresponsive" class="nav navbar-nav dropdown pull-right">
+<li *ngFor="let obj of objectKeys(item1)" [ngClass]="{'dropdown' : isobj(item1[obj])}">
+
+<a routerLink="{{item1[obj]}}" *ngIf="!isobj(item1[obj])">{{obj}}</a>
+<a *ngIf="isobj(item1[obj])" routerLink="#" data-toggle="dropdown" class="dropdown-toggle">{{obj}}<span class="caret"></span></a>
+
+<ul *ngIf="isobj(item1[obj])" class="dropdown-menu  pull-right">
+
+<li *ngFor="let subobj of objectKeys(item1[obj])" [ngClass]="{'dropdown' : isobj(item1[obj][subobj])}">
+<a routerLink="{{item1[obj][subobj]}}" *ngIf="!isobj(item1[obj][subobj])">{{subobj}}</a>
+<a *ngIf="isobj(item1[obj][subobj])" routerLink="#" data-toggle="dropdown" class="dropdown-toggle">{{subobj}}<span class="caret"></span></a>
+
+<ul *ngIf="isobj(item1[obj][subobj])" class="dropdown-menu pull-right">
+
+<li *ngFor="let superobj of objectKeys(item1[obj][subobj])" [ngClass]="{'dropdown' : isobj(item1[obj][subobj][superobj])}">
+<a routerLink="{{item1[obj][subobj][superobj]}}">{{superobj}}</a>
+</li>
+
+</ul>
+</li>
+</ul>
+
+</li>
+
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown">Menu
+        <span id="user" class="caret"></span> 
+        
+    </a>
+    <ul class="dropdown-menu pull-right">
+        <li><a href="#" id="logoutbutton" (click)="logout();">
+        <span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+    </ul>
+  </li>
+
+</ul>
+</div>
+ -->
+
+ <div id="header-area" class="header_area">
+    <div class="header_bottom">
+        <div class="container">
+            <div class="row">
+                <nav role="navigation" class="navbar navbar-default mainmenu">
+            <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- Collection of nav links and other content for toggling -->
+                    <div id="navbarCollapse" class="collapse navbar-collapse">
+                        <ul id="fresponsive" class="nav navbar-nav dropdown">
+                            
+                        <li *ngFor="let obj of objectKeys(item1)" [ngClass]="{'dropdown' : isobj(item1[obj])}">
+                            
+                                <a routerLink="{{item1[obj]}}" *ngIf="!isobj(item1[obj])">{{obj}}</a>
+                                <a *ngIf="isobj(item1[obj])" routerLink="#" data-toggle="dropdown" class="dropdown-toggle">{{obj}}<span class="caret"></span></a>
+                            
+                                <ul *ngIf="isobj(item1[obj])" class="dropdown-menu  pull-right">
+                            
+                                <li *ngFor="let subobj of objectKeys(item1[obj])" [ngClass]="{'dropdown' : isobj(item1[obj][subobj])}">
+                                <a routerLink="{{item1[obj][subobj]}}" *ngIf="!isobj(item1[obj][subobj])">{{subobj}}</a>
+                                <a *ngIf="isobj(item1[obj][subobj])" routerLink="#" data-toggle="dropdown" class="dropdown-toggle">{{subobj}}<span class="right-caret"></span></a>
+                            
+                                <ul *ngIf="isobj(item1[obj][subobj])" class="dropdown-menu pull-right">
+                            
+                                <li *ngFor="let superobj of objectKeys(item1[obj][subobj])" [ngClass]="{'dropdown' : isobj(item1[obj][subobj][superobj])}">
+                                <a routerLink="{{item1[obj][subobj][superobj]}}">{{superobj}}</a>
+                                </li>
+                            
+                                </ul>
+                                </li>
+                                </ul>
+                            
+                                </li>
+                            
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <span id="user" style="margin: 6px;">Hi </span> <i class="caret"></i>
+                                    </a>
+                                    <ul class="nav navbar-nav dropdown">
+                                        <li><a href="#" id="logoutbutton" (click)="logout();">
+                                        <span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                                
+                    </div>
+                </nav>
+            </div> 
+        </div>            
+    </div><!-- /.header_bottom -->
+  
+</div>

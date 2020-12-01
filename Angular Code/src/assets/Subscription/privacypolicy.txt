@@ -1,0 +1,53 @@
+
+<table>
+							<tbody><tr>
+							  <td  class=\"txt\"><div id=\"k1\" style=\"overflow:auto; width:100%;  height:400; padding:0 5 0 5;\" onscroll=\"enable()\"> <span style="font-weight: bold;" class=\"f_head2\">IMPORTANT:</span><br>
+                                    <br>
+							    THIS END-USER LICENSE AGREEMENT (or &quot;EULA&quot;) IS A LEGAL AGREEMENT BETWEEN THE PERSON, COMPANY, OR ORGANIZATION (&quot;YOU&quot; OR &quot; CUSTOMER&quot;) THAT HAS LICENSED THIS GOBIOM DATABASE (&quot; ONLINE GOBIOM DATABASE&quot;) AND Excelra Knowledge Solutions Private Limited (or &quot; EXCELRA&quot;). BY INSTALLING AND USING THE ONLINE GOBIOM DATABASE, CUSTOMER ACCEPTS THE ONLINE GOBIOM DATABASE AND AGREES TO THE TERMS OF THIS AGREEMENT. READ IT CAREFULLY BEFORE COMPLETING THE INSTALLATION PROCESS AND USING THE ONLINE GOBIOM DATABASE. BY INSTALLING AND/OR USING THE ONLINE GOBIOM DATABASE, YOU ARE CONFIRMING YOUR ACCEPTANCE OF THE ONLINE GOBIOM DATABASE AND AGREEING TO BECOME BOUND BY THE TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO BE BOUND BY THESE TERMS, OR DO NOT HAVE AUTHORITY TO BIND CUSTOMER TO THESE TERMS, THEN DO NOT USE THE ONLINE GOBIOM DATABASE<br>
+  <br>
+THIS EULA SHALL APPLY ONLY TO THE ONLINE GOBIOM DATABASE SUPPLIED BY EXCELRA HEREWITH REGARDLESS OF WHETHER ANY OTHER PRODUCT IS REFERRED TO OR DESCRIBED HEREIN.<br>
+  <br>
+  
+  
+ 
+  <span style="font-weight: bold;" class=\"f_head2\"><a name=\"privcy\"></a>PRIVACY POLICY</span><br>
+  <br>
+							You agree to the EXCELRA&apos;S Privacy Policy, made available online and any amendments to the Policy as may be changed from time to time. It is your responsibility to ensure that you understand the terms of the privacy policy, so you should periodically check the current version of the policy for changes.<br>
+  <br>
+  <span style="font-weight: bold;" class=\"sub_head\">OTHER TERMS</span>
+  <ul style="list-style-type:circle; margin-left: 4%;">
+    <li>EXCELRA is not responsible for any charges associated with accessing the ONLINE GOBIOM DATABASEs, including, but not limited to, any computer equipment, telephone or Internet connections and access software.</li>
+    <li>EXCELRA may modify any of these terms and conditions at any time by providing notice in EXCELRA. Your continued use of the ONLINE GOBIOM DATABASE shall be conclusively deemed acceptance of such modification.</li>
+  </ul>
+  <span style="font-weight: bold;" class=\"sub_head\">LIMITED LIABILITY &amp; WARRANTY LIMITATIONS
+</span>
+  <ul style="list-style-type:circle; margin-left: 4%;">
+    <li>ALL MATERIALS CONTAINED IN THE ONLINE GOBIOM DATABASE ARE PROVIDED ON AN &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF TITLE, OR IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE; THE USE OF THE ONLINE GOBIOM DATABASE AND ALL MATERIALS IS AT THE USER'S OWN RISK; ACCESS TO THE ONLINE GOBIOM DATABASE MAY BE INTERRUPTED AND MAY NOT BE ERROR FREE; AND NEITHER EXCELRA , ITS SUPPLIERS, OR ANYONE ELSE INVOLVED IN CREATING, PRODUCING OR DELIVERING THE ONLINE GOBIOM DATABASE OR THE MATERIALS CONTAINED IN THE ONLINE GOBIOM DATABASE, SHALL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES ARISING OUT OF THE USER'S USE OF OR INABILITY TO USE THE ONLINE GOBIOM DATABASE AND ALL MATERIALS CONTAINED THEREIN AND BASED ON ANY THEORY OF LIABILITY INCLUDING BREACH OF CONTRACT, BREACH OF WARRANTY, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR OTHERWISE, EVEN IF EXCELRA OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND EVEN IF A REMEDY SET FORTH HEREIN IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE</li>
+    <li>EXCELRA&apos;S TOTAL LIABILITY TO YOU FOR ACTUAL DAMAGES FOR ANY CAUSE WHATSOEVER WILL BE LIMITED TO THE GREATER OF $..... OR THE AMOUNT PAID BY YOU FOR THE ONLINE GOBIOM DATABASE THAT CAUSED SUCH DAMAGE.</li>
+    <li>THE FOREGOING LIMITATIONS ON LIABILITY ARE INTENDED TO APPLY TO THE WARRANTIES AND DISCLAIMERS ABOVE AND ALL OTHER ASPECTS OF THIS EULA. </li>
+  </ul>
+  <span style="font-weight: bold;" class=\"sub_head\">GENERAL</span>
+  <ul style="list-style-type:circle; margin-left: 4%;">
+    <li>This EULA shall be governed by the Indian laws, without giving effect to principles of conflict of laws. You hereby consent to the exclusive jurisdiction and venue of the courts sitting in Hyderabad, Andhra Pradesh, India to resolve any disputes arising under this EULA.</li>
+    <li>This EULA contains the complete agreement between the parties with respect to the subject matter hereof, and supersedes all prior or contemporaneous agreements or understandings, whether oral or written. You agree that any varying or additional terms contained in any purchase order or other written notification or document issued by you in relation to The ONLINE GOBIOM DATABASE licensed hereunder shall be of no effect. The failure or delay of EXCELRA to exercise any of its rights under this EULA or upon any breach of this EULA shall not be deemed a waiver of those rights or of the breach.</li>
+<li>No EXCELRA dealer, agent or employee is authorized to make any amendment to this EULA unless such amendment is in writing and signed by a duly authorized representative of EXCELRA.
+</li>
+    <li>If any provision of this EULA shall be held by a court of competent jurisdiction to be contrary to law that provision will be enforced to the maximum extent permissible and the remaining provisions of this EULA will remain in full force and effect.</li>
+    </ul><br><u>All questions concerning this EULA shall be directed to:</u>
+        <pre class=\"txt\">						<b style="color:#0099cc;">
+Excelra Knowledge Solutions Private Limited,
+6th Floor, Wing B, NSL SEZ ARENA,
+Plot No. 6, Survey No. 1,
+IDA Uppal, Hyderabad-500039
+<a href=\"mailto: biomarkers@excelra.com\" style="color:black" class=\"txt_link\">biomarkers@excelra.com
+</a>
+						</pre>
+  
+						      </div></td>
+							</tr>	
+              					
+						</tbody>          
+            </table>
+            </table>
+            </table>
+            

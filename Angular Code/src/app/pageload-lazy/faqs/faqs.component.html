@@ -1,0 +1,265 @@
+<!-- HEADER -->
+<header role="banner" class="position-absolute">
+                    
+  <!-- Top Navigation -->
+  <nav class="background-transparent background-primary-dott full-width nav-font-style fixed">
+
+      <div>
+          <!-- ValuRite Logo -->
+          <div>
+              <ul class="logo-menu">
+                  <a href="index.html" class="logo">
+                      <img class="logo-dark" src="assets/img/valurite_logo.png" alt="logo">
+                  </a>
+              </ul>
+          </div>
+          
+          <!-- Analytic Brains Logo -->
+          <div>
+              <ul class="ab-logo-menu">
+                  <a class="logo" href="http://analyticbrains.com/">
+                      <img class="ab-logo" src="assets/img/ab_logo.png" alt="logo">
+                  </a>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="top-nav menu-spacing">
+
+          <!-- ValuRite Mobile Logo -->
+          <div class="logo hide-l hide-xl hide-xxl">
+              <a href="index.html" class="logo">
+                  <img class="mobi-logo-dark" src="assets/img/appslogo-1.png" alt="">
+              </a>
+          </div>
+
+          <!-- Center Menu Icon-->
+          <p class="nav-text"></p>
+
+          <!-- menu items -->
+          <div class="top-nav" style="display: flex; justify-content: center;">
+              <ul class="top-ul chevron">
+                  <li><a id="valuritehome" [routerLink]="['']">Home</a></li>
+                  <li><a id="valuriteabout" [routerLink]="['/aboutus']">About Us</a></li>
+                  <li><a id="valuritepricing" [routerLink]="['/pricing']">Pricing</a></li>
+                  <li class="active-item"><a id="valuritefaq" [routerLink]="['/faqs']">FAQS</a></li>
+                  <li><a id="valuritecontact" [routerLink]="['/contact']">Contact</a></li>
+                  <li><a id="valuritefeedback" [routerLink]="['/feedback']">Feedback</a></li>
+                  <li><a id="loginclick" (childEvent)="loginevent($event)">Sign in</a></li>
+              </ul>
+          </div>
+
+          <!-- Analytic Brains Mobile Logo -->
+          <div class="logo hide-l hide-xl hide-xxl">
+              <a href="http://analyticbrains.com/" class="logo">
+                  <img class="mobi-ab-logo" src="assets/img/ab_logo.png" alt="">
+              </a>
+          </div>
+
+      </div>
+
+  </nav>
+</header>
+
+<!-- MAIN -->
+<main role="main">
+  <!-- Header -->
+  <header class="section background-image text-center" style="background-image:url(assets/img/faqs1-2.jpg)">
+      <h1 class="animated-element slow text-extra-thin text-white text-s-size-30 text-m-size-40 text-size-50 text-line-height-1 margin-bottom-30 margin-top-130">
+          FAQS
+      </h1>
+      <!-- white full width arrow object -->
+      <img class="arrow-object" src="assets/img/arrow-object-white.svg" alt="">
+  </header>
+
+
+  <!-- FAQ Questions -->          
+  <div class="faqmain section-top-padding" style="padding-bottom: 6rem;"> 
+
+      <!-- Search Bar -->
+      <div class="wrap">
+          <div class="search">
+              <input type="text" class="searchTerm" id="search-text" onclick="mySearch()" placeholder="What are you looking for?">
+              <span class="list-count"></span>
+          </div>
+      </div>
+      
+      <ul id="list">
+          <li class="in li">
+              <button class="accordion accordionPlus question" id="faqbtn">What is ValuRite Product?</button>
+              <div class="panel faq-para answer">
+                  <p class="faq-para-font"><br>ValuRite is a mobile-cum-web based solution that works for Lenders, Property Valuation companies and individual property valuers/ appraisers. They can use this product for Home Loan valuations, Income Tax valuations & NCLT cases.<br><br>  
+                  <b>Dashboard:</b><br> 
+                  Every user is provided with the dashboard with the status of their valuations.<br><br> 
+                  <b>Workflow:</b><br> 
+                  You can create your own list of field executives / appraisers, assign & monitor the status of the valuation for the list of valuations.  You can instantly view the report once the field executive captures the data at the site and validate them before they leave the site.  This will help in the TAT for your appraisal process.
+                  With comprehensive data capture forms, you get reliable and accurate valuations with simplified approval workflow processes. It is user friendly, hosted on the cloud and accessible on-the-go, anytime, anywhere.  It has the ability to capture the pictures and integration with Google maps for capturing the latitude and longitude and nearby places.<br><br>
+                  <b>Scheduling site visits:</b><br> 
+                  Your field executives would be able to schedule / reschedule the site visits with borrowers.  They can provide the list of documents required for verification when they visit the site when scheduling the appointment.<br><br>
+                  <b>Invoicing:</b><br> 
+                  You can capture the invoice amount for each appraisal and raise the invoice to the lender.  You can also capture the payments received and get an ageing report for the outstanding invoices to enable you to follow-up.<br><br></p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">What happens when the mobile internet connectivity goes offline?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br>Do not worry. You will not lose any data captured as all the data captured till you lose the internet connectivity will be saved locally in your mobile app.  Once connectivity is restored, the data will be saved to the server.<br><br></p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">Can we use the same report formats for different lenders?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br>Partially Yes., provided the lenders use same report templates.  Most of the lenders use different templates.<br><br></p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">How do you identify latest changes for valuation process?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br>We have valuation SMEs on our board  who advise us on such changes in the application. Also, We go through official valuation related websites frequently and update our application in sync with those changes.<br><br></p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">Can I evaluate the application before making a payment for the services?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br><b>a.</b> Sure, you can explore the application with free trial access. To get a trial access you can raise a request by clicking on Evaluation request on the website or write to  valuritesupport @analyticbrains.com. <br><br> 
+              <b>b.</b> Free trial access will be for a brief period and timeline can be extended if there is a valid reason.<br><br>
+              </p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">Are there any external data sources to which the application is connected to complete the valuation process?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br><b>a.</b> Google maps are used to locate the properties as nearest as to the actual points.<br><br>
+              <b>b.</b> For guideline values based on the survey number.<br><br>
+              <b>c.</b> For appraiser membership information validation, we connect to external data source.<br><br>
+              </p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">Does my browser support the ValuRite application?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br><br>Use Google Chrome  last 2 versions as your browser for the best experience.<br><br></p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">How to send feedback on the features of the application?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br><br>We are eager to receive feedback from you. You could click on 'Feedback' menu and submit your feedback from the home page.<br><br></p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">What should I do if I forgot my password?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br><br><b>a.</b> Click on 'Forgot Password'  option in the login page, enter your e-mail/username in the text box provided and submit. Follow the instructions thereafter to get your password.<br>
+              <b>b.</b> You can also write to us through email <a href="valuritesupport@analyticbrains.com">valuritesupport@analyticbrains.com</a> with your user id details. <br><br>
+              </p>
+              </div>
+          </li> 
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">How do I change the password?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br><br>You can change your password by clicking the 'My Account' menu after logging in. Select 'Change Password' option to change the password.<br><br></p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">Can I change my user name?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br>It is not possible to change your username once you have signed up for ValuRite account.<br><br></p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">What should I do if I forget my username?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br><br>You can recover your username by contacting the support team by sending email to <a href="valuritesupport@analyticbrains.com">valuritesupport@analyticbrains.com</a>. After verification, your username will be sent to you via e-mail.<br><br></p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">I am having trouble logging in?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br><br><b>Some possible reasons for this are:</b><br>
+                      <b>i.</b> Logging in with invalid username/password<br>
+                      <b>ii.</b> Unsupported browsers<br>
+                      <b>iii.</b>	Expired Subscription<br> 
+                      <b>iv.</b> Disabled browser cookies<br><br>
+                  </p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">I am having trouble loading the site?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br><br>Loading problems may occur if a setting in your browser or in third party software, conflicts with ValuRite . To solve this problem, first check that you are using a supported browser, then try clearing your browser�s cache and then resolve firewall issues. If you still have problems in loading the page, contact 
+                      <a href="valuritesupport@analyticbrains.com">valuritesupport@analyticbrains.com</a>. <br><br></p>
+              </div>
+          </li>
+          <li class="in li">
+              <button class="accordion accordionPlus" id="faqbtn">I have a problem not described here?</button>
+              <div class="panel faq-para">
+                  <p class="faq-para-font"><br><br>If your problem is not described here, first check to make sure that you are using one of the supported browsers. If your browser is supported and you are still experiencing a problem, please contact <a href="valuritesupport@analyticbrains.com">valuritesupport@analyticbrains.com</a>.<br><br></p>
+              </div>
+          </li>
+          <span class="empty-item">no result found!</span>
+      </ul>
+  </div>                 
+</main>
+
+<!-- FOOTER -->
+<!-- Main Footer -->
+<section class="section background-black" style="padding-bottom:0rem !important;">
+  <div class="line">
+      <div class="margin2x footer-flex row" style="padding-bottom:3rem;">
+          <div class="s-12 m-6 l-3 xl-4 margin-bottom-30 margin-m-bottom-30">
+              <h4 class="text-white">Our Mission</h4>
+              <p class="text-size-18 footer-font">
+                  <b>Our mission is to empower</b> every person and every organization on the
+                  planet to achieve more.
+              </p>
+          </div>
+          <div class="s-12 m-6 l-3 xl-1 margin-bottom-30 margin-m-bottom-30">
+              <h4 class="text-white">Quick Links</h4>
+              <p class="text-size-16 footer-font">
+              <a class="text-primary-hover text-line-height" id="valuriteabout" href="#">About Us</a><br>
+              <a class="text-primary-hover text-line-height" id="valuritepricing" href="#">Pricing</a><br>
+              <a class="text-primary-hover text-line-height" id="valuritefaq" href="#">FAQS</a><br>
+              <a class="text-primary-hover text-line-height" id="valuritecontact" href="#">Contact Us</a><br>
+              </p>
+          </div>
+          <div class="s-12 m-6 l-3 xl-2 margin-bottom-30 margin-m-bottom-30">
+              <h4 class="text-white">Terms of Use</h4>
+              <p class="text-size-16 footer-font">
+              <a class="text-primary-hover text-line-height" href="page.html">Terms and Conditions</a><br>
+              <a class="text-primary-hover text-line-height" href="page.html">Privacy Policy</a><br>
+              <a class="text-primary-hover text-line-height" href="page.html">Disclaimer</a>
+              </p>
+          </div>
+          <div class="s-12 m-6 l-3 xl-3 margin-bottom-30 margin-m-bottom-30">
+              <h4 class="text-white">Contact Us</h4>
+              <p class="text-size-16 footer-font">
+                  <i class="icon-sli-screen-smartphone text-primary text-line-height"></i> 91 44 4354 6875 <br>
+              <a class="text-primary-hover text-line-height" href="mailto:contact@sampledomain.com">
+                  <i class="icon-sli-mouse text-primary text-line-height"></i> info@analyticbrains.com</a><br>
+              </p>
+          </div>
+          <div class="s-7 m-3 l-2 xl-1 margin-bottom-30 margin-m-bottom-30">
+              <h4 class="text-white">Link With Us</h4>
+              <div class="text-center"><a href="/"><i class="icon-sli-social-linkedin social-icons text-size-30"></i></a></div>
+          </div>
+          <div class="s-7 m-3 l-2 xl-1 margin-bottom-30 margin-m-bottom-30">
+              <h4 class="text-white"> Download on </h4>
+              <a href="/">
+                  <img src="assets/img/Google-Play.png" alt="Google-Play-1">
+              </a>
+          </div>
+      </div>
+
+      <hr class="footer-hr">
+      <div class="small-padding">
+          <div class="float-left footer-font footer-footer">
+              &#169; 2020 ValuRite. All Rights Reserved.
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Go To Top -->
+<i class="icon-sli-arrow-up-circle text-size-50" id="myBtn" onclick="topFunction()"> </i>
+

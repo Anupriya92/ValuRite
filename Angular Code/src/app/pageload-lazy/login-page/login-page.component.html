@@ -1,0 +1,177 @@
+<!-- <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+  <div class="wrapper wrapper--w680">
+      <div class="card card-1">
+          <div class="card-heading"></div>
+          <div class="card-body">
+              <h2 class="title">Registration Info</h2>
+              <form method="POST">
+                  <div class="input-group">
+                      <input class="input--style-1" type="text" placeholder="NAME" name="name">
+                  </div>
+                  <div class="row row-space">
+                      <div class="col-2">
+                          <div class="input-group">
+                              <input type="text" placeholder="BIRTHDATE" name="birthday">
+                          </div>
+                      </div>
+                      <div class="col-2">
+                          <div class="input-group">
+                              <div class="rs-select2 js-select-simple select--no-search">
+                                  <select name="gender">
+                                      <option disabled="disabled" selected="selected">GENDER</option>
+                                      <option>Male</option>
+                                      <option>Female</option>
+                                      <option>Other</option>
+                                  </select>
+                                  <div class="select-dropdown"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="input-group">
+                      <div class="rs-select2 js-select-simple select--no-search">
+                          <select name="class">
+                              <option disabled="disabled" selected="selected">CLASS</option>
+                              <option>Class 1</option>
+                              <option>Class 2</option>
+                              <option>Class 3</option>
+                          </select>
+                          <div class="select-dropdown"></div>
+                      </div>
+                  </div>
+                  <div class="row row-space">
+                      <div class="col-2">
+                          <div class="input-group">
+                              <input class="input--style-1" type="text" placeholder="REGISTRATION CODE" name="res_code">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="p-t-20">
+                      <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div> -->
+
+<!-- <div class="loginmodel" style="overflow-y: scroll !important;">
+
+
+
+    <div class="page-wrapper font-robo">
+
+      <div class="wrapper wrapper--w680">
+          <div class="card card-1">
+                <div>
+                        <input id="closebutton" (click)="callParent('close')" type="button" value="X" />
+                    </div>
+              <div class="card-heading"></div>
+              <div class="card-body">
+
+
+
+
+      <div style="position: relative; border-bottom: 1px solid grey; height:50px;">
+        <div class="tablabelactive">LOGIN</div>
+
+
+        <div class="tablabelinactive" (click)="callParent('registrationpopup')">REGISTRATION</div></div>
+
+
+                  <form [formGroup]="formdata" (ngSubmit)="loginSubmit(formdata.value)" style="margin-top:50px;">
+
+
+
+                             <div class="floating-label">
+                                <input class="floating-input" formControlName="username" maxlength="254" (focus)="alertclear()" id="username" type="email" placeholder=" " required />
+                                <label>Email</label>
+                              </div>
+
+                              <div class="floating-label">
+                                    <input class="floating-input" type="password" maxlength="20" (focus)="alertclear()" id="password" formControlName="password" placeholder=" " required>
+                                    <label>Password</label>
+                                  </div>
+
+                      <div class="p-t-20">
+                          <button [disabled]="!formdata.valid" class="btn btn--radius btn--green" type="submit">Submit</button>
+                      </div>
+                  </form>
+
+                  <div class="alert alert-danger fade" [ngClass]="{in: loginresponse !=''}">
+                        <h6>{{loginresponse}}</h6>
+                      </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    </div> -->
+
+    <div class="loginmodel" style="overflow-y: scroll !important;max-height: calc(100vh - 180px)">
+
+
+
+        <div class="page-wrapper font-robo">  <!--bg-blue p-t-100 -->
+
+          <div class="wrapper wrapper--w680">
+              <div class="card card-1">
+                    <div>
+                            <input id="closebutton" (click)="callParent('close')" type="button" value="X" />
+                        </div>
+                  <div class="card-heading"></div>
+                  <div class="card-body">
+                      <!-- <h2 class="title">LOGIN</h2> -->
+
+
+
+          <div style="position: relative; border-bottom: 1px solid grey; height:50px; cursor: pointer;">
+            <div class="tablabelactive">LOGIN</div>
+
+
+            <div class="tablabelinactive" (click)="callParent('registrationpopup')">REGISTRATION</div></div>
+
+
+                      <form [formGroup]="formdata" (ngSubmit)="loginSubmit(formdata.value)" style="margin-top:50px;">
+
+
+
+                                 <div class="floating-label">
+                                    <input class="floating-input" formControlName="username" maxlength="254" (focus)="alertclear()" id="username" type="email" placeholder=" " required />
+                                    <label>Email</label>
+                                  </div>
+
+                                  <div class="floating-label">
+                                        <input class="floating-input" type="password" maxlength="20" (focus)="alertclear()" id="password" formControlName="password" placeholder=" " required>
+                                        <label>Password</label>
+                                      </div>
+
+                          <div >
+                              <button [disabled]="!formdata.valid" class="btn btn--radius btn--green" type="submit">Submit</button>
+                          </div>
+                      </form>
+        <br>
+                      <div class="alert alert-danger fade" [ngClass]="{in: loginresponse !=''}">
+                            <h6>{{loginresponse}}</h6>
+                          </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        </div>
+
+        <div id="myModal" class="sessionmodel" [ngStyle]="{'display':displays}">
+
+            <div class="modal-content" style="height:200px !important; background-color:white !important;margin-left:37%;width:22%!important">
+
+            <div class="text-center" style="font-family:ProximaNova-Regular;font-size:17px;text-align: center;margin-top:40px;">
+            <!-- <i class="fa fa-check fa-4x mb-3" style="color:#5394ff !important;"></i> -->
+            <p>You are already logged in another device/machine. Do you want to login?</p>
+            </div>
+
+            <div class="modal-footer"style="margin-left:72px!important;">
+            <button type="button" (click)="killPreviousSession()" class="btn btn-primary-modal"style="background:#0493da!important;margin-top: 20px;border-radius:8px;">YES</button>
+            <button type="button" (click)="closepop()" class="btn btn-primary-modal" style="margin-right:34%;background:#0493da!important;border-radius:8px;">No</button>
+            </div>
+            </div>
+
+            </div>

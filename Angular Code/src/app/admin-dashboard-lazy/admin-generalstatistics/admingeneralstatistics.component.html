@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12" style="margin-left: 10px; margin-top: 2%;">
+      <legend>General Statistics</legend>
+    </div>
+  </div>
+
+  <div class="row" style="height:302px;">
+    <!--ng-Select for Company Dropdown List -->
+    <div style="float:left; margin-right:2px; width:23%;padding-left: 30px;" class="col-lg-3 col-sm-3 col-md-3 col-xs-3 formGroup">
+      <b>Company
+        <!-- <span style="color:red;">*</span> -->
+      </b>
+      <ng-select [allowClear]="false" [multiple]="true" [items]="companies" [disabled]="companyDisabled" (selected)="onCompanyItemSelect($event)"
+        (removed)="onCompanyItemRemoved($event)" name="companyDropDown" placeholder="" [(ngModel)]="companyName">
+      </ng-select>
+    </div>
+    <!--ng-Select for User Dropdown List-->
+    <div style="float: left; margin-right:2px; width: 23%" class="col-lg-3 col-sm-3 col-md-3 col-xs-3 formGroup">
+      <b>Users</b>
+      <ng-select [allowClear]="false" [multiple]="true" [items]="users" [disabled]="userDisabled" (selected)="onUserItemSelect($event)"
+        (removed)="onUserItemRemoved($event)" placeholder="" [(ngModel)]="userName" name="userDropDown">
+      </ng-select>
+    </div>
+    <!--Date Pickers-->
+    <div style="float: left; margin-right:2px;" class="col-lg-2 col-sm-2 col-md-2 col-xs-2 formGroup">
+      <b>From </b>
+      <input type="text" (click)="calender($event)" id="startdate" class="form-control" style="width: 200px; background: url(../../../assets/images/datepicker.png) no-repeat scroll 170px center;cursor:pointer"
+        readonly/>
+    </div>
+    <div style="float: left; margin-right:2px;" class="col-lg-2 col-sm-2 col-md-2 col-xs-2 formGroup">
+      <b>To </b>
+      <input type="text" (click)="calender($event)" id="enddate" class="form-control" style="width: 200px; background: url(../../../assets/images/datepicker.png) no-repeat scroll 170px center;cursor:pointer"
+        readonly/>
+    </div>
+    <div style="float: left; margin-right:2px;" class="col-lg-2 col-sm-2 col-md-2 col-xs-2 formGroup">
+      <b>Valuation Status </b>
+      <select id="valuationstatus" class="form-control " style="width:200px">
+        <option selected disabled value="">--Select-- </option>
+        <option value="Approved">Approved</option>
+        <option value="Approved By Approver">Approved By Approver</option>
+        <option value="Assigned">Assigned</option>
+        <option value="Completed">Completed</option>
+        <option value="InProgress">InProgress</option>
+        <option value="Rejected By Approver">Rejected By Approver</option>
+        <option value="Submitted">Submitted</option>
+        <option value="Submitted to Approver">Submitted to Approver</option>
+      </select>
+      <!-- <input type="text"  id="valutaionstatus" class="form-control" style="width: 200px;"/> -->
+    </div>
+    <br>
+    <br>
+    <!--RADiO BUTTONS -->
+    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2 formGroup" style="float:left; margin-top: 20px; margin-right:5px; padding-left: 30px;width:100%; align-content: center">
+      <input [(ngModel)]="radioButtonResultValue" type="radio" [value]="true" name="searchopt" (click)="getRadioButtonMonth()">
+      <label class="radio-inline accMainMeanu" style="padding-right: 20px; padding-left: 0px; vertical-align: text-bottom">Month Wise</label>
+      <input [(ngModel)]="radioButtonResultValue" type="radio" [value]="false" name="searchopt" (click)="getRadioButtonYear()">
+      <label class="radio-inline accMainMeanu" style="padding-right: 20px; padding-left: 0px; vertical-align: text-bottom">Year Wise</label>
+    </div>
+    <div>
+      <!-- Submit Button-->
+      <div>
+        <button class="submit-green" style="float:left;margin-left: 28px;" id="draw" name="" type="submit" (click)="drawchart()">Submit</button>
+        <button class="submit-green" style="float:left;margin-left: 28px;" id="reset" type="button" value="reset" (click)="reset()">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!--CHARTS-->
+    <div class="chart" *ngIf="showUserMonthChart">
+      <app-admin-stack-bar *ngIf="showUserMonthChart" (ApplicationTableData)="generalTable($event)" id="showUserMonthChart" style="padding-top: 15px !important;"
+        [jsondata]="chartObject"></app-admin-stack-bar>
+    </div>
+  </div>
+  <!--Error Message-->
+  <div class="row">
+    <p *ngIf="errorMsgFlag" style="color: red; text-align: center;" id="showUserMonthChart"> No data available to display</p>
+  </div>
+  <!--general popup -->
+  <div class="row">
+    <div class="col-lg-12">
+      <admin-sort-table style="overflow-y: auto;position: fixed;right: 0;left: 0;top: 0;bottom: 0;font-weight: bold;padding: 5%;z-index: 145;opacity: 1 !important; display:none;"
+        id="generalpopup" [tabledata]="Jsondata"></admin-sort-table>
+    </div>
+  </div>
+
+
+
+
+
+</div>

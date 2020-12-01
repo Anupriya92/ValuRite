@@ -1,0 +1,54 @@
+
+<div class="panel-body pan tablepan" style="font-size: 18px;color:white;background-color:#00aeef;text-align: left;" *ngIf="tablecaption !=undefined">
+    {{tablecaption}}</div>
+<div [hidden]="tablehide" class="tabtext tablediv" id="tablediv">
+    <section class="searchpgrow3" style="padding-top: 10px !important; padding-bottom:30px !important;padding-right:15px !important;">
+        <div class="container" id="tablerecords" style="min-width:100% !important;">
+            <!--col-lg-12 col-md-12  container style="min-width:1000px !important; width:1400px !important; max-width:1600px !important;"-->
+
+            <div style="float:left;padding-left:1%; padding-bottom:10px;">Number of Records : {{recordStart}} of {{searchLength}}</div>
+            <div id="export_div" *ngIf="exportflagExists" style="padding-bottom: 10px;float:right;">
+                <!--padding-bottom: 2%-->
+                <i class="fa fa-file-excel-o" id="btn_export" style="font-size: 25px; float: right;pointer-events: auto;cursor: pointer;opacity: 1;"
+                    aria-hidden="true"></i>
+            </div>
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="drug-tab">
+                        <table class="table stripe" style="width:100% !important;">
+                            <thead>
+                                <tr class="theader">
+                                    <th *ngIf="checkboxExists">
+                                        <input ng-model="myCheckbox" id="checkbox1" (change)='checkbx($event)' type="checkbox" />
+                                    </th>
+                                    <th class="no-padding" style="min-width:100px !important;" *ngFor="let thead of headers" data-toggle="popover" title={{thead}}
+                                        data-placement="right">
+                                        <span *ngIf="thead == 'Visualization'" class="ebmlength">{{thead}}</span>
+                                        <span *ngIf="thead != 'Watch' && thead != 'Visualization'">{{thead}}</span>
+                                        <span *ngIf="thead == 'Watch'" class="watchlength">{{thead}}</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tfoot *ngIf="totalExists">
+                                <tr>
+                                    <th *ngFor="let foot of footers">{{foot}}</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" id="remove" class="login_btn site_btn report_default" style="margin-right:20px; display:none">
+                    <span class=".btn-info" style="padding-right:6px;">&nbsp;Remove</span>
+                </button>
+                <button type="button" id="reset" class="login_btn site_btn report_default" style="margin-right:20px; display:none">
+                    <span class=".btn-info" style="padding-right:6px;">&nbsp;Reset</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <div>
+    </div>

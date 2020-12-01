@@ -1,0 +1,173 @@
+<!-- Login Page -->
+<!-- <div id="myModal" class="modal backdrop" [ngStyle]="{'display':displays}">
+  <div class="modal-dialog">
+    <div class="modal-content" style="height:200px !important; background-color:white !important;">
+      <div class="modal-body">
+        <div class="text-center">
+          <p>You are already logged in another device/machine. Do you want to login?</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="killPreviousSession()" class="btn btn-primary-modal">YES</button>
+        <button type="button" (click)="closepop()" class="btn btn-primary-modal" style="margin-right:34%">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade in" id="myModal" [ngStyle]="{'display':display}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-body">
+      <div class="row" style="background-color:white;">
+        <div class="col-md-5 lgn-pnl-styl1" style="height:600px">
+          <div class="row text-center sign-with">
+            <div class="col-md-12">
+              <h3 style="float:left; padding-left:10px; color:#ffffff; font-size:28px;"> LOGIN </h3>
+            </div>
+            <div class="col-md-12">
+              <div style="bottom:50px ">
+                <h3 style="float:left; text-align: left; padding-left:10px; font-size:16px; font-weight:normal; padding-top:60px; color:#ffffff">Biomarker database for informed clinical & therapeutic decision making</h3>
+              </div>
+              <div style="vertical-align:bottom; text-align:center">
+                <img src="assets/images/login_panel_icons.png" alt="Login Back image"> </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7" style="padding:20px 20px 20px 20px">
+          <button type="button" (click)="callParent('close')" title="close" style="float:right; border:none;">
+            <i class="fa fa-times" style="color:#0099cc; height: 20px; width: 20px;" aria-hidden="true"></i>
+          </button>
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a data-toggle="tab">Login</a>
+            </li>
+            <li>
+              <a (click)="callParent('registerPopup')">Registration</a>
+            </li>
+       
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="LoginPanel" style="padding-top:10px">
+              <form [formGroup]="formdata" (ngSubmit)="loginSubmit(formdata.value)" class="form-horizontal">
+                <div class="form-group">
+                  <label for="email" class="col-sm-3 control-label"> Email</label>
+                  <div class="col-sm-9">
+                    <input type="email" maxlength="254" (focus)="alertclear()" class="form-control" id="username" placeholder="Email" formControlName="username"
+                      required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password" class="col-sm-3 control-label"> Password</label>
+                  <div class="col-sm-9">
+                    <input type="password" maxlength="20" (focus)="alertclear()" class="form-control" id="password" placeholder="Password" formControlName="password"
+                      required />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3"> </div>
+                  <div class="col-sm-9">
+                    <button type="submit" [disabled]="!formdata.valid" class="btn btn-primary btn-md"> Submit</button>
+                  </div>
+                </div>
+              </form>
+              <div class="alert alert-danger fade" [ngClass]="{in: loginresponse !=''}">
+                <h6>{{loginresponse}}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Login Page -->
+<div id="myModal" class="modal backdrop" [ngStyle]="{'display':displays}">
+  <div class="modal-dialog">
+    <div class="modal-content" style="height:200px !important; background-color:white !important;">
+      <div class="modal-body">
+        <div class="text-center">
+          <!-- <i class="fa fa-check fa-4x mb-3" style="color:#5394ff !important;"></i> -->
+          <p>You are already logged in another device/machine. Do you want to login?</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="killPreviousSession()" class="btn btn-primary-modal">YES</button>
+        <button type="button" (click)="closepop()" class="btn btn-primary-modal" style="margin-right:34%">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="loginmodel" [ngStyle]="{'display':display}">
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <link rel="stylesheet" href="../../../assets/css/materialize.min.css">
+
+  </head>
+  <body>
+    <div id="login-page">
+
+      <div>
+          <input id="closebutton" (click)="callParent('close')" type="button" value="X" />
+      </div>
+              
+      <div class="img-side">
+          <img class="full-img" src="./../../../assets/img/bg077.jpg" alt="image">
+      </div>
+  
+      <div class="col s12 z-depth-6 card-panel login-side" style="margin:0px !important;">
+        
+        <form [formGroup]="formdata" (ngSubmit)="loginSubmit(formdata.value)" class="login-form">
+          <div class="row" style="margin-bottom: 0 !important">
+            <div class="input-field col s12 center login-title">
+              <b> Login </b>
+             <!-- <img src="./assets/img/appslogo.png" align="middle" style="height:90px; width:80px;" alt="" class="responsive-img valign profile-image-login"> -->
+            </div>
+          </div>
+          <div class="row margin center-align">
+            <div class="input-field s12">
+              <input formControlName="username" maxlength="254" (focus)="alertclear()" id="username" class="user-input" type="email" placeholder="Enter Email" required/>
+              <label for="email" data-error="wrong" data-success="right" class="center-align label-text">Email</label>
+              <label class="label-icons">
+                <span class="sli icon-sli-user"></span>
+              </label>
+            </div>
+          </div>
+          <div class="row margin center-align">
+            <div class="input-field s12">
+              <input type="password" maxlength="20" (focus)="alertclear()" id="password" class="user-input" formControlName="password" placeholder="Enter Password" required/>
+              <label for="email" data-error="wrong" data-success="right" class="center-align label-text">Password</label>
+              <label class="label-icons">
+                <span class="sli icon-sli-lock"></span>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <button type="submit" [disabled]="!formdata.valid" class="btn login-btn waves-effect waves-light col s12 text-center" >Login</button>
+              <!-- <a href="login.html" [disabled]="!formdata.valid" class="btn waves-effect waves-light col s12">Login</a> -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6 m6 l6">
+              <p class="text-size-18"><a [routerLink]="['/register']">Register Now!</a></p>
+            </div>
+            <div class="input-field col s6 m6 l6">
+                <p class="text-size-18"  style="float: right;"><a [routerLink]="['/forgotpwd']">Forgot password?</a></p>
+            </div>          
+          </div>
+        </form>
+        <div class="alert alert-danger fade" [ngClass]="{in: loginresponse !=''}">
+            <h6>{{loginresponse}}</h6>
+          </div>
+      </div>
+    </div>
+  
+  </body>
+  </html>
+  
+  </div>

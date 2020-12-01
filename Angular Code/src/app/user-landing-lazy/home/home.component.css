@@ -1,0 +1,45 @@
+.oncology-bg
+{
+    z-index: 0 !important;
+}
+
+.row
+{
+    margin: 0px !important;
+}
+
+
+input[type='radio']:after {
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 15px;
+    position: relative;
+    /* background-color: #d1d3d1; */
+    background-color: white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #56a8fe;
+}
+input[type='radio']:checked:after {
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 15px;
+    /* top: -2px;
+    left: -1px; */
+    position: relative;
+    background-color: #56a8fe;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid greenyellow;
+}
+
+input[type='radio'] {
+    width: 15px !important;
+    height: 15px !important;
+    margin-right:5px !important;
+}
+.container{
+    max-width:1225px!important;
+}

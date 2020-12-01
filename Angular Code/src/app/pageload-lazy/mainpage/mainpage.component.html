@@ -1,0 +1,80 @@
+
+<!-- <div id="totalcontent">
+
+</div>
+
+
+
+<div id="loginPopup" class="commonPopup" style="display:none;">
+    <app-login-page (childEvent)="loginevent($event)">
+    </app-login-page>
+</div>
+
+<div id="registerPopup" class="commonPopup" style="display:none;">
+    <app-new-user (childEvent)="loginevent($event)">
+    </app-new-user>
+</div>
+
+
+
+<div id="resetPopup" class="commonPopup" style="display:none;">
+    <app-reset-password (childEvent)="loginevent($event)">
+    </app-reset-password>
+</div>
+
+<div id="feedbackPopup" class="commonPopup" style="display:none;">
+    <app-feedback (childEvent)="loginevent($event)">
+    </app-feedback>
+</div>
+
+<div id="privacyPopup" class="commonPopup" style="display:none;">
+    <app-content-popup [type]="contenttype" (childEvent)="loginevent($event)">
+    </app-content-popup>
+</div>
+
+ <div id="forgotPopup" class="commonpopup" style="display:none;">
+        <app-forgot-password (childEvent)="loginevent($event)">
+        </app-forgot-password>
+ </div> -->
+
+
+<div id="totalcontent">
+    
+    </div>
+    
+    
+    
+    <!-- <div id="loginPopup" class="commonPopup" style="display:none;"> -->
+        <app-login-page *ngIf="loginpopup" (childEvent)="loginevent($event)">
+        </app-login-page>
+    <!-- </div> -->
+    
+     <!-- <div id="registerPopup" class="commonPopup" style="display:none;"> -->
+        <app-new-user *ngIf="registrationpopup" (childEvent)="loginevent($event)">
+        </app-new-user>
+    <!-- </div> -->
+    
+    
+    <!--
+    <div id="resetPopup" class="commonPopup" style="display:none;">
+        <app-reset-password (childEvent)="loginevent($event)">
+        </app-reset-password>
+    </div>
+    
+    <div id="feedbackPopup" class="commonPopup" style="display:none;">
+        <app-feedback (childEvent)="loginevent($event)">
+        </app-feedback>
+    </div>
+    
+    <div id="privacyPopup" class="commonPopup" style="display:none;">
+        <app-content-popup [type]="contenttype" (childEvent)="loginevent($event)">
+        </app-content-popup>
+    </div>
+    
+     <div id="forgotPopup" class="commonpopup" style="display:none;">
+            <app-forgot-password (childEvent)="loginevent($event)">
+            </app-forgot-password>
+     </div> -->
+    
+    
+

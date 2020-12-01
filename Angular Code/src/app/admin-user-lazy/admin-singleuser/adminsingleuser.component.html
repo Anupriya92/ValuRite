@@ -1,0 +1,331 @@
+<div style="height: auto; min-height: 600px !important; padding-top: 60px; padding-bottom:60px;">
+    <div class="breadcrumsec">
+        <div class="wrapper" style="margin: 0;padding: 0;max-width: -webkit-fill-available;">
+            <ol class="breadcrumb breadresize" style="padding-top: 18px;">
+                <li>
+                    <a routerLink="/dashboard">Home</a>
+                </li>
+                <li>
+                    <a>User Creation</a>
+                </li>
+                <li>
+                    <a routerLink="/search">Single User</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <form [formGroup]="formdata" (ngSubmit)="Submit(formdata.value)">
+        <fieldset>
+            <div class="container">
+                <!-- Personal Information -->
+                <legend>
+                    <b>User Information</b>
+                </legend>
+                <div class="row">
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                        <label>First Name <span style="color:red;">*</span></label>
+                        
+                        <input type="text"style="width:90%" formControlName="firstName" maxlength="100" id="firstName" (input)="onKey($event)" class="form-control"
+                           >
+                        <div class="firstnameclass" style="height:10px;">
+                            <h6 id="fNameText" class="firstNameTxt" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                        <label>Last Name  <span style="color:red;">*</span></label>
+                       
+                        <input type="text" style="width:90%" formControlName="lastName" maxlength="100" id="lastName" (input)="onKey($event)" class="form-control"
+                            >
+                        <div class="lastNameclass" style="height:10px;">
+                            <h6 id="lNameText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3" >
+                        <label>Email Id  <span style="color:red;">*</span></label>
+                 
+                        <input type="text" style="width:90%" formControlName="UserName" id="UserName" (change)="onKey($event)" class="form-control" >
+                        <div class="firstnameclass " style="height:10px;">
+                            <h6 id="userText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                        <label>Mobile Number  <span style="color:red;">*</span></label>
+                        <input type="text" style="width:90%" formControlName="phoneNumber" maxlength="100" id="phoneNumber" (input)="onKey($event)" class="form-control"
+                            >
+                        <div class="firstnameclass " style="height:10px;">
+                            <h6 id="phNumText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                        </div>
+                        </div>
+                </div>
+                <!-- <br> -->
+                <div class="row">
+                        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                                <label>Address Line 1   <span style="color:red;">*</span></label>
+                                <textarea style="width:90%" formControlName="AddressLine1" maxlength="1000" id="addressline1" (input)="onKey($event)" class="form-control"
+                                    > </textarea>
+                                <div class="firstnameclass " style="height:10px;">
+                                    <h6 id="addressLine1Text" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                                </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                                        <label>Address Line 2</label>
+                                        <textarea type="text" style="width:90%" formControlName="AddressLine2" maxlength="100" id="addressline2" class="form-control"
+                                            ></textarea>
+                                        <div class="firstnameclass " style="height:10px;">
+                                            <h6 id="addressLine2Text" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                                        </div>
+                                        </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                        <label >Country <span style="color:red;">*</span></label>
+                        <br>
+                        <select style="width:90%" id="countryName" formControlName="Country"  (change)="onCountryItemSelect($event.target)">
+                          <option  selected disabled>--Select--</option>
+                          <option *ngFor="let c of countryList" [value]="c.id">{{c.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                    
+                        <label >State  <span style="color:red;">*</span></label>
+                        <br>
+                        <select  style="width:90%" class="form-control" formControlName="State" id="stateName" (change)="onStateItemSelect($event.target)">
+                          <option disabled>--Select--</option>
+                          <option *ngFor="let c of stateList" [value]="c.id">{{c.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- <br> -->
+                <div class="row">
+                        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                        <label >City  <span style="color:red;">*</span></label>
+                        <br>
+                        <select  style="width:90%" class="form-control city" formControlName="City" id="citynames" (change)="onCityItemSelect($event.target)">
+                          <option disabled>--Select--</option>
+                          <option *ngFor="let c of cityList" [value]="c.id">{{c.name}}</option>
+                        </select>
+                    </div>
+                   
+                        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                            <label>Area  </label>
+                            <input type="text" style="width:90%" formControlName="areaName" maxlength="100" id="addarea" (input)="onKey($event)" class="form-control"
+                                >
+                            <div class="firstnameclass " style="height:10px;">
+                                <h6 id="areaText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                            </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                                <label>Land Mark</label>
+                                <input type="text" style="width:90%" formControlName="landmark" maxlength="100" id="addlandMark" class="form-control"
+                                    >
+                                <div class="firstnameclass " style="height:10px;">
+                                    <h6 id="landmarkText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                                </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                                    <label>Pin Code  </label>
+                                    <input type="text" style="width:90%" formControlName="pinCode" maxlength="100" id="pincode" (input)="onKey($event)" class="form-control"
+                                        >
+                                    <div class="firstnameclass " style="height:10px;">
+                                        <h6 id="pincodeText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                                    </div>
+                                    </div>
+                </div>
+                <!-- <br> -->
+                <div class="row">
+                        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2">
+                                <div style="float:left; margin-right:5px; width: 200px;">
+                                    <label>User Type  <span style="color:red;">*</span></label>
+                                    <select id="userType" formControlName="userType" class="form-control usertype"  (change)="userTypeFunc($event)" style="width:100%;display:inline-block;background-color:rgb(255,255,255)">
+                                            <option selected disabled value="">--Select-- </option>
+                                            <option value="Admin">Admin</option>
+                                            <option value="Appraiser">Appraiser</option>
+                                            <option value="Borrower">Borrower</option>
+                                            <option value="Lender">Lender</option>
+                                         
+                                        </select>
+                                   
+                                </div>
+                            </div>
+        
+                            <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" style="margin-left: 4%;" >
+                                <div style="float:left; margin-right:5px; width: 200px;">
+                                    <label>User Role  <span style="color:red;">*</span></label>
+                                    <select id="userRole" formControlName="userRole" class="form-control userRole" (change)="userRoleSetOrgType($event)"  style="width:100%;display:inline-block;background-color:rgb(255,255,255)">
+                                            <option selected disabled value="">--Select-- </option>
+                                            <option value="Admin">Admin</option>
+                                            <option value="Comp app without lender">Comp app without lender</option>
+                                            <option value="Comp with lender">Comp with lender</option>
+                                            <option value="Ind app without lender">Ind app without lender</option>
+                                            <option value="Ind with lender">Ind with lender</option>
+                                            <option value="User">User</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+                    <div class="col-lg-2 col-sm-2 col-m2-3 col-xs-2" style="margin-left: 50px;
+                    margin-top: 1%;">
+                        <button type="button" (click)="password()" [disabled]="false" id="generatepasswrd" class="generatebtn" style="width:90%">Generate Password</button>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3" style="margin-right: -4%;">
+                        <label>Enter Password <span style="color:red;">*</span> </label>
+                        
+                        <input type="password" maxlength="20" [(ngModel)]="enterpwd" name="enterpassword" id="enterpwd" (input)="onKey($event)" (change)="passwordValidate($event)"
+                            class="form-control manual" style="width:51% ;position: absolute;z-index: 1; border-bottom-right-radius: 0; border-top-right-radius: 0;"
+                            [ngModelOptions]="{standalone: true}" />
+                        <span class="input-group-btn">
+                            <button type="button" toggle="#password-field" (click)="pwdShow()" class="fa fa-fw fa-eye field-icon toglepassword btn btn-default"
+                                style="width:38px;height:34px;margin-left:147px">
+                            </button>
+                        </span>
+                        <h6 id="passwordtext" style="margin-top:0px; margin-bottom:0px; color:red;display:none">
+                        </h6>
+                        <span [popover]="myPopover1" [popoverOnHover]="true" class="fa fa-info-circle" title="instruction" id="instruction" style="color:#129cca;cursor: pointer;display:none;font-size:14px"></span>
+                        <popover-content #myPopover1 placement="left-bottom" [animation]="true" [closeOnClickOutside]="true" style="font-family:calibri;">
+                            <b>
+                                <span class="dot"></span> Password must contain the following:
+                                <br>
+                                <span class="dot"></span> Atleast one lowercase letter.
+                                <br>
+                                <span class="dot"></span> Atleast one capital (uppercase) letter.
+                                <br>
+                                <span class="dot"></span> Atleast one number.
+                                <br>
+                                <span class="dot"></span> Minimum 8 characters to maximum 20 characters.
+                                <br>
+                                <span class="dot"></span> Minimum one special character.
+                                <br>
+                                <span class="dot"></span> Space not allowed.</b>
+                        </popover-content>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3" style="margin-right: -5%;" >
+                        <label>Re-type Password  <span style="color:red;">*</span></label>
+                       
+                        <input type="password" id="retypepassword" name="retypepassword" maxlength="20" (input)="onKey($event)" (change)="confirmpasWrd($event)"
+                            formControlName="retypepassword" class="form-control manualpwd" style="width:51% ;position: absolute;z-index: 1; border-bottom-right-radius: 0; border-top-right-radius: 0;">
+                        <span class="input-group-btn">
+                            <button type="button" toggle="#password" (click)="passwdShow()" class="fa fa-fw fa-eye field-icon togglepasswd btn btn-default"
+                                style="width:38px;height:34px;margin-left:56%">
+                            </button>
+                        </span>
+                        <div class="errorClass" style="height:10px;">
+                            <h6 id="confirmpaswrdtext" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                            <span [popover]="myPopover2" [popoverOnHover]="true" class="fa fa-info-circle" title="instruction" id="instructions" style="color:#129cca;cursor: pointer;display:none;font-size:14px"></span>
+                            <popover-content #myPopover2 placement="left-bottom" [animation]="true" [closeOnClickOutside]="true" style="font-family:calibri;">
+                                <b>
+                                    <span class="dot"></span> Password must contain the following:
+                                    <br>
+                                    <span class="dot"></span> Atleast one lowercase letter.
+                                    <br>
+                                    <span class="dot"></span> Atleast one capital (uppercase) letter.
+                                    <br>
+                                    <span class="dot"></span> Atleast one number.
+                                    <br>
+                                    <span class="dot"></span> Minimum 8 characters to maximum 20 characters.
+                                    <br>
+                                    <span class="dot"></span> Minimum one special character.
+                                    <br>
+                                    <span class="dot"></span> Space not allowed. </b>
+                            </popover-content>
+                        </div>
+                    </div>
+                </div>
+                <!-- <br> -->
+                <!-- Company Information  -->
+                <!-- <legend> -->
+                    <!-- <b>Company Information</b> -->
+                <!-- </legend> -->
+                <div class="row">
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                        <div style="float:left; margin-right:5px; width: 262px;">
+                            <label> Company Name  <span style="color:red;">*</span></label>
+                           
+                            <ng-select [allowClear]="true" [multiple]="false" [items]="companydropdown" formControlName="companyname" (selected)="onCompanyselect($event)"
+                                class=" companyname" id="companyselected" name="selectedObject" placeholder="--Select--" [(ngModel)]="selectedcompyName">
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                        <div style="float:left; margin-right:5px; width: 200px;">
+                            <label>Contract Reference  <span style="color:red;">*</span></label>
+                           
+                            <select name="contractref" id="contractref" placeholder="--Select--" class="form-control" formControlName="contractref" (change)="onchangereference($event.target)"
+                                style="width:100%;display:inline-block;">
+                                <option selected disabled value="">--Select--</option>
+                                <option *ngFor="let company of reference" [value]="company">{{company}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" style="margin-left: -5%;">
+                            <div style="float:left; margin-right:5px; width: 100px;">
+                                <label>General Alerts </label>
+                                <select id="generalflag" class="form-control generalflag" value="{{generalflag}}" style="width:100%;display:inline-block;background-color:rgb(255,255,255)">
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" style="margin-left: -4%;">
+                                <div style="float:left; margin-right:5px; width: 200px;">
+                                    <label> Start Date </label>
+                                    <input type="text" disabled (click)="datefetch($event)" [(ngModel)]="startdate" name="startdate" input formControlName="startDate"
+                                        id="startdate" class="form-control startdate" style="background: url(../../assets/images/datepicker.png) no-repeat scroll 170px center;">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" style="margin-left: 4%;">
+                                <div style="float:left; margin-right:5px; width: 200px;">
+                                    <label>End Date </label>
+                                    <input type="text" disabled (click)="datefetch($event)" [(ngModel)]="enddate" name="enddate" formControlName="endDate" id="enddate"
+                                        class="form-control enddate" style="background: url(../../assets/images/datepicker.png) no-repeat scroll 170px center;">
+                                </div>
+                            </div>
+                </div>
+                <br>
+                <div id="AssociationTableDiv" style="display:none;">
+                <label> Association Details </label>
+                <div class="container-fluid"  style="border-radius: 5px;">
+                     
+                    <table  id="associationTable">
+                      <thead style="padding-bottom:100%;">
+                        <th>
+                          <input [(ngModel)]="mainCheckbox" name="mainCheckboxName" class="styled parentcheck" id="checkbox1" (change)='checkbox($event)'
+                            type="checkbox"  [ngModelOptions]="{standalone: true}"/>
+                        </th>
+                        <th>Association Name
+                          <span style="color:red;">*</span>
+                        </th>
+                        <th>Member ID
+                          <span style="color:red;">*</span>
+                        </th>
+                        <th>Action</th>
+                           </thead>
+                           <tbody style="padding-bottom:100%;">
+                        <tr id="rowId{{ind}}"  *ngFor="let i of Rows; let ind = index" style="background-color:#f3f3f3;">
+                          <td>
+                            <input type="checkbox" id="chkBox{{ind}}" class="chkGrp" (click)="checkboxloop($event)" />
+                          </td>
+                          <td>
+                            <input type="text" id="associationName{{ind}}" (input)="keyPressevent($event)" maxlength="100" class="form-control associationName" name="associationName"
+                              />
+                          </td>
+                          <td>
+                            <input type="text" id="memberID{{ind}}" maxlength="100" (input)="keyPressevent($event)" class="form-control memberID" name="memberID"
+                             />
+                          </td>
+                          <td>
+                            <i class="fa fa-plus-circle " (click)="addAssTable($event)" id="addicon{{ind}}" style=" font-family: FontAwesome; font-size:21px;"></i>
+                            <i class="fa fa-trash" (click)="deleteAssTable($event)" id="deleteIcon{{ind}}" aria-hidden="true" style="font-family: FontAwesome; font-size:21px; "></i>
+                          </td>
+                          </tr>
+                        </tbody>
+                          </table>
+                          </div>
+                        </div>
+                <br>
+                <div class="row">
+                    <button type="button" (click)="reset()" class="submit-green" style="width: 9%;float:right;margin:7px;margin-right: 40%">Reset</button>
+                    <button type="button" id="userSubmit" type="submit" [disabled]="!formdata.valid" class="submit-green" style="width: 9%;float:right;margin:7px;margin-left: 23%">Save</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

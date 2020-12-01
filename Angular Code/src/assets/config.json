@@ -1,0 +1,10 @@
+{
+    "production": "local",
+    "localmenuandhome": "http://localhost:3007",
+    "localadmin": "http://localhost:3008",
+    "url49menuandhome": "http://49.207.182.154:3007",
+    "url49admin": "http://49.207.182.154:3008",
+    "localurl": "http://localhost:3000",
+    "locallanding": "http://localhost:5061/ValuRite/ApplicationQueue.aspx",
+    "landingurl49":"http://49.207.182.154/PropApprasial/ValuRite/ApplicationQueue.aspx"
+    }

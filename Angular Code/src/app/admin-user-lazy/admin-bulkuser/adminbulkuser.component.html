@@ -1,0 +1,252 @@
+<div style="height: auto; min-height: 600px !important; padding-top: 60px; padding-bottom:60px;">
+  <div class="breadcrumsec">
+    <div class="wrapper" style="margin: 0;padding: 0;max-width: -webkit-fill-available;">
+      <ol class="breadcrumb breadresize" style="padding-top: 18px;">
+        <li>
+          <a routerLink="/dashboard">Home</a>
+        </li>
+        <li>
+          <a>User Creation</a>
+        </li>
+        <li>
+          <a routerLink="/search">Bulk User</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <form>
+    <div style="margin:2%">
+      <legend>
+        <b>Company Information</b>
+      </legend>
+      <div class="row">
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <div style="float:left; margin-right:5px; width: 300px;">
+            <label> Company Name </label>
+            <span style="color:red;">*</span>
+            <ng-select [multiple]="false" [items]="userdrop" style="color: #555 !important" (selected)="onCompanyselect($event)" class="companyname"
+              id="companyselected" name="selectedObject" placeholder="--Select--" [(ngModel)]="selectedCompanyName">
+            </ng-select>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <div style="float:left; margin-right:5px; width: 200px;">
+            <label>Contract Reference </label>
+            <span style="color:red;">*</span>
+            <select name="selectedref" id="selectedref" class="form-control contractref" (change)="onchangereference($event.target)"
+              style="width:100%;display:inline-block;">
+              <option selected value="" disabled>--Select--</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <div style="float:left; margin-right:5px; width: 200px;">
+            <label>User Type </label>
+            <span style="color:red;">*</span>
+            <select class="form-control usertype" id="userType" (change)="onItemSelect($event)" style="width:100%;display:inline-block;">
+              <option disabled selected value="">--Select--</option>
+              <option *ngFor="let user of roleName|orderBy: 'rolename'" [value]="user.rolename">{{user.rolename}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <div style="float: left; margin-right:5px; width: 200px;">
+            <label>Download Limit</label>
+            <input type="text" readonly id="limits" [(ngModel)]="limits" name="limits" min="100" value="100" style="border-radius: 4px; width: 200px;background-color:rgb(255,255,255)"
+              class="form-control limits">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <div style="float:left; margin-right:5px; width: 200px;">
+            <label> Start Date </label>
+            <input type="text" disabled (click)="fetchdate($event)" [(ngModel)]="startdate" name="startdate" id="startdate" class="form-control onhover startDate"
+              style="background: url(../../assets/images/datepicker.png) no-repeat scroll 170px center;">
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <div style="float:left; margin-right:5px; width: 200px;">
+            <label>End Date </label>
+            <input type="text" disabled (click)="fetchdate($event)" (select)="select($event)" [(ngModel)]="enddate" name="enddate" id="enddate" class="form-control onhover endDate"
+              style="background: url(../../assets/images/datepicker.png) no-repeat scroll 170px center;">
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <div style="float:left; margin-right:5px; width: 200px;">
+            <label>General Alerts </label>
+            <select id="generalflag" class="form-control generalalert" value="{{generalflag}}" style="width:100%;display:inline-block;background-color:rgb(255,255,255)">
+              <option disabled selected value="">--Select--</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <div style="float:left; margin-right:5px; width: 200px;">
+            <label>Export </label>
+            <input type="text" readonly [(ngModel)]="exportflag" id="exportflag" class="form-control export" name="exportflag" style="width:100%;display:inline-block;background-color:rgb(255,255,255)">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div style="border-radius: 5px; padding: 10px;">
+        <legend>
+          <b>User Information</b>
+        </legend>
+        <div class="row">
+          <button type="button" (click)="uploaduser()" id="uploadBtn" [disabled]="true" class="submit-green" style="float: left; margin-left: 16px; width: auto;">
+            <i class="fa fa-upload" style="font-family: FontAwesome;"></i> Upload</button>
+          <input type="file" id="my_file_input" accept=".xlsx" class="submit-green" style="display:none">
+          <br>
+          <!-- Sample Template download path -->
+          <a href="../../../assets/bulkUserSampleTemplate.xlsx" download style="margin-left: 20px">
+            <i class="fa fa-file-excel-o"></i> Sample Template</a>
+        </div>
+
+        <div class="container-fluid">
+          <table id="personalInfoTable">
+            <thead>
+              <th>
+                <input [(ngModel)]="mainCheckbox" name="mainCheckboxName" class="styled parentcheck" id="checkbox1" (change)='checkbx($event)'
+                  type="checkbox" />
+              </th>
+              <th>First Name
+                <span style="color:red;">*</span>
+              </th>
+              <th>Last Name
+                <span style="color:red;">*</span>
+              </th>
+              <th>User Name
+                <span style="color:red;">*</span>
+              </th>
+              <th>Password
+                <span style="color:red;">*</span>
+              </th>
+              <th>Confirm Password
+                <span style="color:red;">*</span>
+              </th>
+              <th>Phone Number
+              </th>
+              <th>Department
+              </th>
+              <th>Area of Interest
+              </th>
+              <th>Action</th>
+            </thead>
+            <!--Personal Information Grid -->
+            <tbody style="padding-bottom:100%;">
+              <tr id="rowId{{ind}}" *ngFor="let i of Rows; let ind = index" style="background-color:#f3f3f3;">
+                <td>
+                  <input type="checkbox" id="chkBox{{ind}}" class="chkGrp" (click)="checkboxloop($event)" />
+                </td>
+                <td>
+                  <input type="text" id="firstName{{ind}}" maxlength="100" (input)="onKey($event)" class="tempFormContrl firstName" name="FirstName"
+                    value="{{i.First_Name}}" />
+                  <div class="errorClass" style="height:10px;">
+                    <h6 id="fNameText{{ind}}" class="firstNameTxt" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" id="lastName{{ind}}" maxlength="100" (input)="onKey($event)" class="tempFormContrl lastName" name="lastName"
+                    value="{{i.Last_Name}}" required />
+                  <div class="errorClass" style="height:10px;">
+                    <h6 id="lNameText{{ind}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" id="userName{{ind}}" class="tempFormContrl userName" (input)="onKey($event)" name="username" value="{{i.User_Name}}"
+                  />
+                  <div class="errorClass" style="height:10px;">
+                    <h6 id="userNametext{{ind}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" id="passWord{{ind}}" class="tempFormContrl passWord" name="passWord" (input)="onKey($event)" value="{{i.Password}}"
+                    (change)="passwordValidate($event)" />
+                  <div class="errorClass" style="height:10px;">
+                    <h6 id="passwordtext{{ind}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none">
+                    </h6>
+                    <span [popover]="myPopover" [popoverOnHover]="true" class="fa fa-info-circle" title="instruction" id="instruction{{ind}}"
+                      style="color:#129cca;cursor: pointer;display:none;font-size:14px"></span>
+                    <popover-content #myPopover placement="left-bottom" [animation]="true" [closeOnClickOutside]="true" style="font-family:calibri;">
+                      <b>
+                        <span class="dot"></span> Password must contain the following:
+                        <br>
+                        <span class="dot"></span> Atleast one lowercase letter.
+                        <br>
+                        <span class="dot"></span> Atleast one capital (uppercase) letter.
+                        <br>
+                        <span class="dot"></span> Atleast one number.
+                        <br>
+                        <span class="dot"></span> Minimum 8 characters to maximum 20 characters.
+                        <br>
+                        <span class="dot"></span> Minimum one special character.
+                        <br>
+                        <span class="dot"></span> Space not allowed.</b>
+                    </popover-content>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" id="confirmPasswrd{{ind}}" class="tempFormContrl confirmPasswrd" (input)="onKey($event)" (change)="confirmpasWrd($event)"
+                    name="confirmPasswrd" value="{{i.Confirm_Password}}" />
+                  <div class="errorClass" style="height:10px;">
+                    <h6 id="confirmpaswrdtext{{ind}}" style="margin-top:0px; margin-bottom:0px;color:red;display:none"></h6>
+                    <span [popover]="myPopover" [popoverOnHover]="true" class="fa fa-info-circle" title="instruction" id="instructions{{ind}}"
+                      style="color:#129cca;cursor: pointer;display:none;font-size:14px"></span>
+                    <popover-content #myPopover placement="left-bottom" [animation]="true" [closeOnClickOutside]="true" style="font-family:calibri;">
+                      <b>
+                        <span class="dot"></span> Password must contain the following:
+                        <br>
+                        <span class="dot"></span> Atleast one lowercase letter.
+                        <br>
+                        <span class="dot"></span> Atleast one capital (uppercase) letter.
+                        <br>
+                        <span class="dot"></span> Atleast one number.
+                        <br>
+                        <span class="dot"></span> Minimum 8 characters to maximum 20 characters.
+                        <br>
+                        <span class="dot"></span> Minimum one special character.
+                        <br>
+                        <span class="dot"></span> Space not allowed.</b>
+                    </popover-content>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" id="phonenumber{{ind}}" maxlength="100" class="tempFormContrl phonenumber" (input)="onKey($event)" name="PhoneNumber"
+                    value="{{i.Phone_Number}}" />
+                  <div class="errorClass" style="height:10px;">
+                    <h6 id="phnumText{{ind}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" id="department{{ind}}" maxlength="100" class="tempFormContrl department" (input)="onKey($event)" name="Department"
+                    value="{{i.Department}}" />
+                  <div class="errorClass" style="height:10px;">
+                    <h6 id="deptText{{ind}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" id="areaOfinterest{{ind}}" maxlength="100" class="tempFormContrl areaOfinterest" (input)="onKey($event)"
+                    name="AreaofInterset" value="{{i.Area_of_Interest}}" />
+                  <div class="errorClass" style="height:10px;">
+                    <h6 id="areaOfinterestText{{ind}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                  </div>
+                </td>
+                <td>
+                  <i class="fa fa-plus-circle " (click)="addpersonalinfo($event)" id="addicon{{ind}}" style=" font-family: FontAwesome; font-size:21px;"></i>
+                  <i class="fa fa-trash" (click)="deleteFieldValues($event)" id="deleteIcon{{ind}}" aria-hidden="true" style="font-family: FontAwesome; font-size:21px; "></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" (click)="submitdetails()" id="submitbtn" [disabled]="true" class="submit-green" style="float:left;width:9%">Submit</button>
+          <button type="button" (click)="reset()" class="submit-green" style="float: left;width:9%;margin-left:10px">Reset</button>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

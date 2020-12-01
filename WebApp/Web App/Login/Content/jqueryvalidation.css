@@ -1,0 +1,140 @@
+#field {
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: small;
+}
+
+.asterisk_input:after {
+    content: "*" !important;
+    color: #e32 !important;
+    position: absolute !important;
+    margin: -5% 2% 12% 90% !important;
+    font-size: 120% !important;
+    padding: 5px 0 0 !important;
+}
+
+.asterisk_input5:after {
+    padding: 9px 14px 0px 18px !important;
+}
+
+
+.asterisk_input4:after {
+    margin: -8% 0% 50% 78% !important;
+}
+
+.asterisk_input2:after {
+    margin: 2% 0% 60% 63% !important;
+}
+
+.asterisk_input3:after {
+    margin: -5% 0% 50% 92% !important;
+}
+
+
+textarea.error, input.error, select.error {
+    border: 1px solid #A94442 !important;
+    outline: thin !important;
+    box-shadow: 0 0 8px #A94442 !important;
+    background-color: #FEE !important;
+}
+
+span.error {
+    border: 1px solid #A94442 !important;
+    outline: thin !important;
+    box-shadow: 0 0 8px #A94442 !important;
+    background-color: #FEE !important;
+}
+
+div.error {
+    border: 1px solid #A94442 !important;
+    outline: thin !important;
+    box-shadow: 0 0 8px #A94442 !important;
+    color: red !important;
+}
+
+select.error {
+    color: #A94442;
+}
+
+.error .select2-selection__rendered {
+    color: #af514f !important;
+    background-color: #ffeeee !important;
+    line-height: 28px !important;
+}
+
+/*select.error:first-child {
+    color: #A94442;
+}*/
+
+input::-webkit-input-placeholder {
+    opacity: 0.7;
+}
+
+input[type=text].error::-webkit-input-placeholder {
+    color: #A94442;
+    opacity: 1;
+}
+
+input[type=text].error:-ms-input-placeholder {
+    color: #A94442;
+}
+
+input[type=text].error::-moz-placeholder {
+    color: #A94442;
+}
+
+input[type=password].error::-webkit-input-placeholder {
+    color: #A94442;
+}
+
+input[type=password].error:-ms-input-placeholder {
+    color: #A94442;
+}
+
+input[type=password].error::-moz-placeholder {
+    color: #A94442;
+}
+
+textarea.error::-webkit-input-placeholder {
+    color: #A94442;
+}
+
+textarea.error:-ms-input-placeholder {
+    color: #A94442;
+}
+
+textarea.error::-moz-placeholder {
+    color: #A94442;
+}
+
+label.valid {
+    background: url('/includes/images/checked.png') no-repeat;
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-size: contain;
+}
+
+label.error {
+    color: #A94442;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: smaller;
+    display: none !important;
+}
+
+.errTest {
+    border: 1px solid #A94442;
+    outline: thin;
+    box-shadow: 0 0 8px #A94442;
+    background-color: #FEE;
+}
+
+.asterisk_input1:after {
+    content: "*" !important;
+    color: #e32 !important;
+    position: relative !important;
+    /* top: 0; */
+    /* margin: -2% 0% 0px 0px !important; */
+    font-size: 130% !important;
+    /* padding: 0 5px 0 0 !important; */
+}

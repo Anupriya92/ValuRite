@@ -1,0 +1,51 @@
+
+<!-- <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css" /> -->
+
+<div style="height: auto; min-height: 600px !important; padding-top: 60px; padding-bottom:60px;">
+  <div class="breadcrumsec">
+    <div class="wrapper" style="margin: 0;padding: 0;max-width: -webkit-fill-available;">
+      <ol class="breadcrumb breadresize" style="padding-top: 18px;">
+        <li>
+          <a routerLink="/dashboard">Home</a>
+        </li>
+        <li>
+          <a>User Creation</a>
+        </li>
+        <li>
+          <a routerLink="/user">User Log</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <fieldset>
+    <form style="border-radius: 4px; float  : left; width: 75%;margin-left:28px; ">
+      <form action="/action_page.php" method="post">
+        <div class="row col-lg-12 col-sm-12 col-md-12 col-xs-12 formGroup">
+          <!--ng-Select for Company Dropdown List-->
+          <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4 formGroup">
+            <b>Company</b>
+            <ng-select [allowClear]="true" [multiple]="false" [items]="companies" [disabled]="companyDisabled" (selected)="onCompanyItemSelect($event)"
+              (removed)="onCompanyItemRemoved($event)" name="companyUserlog" placeholder="" [(ngModel)]="companyName" [ngClass]="{'browser-default': true, 'bootstrapButton': true, 'btn': false}">
+            </ng-select>
+          </div>
+          <!--ng-Select for User Dropdown List-->
+          <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4 formGroup">
+            <b>Users</b>
+            <ng-select [allowClear]="true" [multiple]="false" [items]="users" [disabled]="userDisabled" (selected)="onUserItemSelect($event)"
+              (removed)="onUserItemRemoved($event)" placeholder="" id="ngdropdown" [(ngModel)]="userlogemail" name="userlogemail"
+              [ngClass]="{'browser-default': true, 'bootstrapButton': true, 'btn': false}">
+            </ng-select>
+          </div>
+          <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2 formGroup">
+            <button type="submit" (click)="Onuser_Action()" class="submit-green" value="Submit" style="margin: 20px;margin-left:-15px;">Submit</button>
+          </div>
+          <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2 formGroup closea">
+            <button type="reset" (click)="Reset_Click()" value="Reset" class="submit-green" style="margin: 20px;margin-left:-87px;">Reset</button>
+          </div>
+        </div>
+      </form>
+    </form>
+  </fieldset>
+  <admin-sort-table *ngIf="showUserlog" id="userLogSortTable" [tabledata]="jsonData"></admin-sort-table>
+</div>

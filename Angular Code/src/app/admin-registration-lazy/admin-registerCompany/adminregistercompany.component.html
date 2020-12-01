@@ -1,0 +1,568 @@
+<div style="height: auto; min-height: 600px !important; padding-top: 60px; padding-bottom:60px;">
+  <div class="breadcrumsec">
+    <div class="wrapper" style="margin: 0;padding: 0;max-width: -webkit-fill-available;">
+      <ol class="breadcrumb breadresize" style="padding-top: 18px;">
+        <li>
+          <a routerLink="/dashboard">Home</a>
+        </li>
+        <li>
+          Company
+        </li>
+        <li>Register</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Company Registration input fields -->
+  <form [formGroup]="formdata" id="companyForm" (ngSubmit)="submitForm(formdata.value)">
+    <div style="margin-left: 50px !important;">  <!--class="container"-->
+      <div class="row">
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <label>Company Name</label>
+          <span style="color:red;">*</span>
+          <br>
+          <input type="text" mandatory="true" (keyup)="submitEnable()" class="form-control" name="companyname" (change)="onCompanyExist()" formControlName="companyname" id="companyname"
+            [(ngModel)]="companyName" required>
+          <div class="companynameclass" style="height:10px;">
+            <h6 id="companyText" style="margin-top:0px; color:red;display:none"></h6>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3">
+          <label>GST Number</label>
+          <!-- <span style="color:red;">*</span> -->
+          <br>
+          <input type="text" class="tempFormContrl" formControlName="gstNumber" id="gstNumber" style="width:262px;"
+          required>
+        </div>
+
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <label>PAN Number</label>
+          <!-- <span style="color:red;">*</span> -->
+          <br>
+          <input type="text" mandatory="true" (keyup)="submitEnable()" class="form-control" formControlName="panNumber" name="panNumber" id="panNum"
+            required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <label>Company Description</label>
+          <textarea class="form-control" id="comdesc" name="companydesc" formControlName="companyDescription" [(ngModel)]="companyDesc"
+            style="resize:none" cols="20" rows="2" required></textarea>
+        </div>
+
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <label>Company Address</label>
+          <br>
+          <textarea class="form-control" name="companyaddress" formControlName="companyAddress" id="comaddress" [(ngModel)]="address"
+            style="resize:none" cols="20" rows="2" required></textarea>
+        </div>
+
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <label>Country</label>
+          <span style="color:red;">*</span>
+          <br>
+          <select  class="form-control"  mandatory="true" id="countryDatas" (change)="onCountryItemSelect($event.target); submitEnable();">
+            <option selected disabled>--Select--</option>
+            <option *ngFor="let c of CountryList" [value]="c.id">{{c.name}}</option>
+          </select>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <label>State</label>
+          <br>
+          <select class="form-control" id="stateId" (change)="onStateItemSelect($event.target);">
+            <option disabled>--Select--</option>
+            <option *ngFor="let c of StateList" [value]="c.id">{{c.name}}</option>
+          </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <label>City</label>
+          <br>
+          <select class="form-control city" id="citynames" (change)="onCityItemSelect($event.target); ">
+            <option disabled>--Select--</option>
+            <option *ngFor="let c of CityList" [value]="c.id">{{c.name}}</option>
+          </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <label>Zip Code</label>
+          <input type="text" name="zip" formControlName="zipcode" [(ngModel)]="zipCode" id="zipCodes" class="form-control">
+        </div>
+      </div>
+    <!-- </div> -->
+    <br>
+    <br>
+    <!-- Contact Details grid view class="col-lg-12 col-md-12 col-sm-12 col-xs-12"-->
+    <div >
+      <label>Contact Details</label>
+      <br>
+      <table class="table1" id="contactTable">
+        <thead style="background-color: #129cca;color: white;">
+          <th>Contact Type
+            <span style="color:red;">*</span>
+          </th>
+          <th>Contact Name
+            <span style="color:red;">*</span>
+          </th>
+          <th>Email-Id
+            <span style="color:red;">*</span>
+          </th>
+          <th>Phone Number
+          </th>
+          <th>Action </th>
+        </thead>
+
+        <tr id="contactRow{{i}}" class="contact-details" *ngFor="let no of noOfRows; let i = index;" [attr.data-index]="i">
+   
+          <td>
+            <label class="form-check-label" for="radio1">
+              <input type="radio" class="form-check-input contact_type" id=prime{{[i]}} name=contact{{[i]}} [checked]="true" value="Primary">Primary
+            </label>
+            <label class="form-check-label" for="radio1">
+              <input type="radio" class="form-check-input contact_type" id=second{{[i]}} name=contact{{[i]}} value="Secondary">Secondary
+            </label>
+          </td>
+
+          <td>
+            <input type="text"  mandatory="true"   (keyup)="submitEnable()" name="ContactName" id="ctname{{i}}" (input)="onKey($event)" class="tempFormContrl contactname">
+            <div class="ctnameclass" style="height:10px;">
+              <h6 id="ctnametext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+            </div>
+          </td>
+
+          <td>
+            <input type="email" mandatory="true"    (keyup)="submitEnable()" style="width:179px" id="ctemail{{i}}" (change)="onKey($event)" class="tempFormContrl contactemail" aria-describedby="emailHelp"
+              id="exampleInputEmail1" required name="ContactEmail">
+            <div class="ctemailclass" style="height:10px;">
+              <h6 id="ctemailtext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+            </div>
+          </td>
+
+          <td>
+            <input type="text" id="ctnumber{{i}}" name="ContactNumber" (input)="onKey($event)" class="tempFormContrl contactmobile">
+            <div class="ctnumberclass" style="height:10px;">
+              <h6 id="ctnumbertext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+            </div>
+          </td>
+
+          <td>
+            <i class="fa fa-plus-circle" id="addicon{{i}}" (click)="onaddrow($event)" style="font-family: FontAwesome; font-size:21px;"></i>
+            <i class="fa fa-trash" style="font-size: 21px;font-family: FontAwesome" (click)="deleteContactFieldValue($event)"></i>
+          </td>
+       
+        </tr>
+      </table>
+    </div>
+ 
+<br>
+<br>
+    <!-- Contract Details grid view class="col-lg-12 col-md-12 col-sm-12 col-xs-12"-->
+    <div >
+      <label>Contract Details</label>
+      <br>
+
+      <div class="container-fluid" style="display: inline-block;">
+        <table class="table2" id="contractTable">
+         
+          <thead style="background-color: #129cca;color: white;">
+            
+            <th>Contract Reference
+              <span style="color:red;">*</span>
+            </th>
+           
+            <th>Contract Description
+              <span style="color:red;">*</span>
+            </th>
+            
+            <th>Contract Date
+              <span style="color:red;">*</span>
+            </th>
+           
+            <th>No.Of Session
+              <span style="color:red;">*</span>
+            </th>
+            <th>General Alerts
+              <span style="color:red;">*</span>
+            </th>
+         
+            <th>Start Date
+              <span style="color:red;">*</span>
+            </th>
+           
+            <th>End Date
+              <span style="color:red;">*</span>
+            </th>
+           
+            <th>Action </th>
+          </thead>
+
+          <tbody style="padding-bottom:100%; ">
+            <tr id="contractrowId{{i}}" *ngFor="let no of numberOfRows ;let i = index;" [attr.data-index]="i">
+             
+              <td>
+                <input type="text"  mandatory="true"  (keyup)="submitEnable()" id="contractref{{i}}" (input)="onContractDetails($event)" (keyup)="contractRefExists($event)" style="width:150px;"
+                  class="tempFormContrl contractreference" />
+                <div class="refclass" style="height:10px;">
+                  <h6 id="conreftext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+              </td>
+
+              <td>
+                <textarea   mandatory="true" (keyup)="submitEnable()"  class="form-control contractdesc" id="contractdesc{{i}}" (input)="onContractDetails($event)" cols="20" rows="1"
+                  required style="resize:none"></textarea>
+                <div class="descclass" style="height:10px;">
+                  <h6 id="condesctext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+              </td>
+
+              <td>
+                <input type="text"  mandatory="true" (click)="datefetch($event)" (change)="onContractDetails($event)" readonly id="contractdateregister{{i}}"
+                  class="tempFormContrl contractdateregister contractdate" style="width:120px; background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center white;cursor:pointer;">
+                <div class="dateclass" style="height:10px;">
+                  <h6 id="condate{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+              </td>
+
+              <td>
+                <input type="text"  mandatory="true" (keyup)="submitEnable()" maxlength="20" class="tempFormContrl session" (keypress)="isNumber($event)" (input)="onContractDetails($event)" id="NoOfSession"
+                  id="session{{i}}" style="width:100px" />
+                <div class="sessionclass" style="height:10px;">
+                  <h6 id="sessiontext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+              </td>
+
+              <td>
+                <select id="dropdown2{{i}}"  mandatory="true"  (change)="submitEnable()" style="width: 100px" class="alertvalue">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                <div class="alertclass" style="height:10px;">
+                  <h6 id="alertDD{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+              </td>
+              <td>
+                <input type="text"  mandatory="true"  (click)="datefetch($event)" id="startdateregister{{i}}" readonly class="tempFormContrl startdateregister startdate"
+                  style="width:120px; background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center white;cursor:pointer">
+                <div class="startclass" style="height:10px;">
+                  <h6 id="startdateid{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+                <p id="Startmessage" style="margin-top:0px; margin-bottom:0px; color:red">
+                  {{sDatemessage}}
+                </p>
+              </td>
+              <td>
+                <input type="text"  mandatory="true"  (click)="datefetch($event)" readonly id="enddateregister{{i}}" class="tempFormContrl enddateregister enddate"
+                  style="width:120px; background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center white;cursor:pointer">
+                <div class="endclass" style="height:10px;">
+                  <h6 id="enddate{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+                <p id="Endmessage" style="margin-top:0px; margin-bottom:0px; color:red">
+                  {{sDatemessage}}
+                </p>
+              </td>
+              <td>
+                <i class="fa fa-plus-circle" id="plusicon{{i}}" (click)="onaddcontract($event)" style="font-family: FontAwesome; font-size:21px;"></i>
+                <i class="fa fa-trash contract-delete" id={{i}} style="font-size: 21px;font-family: FontAwesome" (click)="deleteContractFieldValue($event)"></i>
+              </td>
+            </tr>
+        </table>
+      </div>
+      <div class="row">
+        <button class="submit-green" style="float:left; margin-left: 500px; margin-right:20px;" type="submit" [disabled]="!formdata.valid" id="companyInsert">Submit</button>
+        <button class="submit-green" style="float:left;" type="button" (click)="resetClick()" id="reset">Reset</button>
+      </div>
+    </div>
+  </div>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div style="height: auto; min-height: 600px !important; padding-top: 60px; padding-bottom:60px;">
+  <div class="breadcrumsec">
+    <div class="wrapper" style="margin: 0;padding: 0;max-width: -webkit-fill-available;">
+      <ol class="breadcrumb breadresize" style="padding-top: 18px;">
+        <li>
+          <a routerLink="/dashboard">Home</a>
+        </li>
+        <li>
+          Company
+        </li>
+        <li>Register</li>
+      </ol>
+    </div>
+  </div>
+
+  Company Registration input fields
+  <form [formGroup]="formdata" (ngSubmit)="submitForm(formdata.value)">
+    <div class="container">
+      <div class="row" style="margin-top: 13px">
+        <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
+          <label style="margin-top: 14px;margin-left: 65px">Company Name</label>
+          <span style="color:red;">*</span>
+          <br>
+          <input type="text" class="tempFormContrl" name="companyname" (change)="onCompanyExist()" formControlName="companyname" id="companyname"
+            [(ngModel)]="companyName" style="width:315px;margin-left: 64px" required>
+          <div class="companynameclass" style="height:10px;">
+            <h6 id="companyText" style="margin-top:0px; margin-left:64px; color:red;display:none"></h6>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3" style="margin-left: 90px">
+          <label style="margin-top: 14px">GST Number</label>
+          <span style="color:red;">*</span>
+          <br>
+          <input type="text" class="tempFormContrl" formControlName="gstNumber" id="gstNumber" style="width:262px;"
+          required>
+        </div>
+
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <label style="margin-left: 65px;margin-top: 14px">PAN Number</label>
+          <span style="color:red;">*</span>
+          <br>
+          <input type="text" class="tempFormContrl" formControlName="panNumber" name="panNumber" id="panNum"  style="width:262px;margin-left: 63px"
+            required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
+          <label style="margin-top: 26px;margin-left: 62px">Company Description</label>
+          <textarea class="form-control" id="comdesc" name="companydesc" formControlName="companyDescription" [(ngModel)]="companyDesc"
+            style="margin-left: 62px;width: 88%;resize:none" cols="20" rows="2" required></textarea>
+        </div>
+
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+          <label style="margin-left: 90px;margin-top: 26px">Company Address</label>
+          <br>
+          <textarea class="form-control" name="companyaddress" formControlName="companyAddress" id="comaddress" [(ngModel)]="address"
+            style="margin-left: 90px;resize:none" cols="20" rows="2" required></textarea>
+        </div>
+
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3" style="margin-left: 153px">
+          <label style="margin-top: 26px">Country</label>
+          <span style="color:red;">*</span>
+          <br>
+          <select style="width: 218px" id="countryDatas" (change)="onCountryItemSelect($event.target)">
+            <option selected disabled>--Select--</option>
+            <option *ngFor="let c of CountryList" [value]="c.id">{{c.name}}</option>
+          </select>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3" style="margin-left: 62px">
+          <label style="margin-top: 7px;margin-left: 2px">State</label>
+          <br>
+          <select style="width: 218px" class="form-control" id="stateId" (change)="onStateItemSelect($event.target)">
+            <option disabled>--Select--</option>
+            <option *ngFor="let c of StateList" [value]="c.id">{{c.name}}</option>
+          </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3" style="margin-left: 124px">
+          <label style="margin-top: 7px;margin-left: 2px">City</label>
+          <br>
+          <select style="width: 218px" class="form-control city" id="citynames" (change)="onCityItemSelect($event.target)">
+            <option disabled>--Select--</option>
+            <option *ngFor="let c of CityList" [value]="c.id">{{c.name}}</option>
+          </select>
+        </div>
+
+        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" style="margin-left: 61px">
+          <label style="margin-top: 7px;margin-left: 2px">Pin Code</label>
+          <input type="text" name="zip" formControlName="zipcode" [(ngModel)]="zipCode" id="zipCodes" class="form-control">
+        </div>
+      </div>
+    </div>
+    <br>
+
+    Contact Details grid view
+    <div>
+      <label style="margin-top: 25px;margin-left: 45%">Contact Details</label>
+      <br>
+      <table class="table1" style="margin-left: 20%" id="contactTable">
+        <thead style="background-color: #129cca;color: white;">
+          <th>Contact Type
+            <span style="color:red;">*</span>
+          </th>
+          <th>Contact Name
+            <span style="color:red;">*</span>
+          </th>
+          <th>Email-Id
+            <span style="color:red;">*</span>
+          </th>
+          <th>Phone Number
+          </th>
+          <th>Action </th>
+        </thead>
+
+        <tr id="contactRow{{i}}" class="contact-details" *ngFor="let no of noOfRows; let i = index;" [attr.data-index]="i">
+          <td>
+            <label class="form-check-label" for="radio1">
+              <input type="radio" class="form-check-input contact_type" id=prime{{[i]}} name=contact{{[i]}} [checked]="true" value="Primary">Primary
+            </label>
+            <label class="form-check-label" for="radio1">
+              <input type="radio" class="form-check-input contact_type" id=second{{[i]}} name=contact{{[i]}} value="Secondary">Secondary
+            </label>
+          </td>
+
+          <td>
+            <input type="text" name="ContactName" id="ctname{{i}}" (input)="onKey($event)" class="tempFormContrl contactname">
+            <div class="ctnameclass" style="height:10px;">
+              <h6 id="ctnametext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+            </div>
+          </td>
+
+          <td>
+            <input type="email" style="width:179px" id="ctemail{{i}}" (change)="onKey($event)" class="tempFormContrl contactemail" aria-describedby="emailHelp"
+              id="exampleInputEmail1" required name="ContactEmail">
+            <div class="ctemailclass" style="height:10px;">
+              <h6 id="ctemailtext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+            </div>
+          </td>
+
+          <td>
+            <input type="text" id="ctnumber{{i}}" name="ContactNumber" (input)="onKey($event)" class="tempFormContrl contactmobile">
+            <div class="ctnumberclass" style="height:10px;">
+              <h6 id="ctnumbertext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+            </div>
+          </td>
+
+          <td>
+            <i class="fa fa-plus-circle" id="addicon{{i}}" (click)="onaddrow($event)" style="font-family: FontAwesome; font-size:21px;"></i>
+            <i class="fa fa-trash" style="font-size: 21px;font-family: FontAwesome" (click)="deleteContactFieldValue($event)"></i>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    Contract Details grid view
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left: 10%">
+      <label style="margin-top: 14px;margin-left: 34%">Contract Details</label>
+      <br>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left : 100px">
+      <div class="container-fluid" style="display: inline-block;">
+        <table class="table2" id="contractTable">
+          <thead style="background-color: #129cca;color: white;">
+            <th>Contract Reference
+              <span style="color:red;">*</span>
+            </th>
+            <th>Contract Description
+              <span style="color:red;">*</span>
+            </th>
+            <th>Contract Date
+              <span style="color:red;">*</span>
+            </th>
+            <th>No.Of Session
+              <span style="color:red;">*</span>
+            </th>
+            <th>General Alerts
+              <span style="color:red;">*</span>
+            </th>
+            <th>Start Date
+              <span style="color:red;">*</span>
+            </th>
+            <th>End Date
+              <span style="color:red;">*</span>
+            </th>
+            <th>Action </th>
+          </thead>
+
+          <tbody style="padding-bottom:100%; ">
+            <tr id="contractrowId{{i}}" *ngFor="let no of numberOfRows ;let i = index;" [attr.data-index]="i">
+              <td>
+                <input type="text" id="contractref{{i}}" (input)="onContractDetails($event)" (change)="contractRefExists($event)" style="width:150px;"
+                  class="tempFormContrl contractreference" />
+                <div class="refclass" style="height:10px;">
+                  <h6 id="conreftext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+              </td>
+
+              <td>
+                <textarea class="form-control contractdesc" id="contractdesc{{i}}" (input)="onContractDetails($event)" cols="20" rows="1"
+                  required style="resize:none"></textarea>
+                <div class="descclass" style="height:10px;">
+                  <h6 id="condesctext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+              </td>
+
+              <td>
+                <input type="text" (click)="datefetch($event)" (input)="onContractDetails($event)" readonly id="contractdateregister{{i}}"
+                  class="tempFormContrl contractdateregister contractdate" style="width:120px; background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center white;cursor:pointer;">
+                <div class="dateclass" style="height:10px;">
+                  <h6 id="condate{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+              </td>
+
+              <td>
+                <input type="text" maxlength="20" class="tempFormContrl session" (keypress)="isNumber($event)" (input)="onContractDetails($event)"
+                  id="session{{i}}" style="width:100px" />
+                <div class="sessionclass" style="height:10px;">
+                  <h6 id="sessiontext{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+              </td>
+
+              <td>
+                <select id="dropdown2{{i}}" style="width: 100px" class="alertvalue">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                <div class="alertclass" style="height:10px;">
+                  <h6 id="alertDD{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+              </td>
+
+              <td>
+                <input type="text" (click)="datefetch($event)" id="startdateregister{{i}}" readonly class="tempFormContrl startdateregister startdate"
+                  style="width:120px; background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center white;cursor:pointer">
+                <div class="startclass" style="height:10px;">
+                  <h6 id="startdateid{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+                <p id="Startmessage" style="margin-top:0px; margin-bottom:0px; color:red">
+                  {{sDatemessage}}
+                </p>
+              </td>
+
+              <td>
+                <input type="text" (click)="datefetch($event)" readonly id="enddateregister{{i}}" class="tempFormContrl enddateregister enddate"
+                  style="width:120px; background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center white;cursor:pointer">
+                <div class="endclass" style="height:10px;">
+                  <h6 id="enddate{{i}}" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                </div>
+                <p id="Endmessage" style="margin-top:0px; margin-bottom:0px; color:red">
+                  {{sDatemessage}}
+                </p>
+              </td>
+
+              <td>
+                <i class="fa fa-plus-circle" id="plusicon{{i}}" (click)="onaddcontract($event)" style="font-family: FontAwesome; font-size:21px;"></i>
+                <i class="fa fa-trash contract-delete" id={{i}} style="font-size: 21px;font-family: FontAwesome" (click)="deleteContractFieldValue($event)"></i>
+              </td>
+            </tr>
+        </table>
+      </div></div>
+      <div class="row">
+        <button class="submit-green" type="button" (click)="resetClick()" style="width: 9%;float:right;margin:7px;margin-right: 40%"
+          id="reset">Reset</button>
+        <button class="submit-green" type="submit" [disabled]="!formdata.valid" id="companyInsert" style="width: 9%;float:right;margin:7px;margin-left: 23%">Submit</button>
+      </div>
+  
+  </form>
+</div> -->

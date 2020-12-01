@@ -1,0 +1,14 @@
+/* @import '../../../assets/valurite-css/components.css';
+@import '../../../assets/valurite-css/responsee.css';
+@import '../../../assets/owl-carousel/owl.carousel.css';
+@import '../../../assets/owl-carousel/owl.theme.css';
+@import '../../../assets/valurite-css/magnific-popup.css';
+@import '../../../assets/valurite-css/font-awesome.min.css';
+@import '../../../assets/valurite-css/faq-accordin.css';
+@import '../../../assets/valurite-css/template-style.css'; */
+
+.bodyscroll
+{
+    overflow-y: hidden !important;
+    -ms-overflow-style: none !important;
+}

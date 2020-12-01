@@ -1,0 +1,33 @@
+{
+  "name": "gobiom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "MainPage.js",
+  "dependencies": {
+    "array-sort": "^1.0.0",
+    "array-unique": "^0.3.2",
+    "cors": "^2.8.4",
+    "cryptlib": "^1.0.3",
+    "date-and-time": "^0.6.2",
+    "express": "^4.17.0",
+    "express-session": "^1.15.6",
+    "html-pdf": "^2.2.0",
+    "html-tablify": "^2.0.2",
+    "json2xls": "^0.1.2",
+    "jsontoxml": "^1.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "monk": "^6.0.5",
+    "node-unique-array": "^0.0.6",
+    "nodemailer": "^4.4.2",
+    "simple-array-diff": "^1.1.0",
+    "tableify": "^1.1.0",
+    "timediff": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

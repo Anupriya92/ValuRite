@@ -1,0 +1,106 @@
+
+<table>
+							<tbody><tr>
+							  <td  class=\"txt\"><div id=\"k1\" style=\"overflow:auto; width:100%;  height:400; padding:0 5 0 5; \" onscroll=\"enable()\"> <span style="font-weight: bold;" class=\"f_head2\">IMPORTANT:</span><br>
+                                    <br>THIS END-USER LICENSE AGREEMENT (or &quot;EULA&quot;) IS A LEGAL AGREEMENT BETWEEN THE PERSON, COMPANY, OR ORGANIZATION (&quot;YOU&quot; OR &quot;CUSTOMER&quot;) THAT HAS LICENSED THIS GOBIOM DATABASE (&quot;ONLINE GOBIOM DATABASE&quot;) AND Excelra Knowledge Solutions Private Limited (or &quot;EXCELRA&quot;). BY INSTALLING AND USING THE ONLINE GOBIOM DATABASE, CUSTOMER ACCEPTS THE ONLINE GOBIOM DATABASE AND AGREES TO THE TERMS OF THIS AGREEMENT. READ IT CAREFULLY BEFORE COMPLETING THE INSTALLATION PROCESS AND USING THE ONLINE GOBIOM DATABASE. BY INSTALLING AND/OR USING THE ONLINE GOBIOM DATABASE, YOU ARE CONFIRMING YOUR ACCEPTANCE OF THE ONLINE GOBIOM DATABASE AND AGREEING TO BECOME BOUND BY THE TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO BE BOUND BY THESE TERMS, OR DO NOT HAVE AUTHORITY TO BIND CUSTOMER TO THESE TERMS, THEN DO NOT USE THE ONLINE GOBIOM DATABASE
+<br>
+  <br>
+							THIS EULA SHALL APPLY ONLY TO THE ONLINE GOBIOM DATABASE SUPPLIED BY EXCELRA HEREWITH REGARDLESS OF WHETHER ANY OTHER PRODUCT IS REFERRED TO OR DESCRIBED HEREIN.<br>
+  <br>
+  <span style="font-weight: bold;" class=\"sub_head\">GRANT OF LICENSE</span>
+  <ol style="margin-left: 4%;" type="1">
+<li>Users at institutions which have subscribed to ONLINE GOBIOM DATABASE and users who have access under a Company/Society/Organization) or Personal License will have access to the licensed content of the ONLINE GOBIOM DATABASE (&quot;Authorized Users&quot;).</li>
+<li>All Authorized Users are provided with an option to evaluate the ONLINE GOBIOM DATABASE for 15 days without the export or download option. By becoming Authorized Users, they agree that they have evaluated ONLINE GOBIOM DATABASE and are aware of all the features and content. </li>
+<li>Authorized Users will be provided with an individual login which will allow them to access ONLINE GOBIOM DATABASE, articles of interest and search criteria which may be reused by them. </li>
+<li>The license rights granted under this EULA are limited, non-exclusive and non-transferable. </li>
+<li>This grant of license shall be subject to the commercial terms and conditions of the Access fee package that you had opted for, the use of the prescribed mode for access to the ONLINE GOBIOM DATABASE and all applicable laws. </li>     
+  </ol>
+  <span style="font-weight: bold;" class=\"f_head2\"><a name=\"terms\"></a>TERMS OF USE
+</span>
+  <ol style="margin-left: 4%;" type="1">
+<li>Authorized Users may download, view, copy and save to hard disk or diskette and store or print out single copies of individual articles or items for your own personal use, scholarly, educational or scientific research or internal business use. In addition, Authorized Users have the right to use, with appropriate credit, figures, tables and brief excerpts from individual articles in the ONLINE GOBIOM DATABASE(s) as may be permitted under the license, in your own scientific, scholarly and educational works. </li>
+<li >Content downloaded or copied from the ONLINE GOBIOM DATABASE is not for re-sale. </li>
+<li >YOU acknowledge that ONLINE GOBIOM DATABASE and the data in it constitute proprietary information of EXCELRA. Accordingly, upon expiry of the license to ONLINE GOBIOM DATABASE, YOU agree to delete all electronic/physical forms of the data downloaded from ONLINE GOBIOM DATABASE, including all copies made thereof, if any. </li>
+<li>In the event of the YOU are renewing subscription to ONLINE GOBIOM DATABASE before the existing license expires, the downloaded data can continue to be used for the duration of the renewed license. </li>
+<li>Computations involving downloaded data could result in other data that is based on the downloaded data (&apos;Derived Data&apos;). YOU retain perpetual rights to such Derived Data, and it is not bound by the expiry of the license to ONLINE GOBIOM DATABASE. </li>
+<li>ONLINE GOBIOM DATABASE access licenses for individuals are named user licenses. Each named user license is valid for one concurrent login only. Any attempt at more than one concurrent login for the same named user license, shall result in the termination of the already active session, and rejection of login attempt for the other. </li>
+<li>Except as provided above, you may not copy, distribute, transmit or otherwise reproduce material from ONLINE GOBIOM DATABASEs; store such material in any form or medium in a retrieval system; download and/or store an entire issue of an ONLINE GOBIOM DATABASE or its equivalent; or transmit such material, directly or indirectly, for use in any paid service such as document delivery or list serve, or for use by any information brokerage or for systematic distribution, whether or not for commercial or non-profit use or for a fee or free of charge. </li>
+<li>In order to protect the integrity and attribution of the ONLINE GOBIOM DATABASE, you agree not to remove, obscure or modify any copyright or proprietary notices, author attribution or disclaimer contained therein or on any screen display. You may not integrate material from the ONLINE GOBIOM DATABASE(s) with other material or otherwise create derivative works in any medium. This is not meant to prohibit quotations for purposes of comment, criticism or similar scholarly purposes. </li>
+<li>As some examples of improper activities when accessing or using the ONLINE GOBIOM DATABASE and its contents (&quot;Materials&quot;) and the services provided by EXCELRA (&quot;Services&quot;), you agree that you shall not:
+<ul style="list-style-type:circle; margin-left: 4%;">
+<li>Collect, harvest, mine or engage in any other activity to obtain e-mail addresses, phone numbers, personal information or any other information about others.</li>
+<li>Use or attempt to gain access to or use another&apos;s account, password, Service, Materials or computer systems or networks connected to any Adobe server or to the ONLINE GOBIOM DATABASE without authorization from EXCELRA, whether through hacking, password mining or any other means.</li>
+<li>Remove or falsely add to any uploaded Materials any copyright, trademark or other legal or proprietary rights notices, author attributions or other information such as origin or source of the Material.</li>
+<li>Access or attempt to access any Material that you are not authorized to access or Materials through any means not intentionally made available through the ONLINE GOBIOM DATABASE or Services.</li>
+<li>Make available any files containing Materials where you do not own or control, or have not received the necessary licenses to, all Intellectual Property Rights, rights of privacy and publicity and all other rights in and to such Materials.</li>
+<li>Use any Materials in any manner that infringes any Intellectual Property Rights or other rights of any party.</li>
+<li>Disrupt or interfere with the security of, or otherwise cause harm to, the ONLINE GOBIOM DATABASE, or any services, materials, system resources, accounts, passwords, servers or networks connected to or accessible through the ONLINE GOBIOM DATABASE or any affiliated or linked online products.</li>
+<li>Transmit unsolicited or bulk communications to any EXCELRA account holder or to any GVKBIO.com or affiliated e-mail address.</li>
+<li>Post or otherwise submit any software, programs or files that are harmful or disruptive of another’s equipment, software or other property, including any corrupted files, time bombs, Trojan horses, viruses and worms.</li>
+<li>Create a false identity for the purpose of misleading others.</li>
+<li>Download any Materials posted by another that you know, or reasonably should know, cannot be legally reproduced, distributed, performed or displayed in such manner.</li>
+<li>Disrupt, interfere or inhibit any other user from using and enjoying the ONLINE GOBIOM DATABASE or other affiliated or linked online products, Materials or Services.</li>
+<li>Breach any guidelines or other codes of conduct applicable to a given Service or Materials.</li>
+<li>Access or use the ONLINE GOBIOM DATABASE in any manner that could damage, disable, overburden or impair any EXCELRA server or the network(s) connected to any EXCELRA server.</li>
+<li>Violate any applicable laws or regulations related to the access to or use of the ONLINE GOBIOM DATABASE or engage in any activity prohibited by the Terms of Use.</li>
+<li>Post or otherwise submit any topic, name, material or information that is child pornography, defamatory, excessively violent, harassing, inappropriate, indecent, lascivious, lewd, obscene, profane, racist, unlawful, or otherwise objectionable.</li>
+<li>Prepare, compile, use, download or otherwise copy any ONLINE GOBIOM DATABASE user directory or other user or usage information or any portion thereof, or transmit, provide or otherwise distribute (whether or not for a fee) such directory or information to any third party, as not permitted by the license.</li>
+<li>Engage in any chain letters, contests, junk e-mail, pyramid schemes, spamming, surveys or any other duplicative or unsolicited messages (commercial or otherwise).</li>
+<li>Violate the rights of EXCELRA or any third party (including rights of privacy and publicity) or abuse, defame, harass, stalk or threaten another.</li>
+<li>Use any EXCELRA domain name as a pseudonymous return e-mail address.</li>
+<li>Market any goods or services for any business purpose (including advertising and making offers to buy or sell goods or services), unless specifically allowed to do so by EXCELRA.</li>
+
+</ul>
+<li>You may not do anything to restrict or inhibit any other User&apos;s access to or use the ONLINE GOBIOM DATABASE. </li>
+<li>You may not alter, merge, modify, adapt or translate The ONLINE GOBIOM DATABASE, or decompile, reverse engineer, disassemble, or otherwise reduce The ONLINE GOBIOM DATABASE to a human-perceivable form. </li>
+<li>Unless otherwise provided herein, you may not rent, lease, or sublicense The ONLINE GOBIOM DATABASE. </li>
+<li>If you refuse or fail to abide by these Terms and Conditions or violate any other terms of this Agreement, EXCELRA reserves the right in its sole discretion to suspend or terminate your access to the ONLINE GOBIOM DATABASEs immediately without notice, in addition to any other available remedies. </li>
+    
+  </ol>
+  <span style="font-weight: bold;" class=\"sub_head\">LINKS TO THIRD PARTY ONLINE PRODUCTS
+</span><br>
+							The ONLINE GOBIOM DATABASE may include links that will take you to other Online Products outside of the Product (&quot;Linked Online Products&quot;). The Linked Online Products are provided by EXCELRA to you as a convenience and the inclusion of the links do not imply any endorsement by EXCELRA of any Linked Online Product. EXCELRA has no control of the Linked Online Products and you therefore acknowledge and agree that EXCELRA is not responsible for the contents of any Linked Online Product, any link contained in a Linked Online Product or any changes or updates to a Linked Online Product. You further acknowledge and agree that EXCELRA is not responsible for any form of transmission (e.g. webcasting) received from any Linked Online Product.
+<br>
+  <br>
+  <span style="font-weight: bold;" class=\"sub_head\">SPAM E-MAIL AND POSTINGS
+</span><br>
+							    In the event of your or others&apos; access to or use of the ONLINE GOBIOM DATABASE in connection with the transmission of spam newsgroup postings or unsolicited e-mail in violation of these Terms of Use, you acknowledge and agree that EXCELRA would be irreparably harmed thereunder and that monetary damages would be an insufficient and ineffective remedy; therefore you agree that EXCELRA is entitled to obtain immediate injunctive relief against any such transmission (in addition to all other remedies available at law or in equity). EXCELRA may without restriction block, filter or delete unsolicited e-mail.
+<br>
+  <br>
+  <span  style="font-weight: bold;" class=\"sub_head\">ADVERTISEMENTS AND PROMOTIONS
+</span><br>
+							EXCELRA may run advertisements and promotions from third parties via the ONLINE GOBIOM DATABASE in any manner or mode and to any extent. Your communications, activities, relationships and business dealings with any third parties advertising or promoting via the ONLINE GOBIOM DATABASE including payment and delivery of related goods or services, and any other terms, conditions, warranties or representations associated with such dealings, shall be solely matters between you and such third parties. You acknowledge and agree that EXCELRA is not responsible or liable for any loss or damage of any kind incurred as the result of any such dealings or as the result of the presence of such non-EXCELRA advertisers on the ONLINE GOBIOM DATABASE or in connection therewith.
+<br>
+  <br>
+  <span  style="font-weight: bold;" class=\"sub_head\">AUDIT</span><br>
+							    You agree that EXCELRA may audit your use of The ONLINE GOBIOM DATABASE for compliance with these terms at any time, with or without notice. In the event that such audit reveals any use of The ONLINE GOBIOM DATABASE by you other than in full compliance with the terms of this Agreement, you shall reimburse EXCELRA for all reasonable expenses related to such audit in addition to any other liabilities you may incur as a result of such non-compliance.
+<br>
+  <br>
+  <span style="font-weight: bold;" class=\"sub_head\">INDEMNITY AND LIABILITY</span><br>
+							You agree to indemnify and hold GVK and its officers, co-branders, other partners and employees harmless from any claim or demand, including reasonable attorneys&apos; fees, made by any third party due to or arising out of:<br> (a) Your User Materials and any other content (e.g. computer viruses) that you may submit, post to or transmit through the ONLINE GOBIOM DATABASE (including a third party’s use of such User Materials or content (e.g. reliance on the accuracy, completeness or usefulness of your User Materials); <br> (b) Your access to or use of the ONLINE GOBIOM DATABASE, (including any use by your employees, contractors or agents and all uses of your account numbers, user names and passwords, whether or not actually or expressly authorized by you, in connection with the ONLINE GOBIOM DATABASE); <br>  (c) Your connection to the ONLINE GOBIOM DATABASE; <br>  (d) Your violation of the Terms of Use; <br>  (e) The actions of any member of your Work Group; <br>  (f) Your infringement of any third party&apos;s Intellectual Property Rights when using any of the Software made available on the ONLINE GOBIOM DATABASE; <br> (g) Your violation of any rights of any third party; <br>  (h) Your access to or use of Linked Sites and your connections thereto; or<br>  (i) Any dealings between you and any third parties advertising or promoting via the ONLINE GOBIOM DATABASE.<br>
+  <br>
+  <span style="font-weight: bold;" class=\"sub_head\">PROPRIETORY RIGHTS
+</span>
+  <ul>
+    <li>The foregoing license gives you limited license to use The ONLINE GOBIOM DATABASE. EXCELRA and its suppliers retain all right, title and interest, including all copyright and intellectual property rights, in and to, The ONLINE GOBIOM DATABASE (as an independent work and as an underlying work serving as a basis for any application you may develop), and all copies thereof. All rights not specifically granted in this EULA, are reserved by EXCELRA and its suppliers.</li>
+  <li>EXCELRA and other trademarks contained in The ONLINE GOBIOM DATABASE are trademarks or registered trademarks of Excelra Knowledge Solutions Pvt. Ltd. Third party trademarks, trade names, product names and logos may be the trademarks or registered trademarks of their respective owners. You may not remove or alter any trademark, trade names, product names, logo, copyright or other proprietary notices, legends, symbols or labels in The ONLINE GOBIOM DATABASE. This EULA does not authorize you to use EXCELRA's or its licensors' names or any of their respective trademarks.</li>
+  
+  
+   <li><br><u>All questions concerning this EULA shall be directed to:</u>
+        <pre class=\"txt\">						<b style="color:#0099cc;">
+Excelra Knowledge Solutions Private Limited,
+6th Floor, Wing B, NSL SEZ ARENA,
+Plot No. 6, Survey No. 1,
+IDA Uppal, Hyderabad-500039
+<a href=\"mailto:biomarkers@excelra.com\" style="color:black" class=\"txt_link\">biomarkers@excelra.com</a>
+</pre></li>
+  </ul>
+						      </div></td>
+							</tr>	
+              					
+						</tbody>          
+            </table>
+            </table>
+        
+            </table>
+            

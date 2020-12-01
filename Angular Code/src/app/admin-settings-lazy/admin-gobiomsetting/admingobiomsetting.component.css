@@ -1,0 +1,130 @@
+table {
+
+    max-width: 100% !important;
+    overflow-x: scroll;
+    background-color: transparent;
+    display: inline-block;
+    margin-bottom: 4px;
+    border: 1.2px #129cca solid;
+}
+td,th {
+    padding: 8px;
+ }
+ tr:nth-child(even){background-color: #f2f2f2;}
+
+ tr:hover {background-color: #ddd;}
+                    .fa-plus-circle{
+                        pointer-events: none;
+                        cursor: default;
+                        opacity: 0.3;
+
+                 }
+
+ .fa-trash:hover{background-color: #ddd;
+                        cursor: pointer;}
+    
+  
+
+ th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: internal-center;
+    background-color: #129cca;
+    color: white;
+}
+.scroll{
+    overflow-x:scroll;
+    width: 91em;
+    }
+    button.submit-green {font-size: 14px;border: none;font-family: 'ProximaNova-Bold';color: #fff;padding: 5px 20px;margin: 10px auto;background-color: #2fa799;text-align: center;display: block;border-radius: 3px;}
+
+    .tempFormContrl
+{
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.tempFormContrl:hover {
+    cursor: pointer;
+}
+
+.tempFormContrl:focus{
+   border-color:#56aafebd;
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px #56aafebd;
+   outline: 0 none;
+}
+.submit-green[disabled]{
+    background-color: #9ae6dd;
+    color: white;
+    cursor: unset;
+}
+
+.ngxpagination /deep/ {		
+    margin-left: 902px;  		
+}		
+.ngxpagination /deep/ .ngx-pagination .current {		
+    background:#129cca !important;		
+    border-radius: 1px;		
+    padding: 8px 16px;		
+     display: inline-block;		
+  }		
+ 		
+  .ngxpagination /deep/.disabled, .ngxpagination /deep/ .disabled a, .ngxpagination /deep/.disabled a:hover, .ngxpagination /deep/.disabled a:focus {		
+    color: #999;		
+    cursor: not-allowed;		
+    background-color: #fff;		
+    border-color: #ddd;		
+    padding: 8px 16px;		
+    border: 1px solid  #ddd;		
+}		
+.ngxpagination /deep/ a {		
+    color: #428bca;		
+    line-height: 1.428571429;		
+    padding: 8px 16px;		
+    text-decoration: none;		
+    border: 1px solid  #ddd;		
+    position: relative;		
+        
+}		
+        
+.ngxpagination /deep/ a.active {		
+        
+    z-index: 3;		
+    color: white;		
+    border-radius: 5px;		
+    border: 1px solid  #ddd;		
+    line-height: 1.428571429;		
+}		
+        
+.ngxpagination  /deep/ a:hover:not(.active) {		
+    background-color: #ddd;		
+    border-radius: 5px;		
+    border: 1px solid  #ddd;		
+}		
+.ngxpagination  /deep/ ul {		
+margin-top: -20px;	
+float:right;	
+/* margin-bottom: -20px;		 */
+/* margin-left: 875px; 		 */
+}		
+        
+.ngxpagination /deep/ li:first-child a,.pagination /deep/ li:first-child span {		
+    margin-left:0;		
+    border-bottom-left-radius: 4px;		
+    border-top-left-radius: 4px;		
+}		
+.ngxpagination /deep/ li:last-child a,.pagination /deep/ li:last-child span {		
+    border-top-right-radius:4px;		
+    border-bottom-right-radius:4px		
+}

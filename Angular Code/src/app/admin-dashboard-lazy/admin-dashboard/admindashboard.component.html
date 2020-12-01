@@ -1,0 +1,60 @@
+<div style="height: auto; min-height: 600px !important; padding-top: 55px; padding-bottom:60px;">
+  <div class="container-fluid" style="overflow: hidden;">
+    <!--LEGEND-->
+    <div class="row" style="margin-left: 1.8%; margin-top:2%">
+      <legend>Dash Board</legend>
+    </div>
+    <!-- CheckBoxes -->
+    <div class="row" id="statusCheckbox" style="text-align: center">
+      <label style="padding-right: 10px; vertical-align: middle; color: brown">Choose Statistics: </label>
+
+      <input id="recentUsageStatisticsId" name="recentUsageStatisticsCheckBox" value="recentUsageStatisticscb" type="checkbox"
+        [checked]="recentUsageStatisticsFlag" (click)="scrollToRecentStatistics()">
+      <label for="recentUsageStatisticsId" style="padding-right: 8px; padding-left: 4px;vertical-align: middle;">Usage Statistics</label>
+
+      <input id="generalStatisticsID" name="generalStatisticsCheckBox" value="generalStatisticsCB" type="checkbox" [checked]="generalStatisticsFlag"
+        (click)="scrollToGeneralStactistics()">
+      <label for="generalStatisticsID" style="padding-right: 8px; padding-left: 4px;vertical-align: middle;">General Statistics</label>
+
+      <input id="currentUsersID" name="currentUsersCheckBox" value="currentUsersCB" type="checkbox" [checked]="currentUsersFlag"
+        (click)="scrollToCurrentUsers()">
+      <label for="currentUsersID" style="padding-right: 8px; padding-left: 4px;vertical-align: middle;">Logged-in Users</label>
+
+      <input id="userListsID" name="userListsCheckBox" value="userListsCB" type="checkbox" [checked]="userListsFlag" (click)="scrollToUsersList()">
+      <label for="userListsID" style="padding-right: 8px;padding-left: 4px;vertical-align: middle;">Users List</label>
+
+      <button class="submit-green" name="savePreferences" type="submit" (click)="savePreferences()" style="color:white; padding:5px; width: auto; display: inline; ">
+        Save Preferences
+      </button>
+    </div>
+
+    <div class="row" style="margin-left: 40%">
+      <button class="submit-green" name="loggedInUsers" type="button" style="color:white; padding:5px; display: inline; width: auto;"
+        (click)="onButtonClickCurrentUsers()">
+        Currently Logged In Users {{loggedInUsersCount}}
+      </button>
+    </div>
+
+    <!-- CHARTS / GRID-->
+    <div class="row" id="recentUsageStatistics" style="margin-left: 0.8%" *ngIf="recentUsageStatisticsFlag">
+      <!-- A place for Recent Usage  -->
+      <app-adminrecentusage></app-adminrecentusage>
+    </div>
+    <div class="row" id="generalStatistics" style="margin-left: 0.8%" *ngIf="generalStatisticsFlag">
+      <!-- A place for General Statistics  -->
+      <app-admingeneralstatistics></app-admingeneralstatistics>
+    </div>
+    <div class="row" id="currentUsers" style="margin-left: 0.8%" *ngIf="currentUsersFlag">
+      <!-- A place for Current Users -->
+      <app-admincurrentusers></app-admincurrentusers>
+    </div>
+    <div class="row" id="userLists" style="margin-left: 0.8%" *ngIf="userListsFlag">
+      <!-- A place for Userlists -->
+      <app-adminuserlist></app-adminuserlist>
+    </div>
+    <!--Scroll Button-->
+    <a id="return-to-top" style="padding-bottom: 90px">
+      <img src="..\assets\scroll btn.png">
+    </a>
+  </div>
+</div>

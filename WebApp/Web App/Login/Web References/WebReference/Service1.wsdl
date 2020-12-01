@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginServiceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginJsonString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginJsonStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginJsonStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PasswordUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PasswordUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordUpdateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Userregistration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserregistrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserregistrationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginService" />
+  </wsdl:message>
+  <wsdl:message name="LoginServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginJsonStringSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginJsonString" />
+  </wsdl:message>
+  <wsdl:message name="LoginJsonStringSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginJsonStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="PasswordUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:PasswordUpdate" />
+  </wsdl:message>
+  <wsdl:message name="PasswordUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:PasswordUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserregistrationSoapIn">
+    <wsdl:part name="parameters" element="tns:Userregistration" />
+  </wsdl:message>
+  <wsdl:message name="UserregistrationSoapOut">
+    <wsdl:part name="parameters" element="tns:UserregistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginServiceHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginServiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginJsonStringHttpGetIn">
+    <wsdl:part name="JsonString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginJsonStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PasswordUpdateHttpGetIn">
+    <wsdl:part name="JsonString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PasswordUpdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UserregistrationHttpGetIn">
+    <wsdl:part name="JsonString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserregistrationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginServiceHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginServiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginJsonStringHttpPostIn">
+    <wsdl:part name="JsonString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginJsonStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PasswordUpdateHttpPostIn">
+    <wsdl:part name="JsonString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PasswordUpdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UserregistrationHttpPostIn">
+    <wsdl:part name="JsonString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserregistrationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginService">
+      <wsdl:input message="tns:LoginServiceSoapIn" />
+      <wsdl:output message="tns:LoginServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginJsonString">
+      <wsdl:input message="tns:LoginJsonStringSoapIn" />
+      <wsdl:output message="tns:LoginJsonStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PasswordUpdate">
+      <wsdl:input message="tns:PasswordUpdateSoapIn" />
+      <wsdl:output message="tns:PasswordUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Userregistration">
+      <wsdl:input message="tns:UserregistrationSoapIn" />
+      <wsdl:output message="tns:UserregistrationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginService">
+      <wsdl:input message="tns:LoginServiceHttpGetIn" />
+      <wsdl:output message="tns:LoginServiceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginJsonString">
+      <wsdl:input message="tns:LoginJsonStringHttpGetIn" />
+      <wsdl:output message="tns:LoginJsonStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PasswordUpdate">
+      <wsdl:input message="tns:PasswordUpdateHttpGetIn" />
+      <wsdl:output message="tns:PasswordUpdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Userregistration">
+      <wsdl:input message="tns:UserregistrationHttpGetIn" />
+      <wsdl:output message="tns:UserregistrationHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginService">
+      <wsdl:input message="tns:LoginServiceHttpPostIn" />
+      <wsdl:output message="tns:LoginServiceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginJsonString">
+      <wsdl:input message="tns:LoginJsonStringHttpPostIn" />
+      <wsdl:output message="tns:LoginJsonStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PasswordUpdate">
+      <wsdl:input message="tns:PasswordUpdateHttpPostIn" />
+      <wsdl:output message="tns:PasswordUpdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Userregistration">
+      <wsdl:input message="tns:UserregistrationHttpPostIn" />
+      <wsdl:output message="tns:UserregistrationHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginService">
+      <soap:operation soapAction="http://tempuri.org/LoginService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginJsonString">
+      <soap:operation soapAction="http://tempuri.org/LoginJsonString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordUpdate">
+      <soap:operation soapAction="http://tempuri.org/PasswordUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Userregistration">
+      <soap:operation soapAction="http://tempuri.org/Userregistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginService">
+      <soap12:operation soapAction="http://tempuri.org/LoginService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginJsonString">
+      <soap12:operation soapAction="http://tempuri.org/LoginJsonString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordUpdate">
+      <soap12:operation soapAction="http://tempuri.org/PasswordUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Userregistration">
+      <soap12:operation soapAction="http://tempuri.org/Userregistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpGet" type="tns:Service1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginService">
+      <http:operation location="/LoginService" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginJsonString">
+      <http:operation location="/LoginJsonString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordUpdate">
+      <http:operation location="/PasswordUpdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Userregistration">
+      <http:operation location="/Userregistration" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpPost" type="tns:Service1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginService">
+      <http:operation location="/LoginService" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginJsonString">
+      <http:operation location="/LoginJsonString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordUpdate">
+      <http:operation location="/PasswordUpdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Userregistration">
+      <http:operation location="/Userregistration" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://182.72.100.214/PropertyTest/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://182.72.100.214/PropertyTest/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpGet" binding="tns:Service1HttpGet">
+      <http:address location="http://182.72.100.214/PropertyTest/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpPost" binding="tns:Service1HttpPost">
+      <http:address location="http://182.72.100.214/PropertyTest/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

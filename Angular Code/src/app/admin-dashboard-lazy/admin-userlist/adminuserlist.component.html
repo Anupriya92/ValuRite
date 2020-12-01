@@ -1,0 +1,81 @@
+<div class="container-fluid" style="min-height: 500px!important;">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12" id="userListLegend" style="margin-left: 10px; margin-top: 2%;">
+      <legend>Users List</legend>
+    </div>
+  </div>
+
+  <div class="row">
+    <div style="float:left; margin-right:2px; width:23%;padding-left: 30px;" class="col-lg-3 col-sm-3 col-md-3 col-xs-3 formGroup">
+      <b>Company </b>
+      <ng-select [allowClear]="true" [multiple]="true" [items]="companynames" [disabled]="companyNameDisabled" (selected)="onCompanyNameSelect($event)"
+        (removed)="onCompanyNameRemoved($event)" id="userListCompanyNames" name="userListCompanyNames" placeholder="" [(ngModel)]="userListCompanies">
+      </ng-select>
+    </div>
+
+    <div style="float:left; margin-right:2px; width:23%;padding-left: 30px;" class="col-lg-3 col-sm-3 col-md-3 col-xs-3 formGroup">
+      <b>User Name</b>
+      <ng-select [allowClear]="true" [multiple]="true" [items]="usernames" [disabled]="userNameDisabled" (selected)="onUserNameSelect($event)"
+        (removed)="onUserNameRemoved($event)" id="userListUserNames" name="userListUserNames" placeholder="" [(ngModel)]="userListUsers">
+      </ng-select>
+    </div>
+
+    <div style="float:left; margin-right:2px; width:23%;padding-left: 30px;" class="col-lg-3 col-sm-3 col-md-3 col-xs-3 formGroup">
+      <b>User Type</b>
+      <ng-select [allowClear]="false" [multiple]="true" [items]="rolenames" [disabled]="rolenameDisabled" (selected)="onRolenameSelected($event)"
+        (removed)="onRolenameRemoved($event)" placeholder="" [(ngModel)]="rolename">
+      </ng-select>
+    </div>
+
+    <div style="float:left; margin-right:2px; width:23%;padding-left: 30px; display:none;" class="col-lg-3 col-sm-3 col-md-3 col-xs-3 formGroup">
+      <b>Key Word</b>
+      <input type="text" id="searchByKeyword" class="form-control" [(ngModel)]="keywords" style="width:75%; height: 32px; ">
+    </div>
+  </div>
+
+  <div class="row" style='margin-top: 2vh'>
+  </div>
+  <div class="row">
+    <div class='col-lg-3 col-sm-3 col-md-3 col-xs-3 formGroup' style="float:left; margin-right:2px; width:23%;padding-left: 30px;">
+      <input type="radio" id="daysradiobtn" [value]="true" name="dateFilterRadio" (click)="getRadioButtonExpire()">
+      <b>Days To Expire</b>
+    </div>
+    <div class='col-lg-3 col-sm-3 col-md-3 col-xs-3 formGroup' style="float:left; margin-right:2px; width:23%;padding-left: 30px;">
+      <input type="radio" id="dateradiobtn" [value]="false" name="dateFilterRadio" (click)="getRadioButtonDateRange()">
+      <b>Date Range</b>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="disableDaysToExpire" style="float:left; margin-right:2px; width:23%;padding-left: 30px;" class="col-lg-3 col-sm-3 col-md-3 col-xs-3 formGroup">
+      <b>No of Days</b>
+      <input type="number" class="form-control" id="daystoExpire" [(ngModel)]="noofdaysToExpire" style="width: 200px;">
+      <p style="color: red;"> {{daysToExpire.errorMsg}} </p>
+    </div>
+    <div *ngIf="disableDateRange" style="float:left; margin-right:2px; width:23%;padding-left: 30px;" class="col-lg-3 col-sm-3 col-md-3 col-xs-3 formGroup">
+    </div>
+    <div *ngIf="disableDateRange" style="float:left; margin-right:2px; width:23%;padding-left: 30px;" class="col-lg-2 col-sm-2 col-md-2 col-xs-2 formGroup">
+      <b>From </b>
+      <input type="text" (click)="calenderUserList($event)" id="fromdate" class="form-control" style="width: 200px; background: url(../../assets/images/datepicker.png) no-repeat scroll 170px center;cursor:pointer"
+        readonly />
+    </div>
+    <div *ngIf="disableDateRange" style="float:left; margin-right:2px; width:23%;padding-left: 30px;" class="col-lg-2 col-sm-2 col-md-2 col-xs-2 formGroup">
+      <b>To </b>
+      <input type="text" (click)="calenderUserList($event)" id="todate" class="form-control" style="width: 200px; background: url(../../assets/images/datepicker.png) no-repeat scroll 170px center;cursor:pointer"
+        readonly />
+    </div>
+  </div>
+  <div class="row">
+    <!-- Submit Button-->
+    <div>
+      <button class="submit-green" style="float:left;margin-left: 28px;" id="draw" type="button" (click)="submit()">Submit</button>
+      <button class="submit-green" style="float:left;margin-left: 28px;" id="reset" type="button" value="reset" (click)="resetclick()">Reset</button>
+    </div>
+  </div>
+  <!-- SORT TABLE with Results fetched from DB displayed here-->
+  <admin-sort-table *ngIf="showUserList" id="userListSortTable" [tabledata]="jsonData"></admin-sort-table>
+  <!--Error Message-->
+  <div class="row">
+    <p *ngIf="errorMsgFlag" id="userListSortTable" style="color: red; text-align: center;"> No records found for the selected filters</p>
+  </div>
+</div>

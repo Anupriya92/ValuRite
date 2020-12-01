@@ -1,0 +1,6 @@
+{
+"db" : "mongodb://GobiomUser:Test123@192.168.1.220:27017/ValuRitedemo?authSource=admin",
+"admin_db" : "mongodb://GobiomUser:Test123@192.168.1.220:27017/ValuRite_Admin?authSource=admin",
+"menuandhomeport" : "3007",
+"adminport" : "3008"
+}

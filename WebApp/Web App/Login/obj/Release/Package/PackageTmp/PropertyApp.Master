@@ -1,0 +1,1338 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PropertyApp.Master.cs" Inherits="Login1.PropertyApp" EnableViewState="true" ClientIDMode="Static" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%-- <%=ResolveUrl("~/Images/logo1.png") %>--%>
+    <script src="<%=ResolveUrl("~/bootstrap-3.3.6-dist/js/jquery.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/bootstrap/js/bootstrap.js") %>"></script>
+    <script src="<%=ResolveUrl("~/bootstrap/Bootbox/bootbox.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/Js/Valuationdetails.js") %>"></script>
+    <script src="<%=ResolveUrl("~/Js/PropertyCreation.js") %>"></script>
+    <script src="<%=ResolveUrl("~/Js/AssignAppraiser.js") %>"></script>
+    <script src=" <%=ResolveUrl("~/Js/ApplicationQueue.js") %>"></script>
+    <script src="<%=ResolveUrl("~/scripts/GenericForm.js") %>"></script>
+    <script src="<%=ResolveUrl("~/scripts/jquery.session.js") %>"></script>
+    <script src="<%=ResolveUrl("~/Js/jquery.validate.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/Js/additional-methods.min.js") %>"></script>
+<%--    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />--%>
+    <meta name="description" content="Draggabble Widget Boxes &amp; Containers" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <link href="<%=ResolveUrl("~/bootstrap-3.3.6-dist/css/bootstrap.min.css") %>" rel="stylesheet" />
+
+    <script src="<%=ResolveUrl("~/scripts/moment.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/scripts/bootstrap-datetimepicker.min.js") %>"></script>
+
+    <link href="<%=ResolveUrl("~/Content/bootstrap-datetimepicker.min.css") %>" rel="stylesheet" />
+    <%--<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>--%>
+    <%--<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>--%>
+    <link href="<%=ResolveUrl("~/Content/jqueryvalidation.css") %>" rel="stylesheet" />
+   <%-- <link href="<%=ResolveUrl("~/perfect-scrollbar/css/perfect-scrollbar.css") %>" rel="stylesheet" />--%>
+
+    <link href="<%=ResolveUrl("~/bootstrap/css/bootstrap-theme.css") %>" rel="stylesheet" />
+    <link href="<%=ResolveUrl("~/bootstrap/css/bootstrap-theme.min.css") %>" rel="stylesheet" />
+    <link href="<%=ResolveUrl("~/bootstrap/css/bootstrap.min.css") %>" rel="stylesheet" />
+    <link href="<%=ResolveUrl("~/landingpage.css") %>" rel="stylesheet" />
+    <link href="<%=ResolveUrl("~/includes/css/Customcss.css") %>" rel="stylesheet" />
+    <link href="<%=ResolveUrl("~/scripts/font.css") %>" rel="stylesheet" />
+    <%-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -- %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="<%=ResolveUrl("~/perfect-scrollbar/js/perfect-scrollbar.jquery.js") %>"></script>
+
+    
+      <%--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCynNe0tkvj1THBq3j3SyzPL1aN7buAptg&libraries=places"></script>--%>
+
+   <%-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAxy1K1yj7QKjKznklLTkA3HPKqW9kEOtk&libraries=places"></script>  <%--Added by Anupriya %>--%>
+    
+    <%--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD2uAz2-DAynRAx5bjNZ-jymgQWVBMqFDc&libraries=places"></script>--%>
+    <style>
+        /*scroll bar in sidenav*/
+        .ps-container.ps-active-x > .ps-scrollbar-x-rail, .ps-container.ps-active-y > .ps-scrollbar-y-rail {
+            display: block;
+            background-color: #163f53;
+        }
+
+        input:-webkit-autofill, input:-webkit-autofill:active, input:-webkit-autofill:focus, input:-webkit-autofill:hover {
+            -webkit-box-shadow: 0 0 0px 1000px white inset;
+        }
+
+        .ps-container:hover > .ps-scrollbar-y-rail:hover {
+            background-color: #102e3d;
+            opacity: 0.9;
+        }
+
+            .ps-container:hover > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y {
+                background-color: #1e5671;
+            }
+
+            .ps-container:hover > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y {
+                background-color: #1e5671;
+            }
+
+        .ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+            position: absolute;
+            background-color: #1e5671;
+        }
+
+        .myrow {
+            padding-top: 6px;
+        }
+
+
+        /*.btn-link1:hover, .btn-link1:focus {
+            color: #186618;
+            text-decoration: underline;
+            background-color: transparent;
+        }*/
+
+        .icon-bar {
+            background-color: black;
+        }
+
+        .menu ul li.dum:hover {
+            background-color: inherit;
+            cursor: default;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        .highlight {
+        background-color: #1a8e76;   
+            /*background-color: #1ab394;*/
+            /*font-size: 1em !important;*/
+        }
+ 
+        
+        body {margin:0;font-family:Arial}
+
+.topnav {
+  overflow: hidden;
+  background-color: #2d3b48;
+  position: fixed;
+    width: 100%;
+    z-index: 300;
+
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 32px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight:600;
+}
+
+.active {
+  /*background-color: #4CAF50;*/
+  color: white;
+   background-color: #0b7bb0;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 30px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-weight:600;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a, .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topmargin {
+      margin-top: 24% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  
+  /*.topmargin {
+      margin-top: 6%;
+  }*/
+}
+@media only screen and (device-width: 768px) {
+  /* For general iPad layouts */
+  
+  .topmargin {
+      margin-top: 12% !important;
+  }
+}
+       @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+}
+       @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
+}
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+        .topmargin {
+            margin-top:10% !important;
+        }
+        }
+           </style>
+
+    <script type="text/javascript">
+
+ function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+       
+
+        $(document).ready(function () {
+            fnhighlight();
+            setEnv();
+            $('.date').click(function () {
+                $(this).closest('span.input-group-addon').click();
+            })
+            setContentSize();
+        })
+
+        function fnhighlight() {
+            var pagname = localStorage.getItem("pagename");
+            var mainpage = localStorage.getItem("mainlist");
+            console.log("Check " + pagname)
+            console.log("Check1 " + mainpage)
+            $("#" + pagname).addClass("highlight");
+            $("#" + mainpage).addClass("in");
+
+        }
+
+        function getservAdress() {
+            return '<%=Session["ServAddr"]%>';
+        }
+
+        function getfoldrPath() {
+            return '<%=Session["FolderPath"]%>';
+        }
+
+        function setContentSize() {
+            var wid = $("#Demo12").width();
+            wid = wid - 8;
+
+            $('main').css({ 'left': wid + 'px' })
+        }
+
+        $(window).resize(function () {
+            setContentSize();
+        })
+
+        function fnback() {
+            window.location.href = document.referrer;
+        }
+
+        function fnpageredirect(seluser, pagename, mainlist) {
+            $('#modalloading').modal('show');
+            localStorage.setItem("pagename", pagename);
+            localStorage.setItem("mainlist", mainlist);
+            window.location.href = seluser;
+            $('#modalloading').modal('hide');
+        }
+
+        function setEnv() {
+            var pwddet = '<%=Session["hdnpwdupdate"]%>';
+            var strusrtype = '<%=Session["UserType"]%>';
+            var strusrrole = '<%=Session["UserRole"]%>';
+            var OrgType = '<%=Session["OrgType"]%>';
+            var Anonymous ='<%=Session["Anonymous"]%>';
+            setEnvironment(strusrtype, strusrrole, pwddet, OrgType, Anonymous);           
+        }
+
+        function getorgtype() {
+            var OrgType = '<%=Session["OrgType"]%>';
+            return OrgType;
+        }
+
+        function getusrtype() {
+            userType = '<%=Session["UserType"]%>';
+            return userType;
+        }
+
+
+        function getappid() {
+            var userid = '<%=Session["UserID"]%>';
+            return userid;
+        }
+
+        var ValIDSubmit = "";
+        function getIDstosubmit() {
+            ValIDSubmit = '<%=Session["ValuationID"]%>';
+            var valid = ValIDSubmit;
+            return valid;
+        }
+
+        $('#modalloading1').modal({ backdrop: 'static', keyboard: false });
+
+
+        function fnstopload(e) {
+            e.preventDefault()
+        }
+
+         //Added by Anupriya
+        var sessionVal;
+        function fnSessionMangement() {
+           // sessionVal = setInterval(fnSetSession, 60000);
+        }
+        <%--  function fnSetSession() {
+            var obj = {
+                user:'<%=Session["UserID"]%>',
+                sessionID: '<%=Session["SessionID"]%>',
+                type: "check"
+               }
+            var jsonobj = JSON.stringify(obj);
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "ApplicationQueue.aspx/UserSession",
+                data: jsonobj,
+                datatype: "json",
+                success: function (response) {
+                    jsonObj = JSON.parse(response.d);
+                    if (response.d == "1") {
+                        $(function () {
+                            //var exsession = sessionID;
+                            console.log("Session matches")
+                        });
+                    }
+                    else {
+                        clearInterval(sessionVal);
+                        fnclearsession();
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown);
+                },
+            })
+        }--%>
+
+        <%-- function fnSetSession() {
+            var obj = {
+                user:'<%=Session["UserID"]%>',
+                sessionID: '<%=Session["SessionID"]%>',
+                type: "sessionupdate"
+               }
+            var jsonobj = JSON.stringify(obj);
+           // alert("testing" + jsonobj);
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "ApplicationQueue.aspx/UserSession",
+                data: jsonobj,
+                datatype: "json",
+                success: function (response) {
+                    jsonObj = JSON.parse(response.d);
+                    alert(respone.d)
+                    if (response.d == "Valid") {
+                        $(function () {
+                            //var exsession = sessionID;
+                            console.log("Session matches")
+                        });
+                    }
+                    else {
+                        clearInterval(sessionVal);
+                        fnclearsession();
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown);
+                },
+            })
+        }--%>
+
+        // changes done by kavitha 
+        function fnclearsession() {
+           var produrl="<%=ConfigurationManager.AppSettings["localPort"]%>"
+            $('#modalloading1').modal('show');
+            //localStorage.setItem("pagename", "");
+            localStorage.setItem("mainlist", "");
+            $.ajax({
+                type: "POST",
+                url: "landingpage.aspx/btnlogout",
+                data: {},
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    $('#modalloading1').modal('hide');
+                    // window.location.href = response.d;
+                  //   window.open("http://.replace(/ /g, ''):81/", "_self")
+                    window.open(produrl, "_self")
+
+
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    $('#modalloading1').modal('hide');
+                    if (XMLHttpRequest.status == "401") {
+                        // window.location.href = "../login.aspx"
+                       //  window.open(prodPort, "_self")
+                          window.open(produrl, "_self")
+
+                    }
+                    else {
+                        fnclearsession()
+                    }
+                },
+            });
+        }
+
+
+        function sessionout() {
+            localStorage.setItem("pagename", "");
+            localStorage.setItem("mainlist", "");
+            $(function () {
+                bootbox.dialog({
+                    closeButton: false,
+                    message: "Session out! Please log in to continue",
+                    buttons: {
+                        success: {
+                            label: "OK",
+                            callback: function () {
+                                window.location.href = "/login.aspx"
+                            }
+                        }
+                    }
+                });
+            });
+        }
+
+        function getusertypequeu() {
+            var usrtype = '<%=Session["UserType"]%>';
+            return usrtype;
+        }
+
+        function getuserrole() {
+            var usrrole = '<%=Session["UserRole"]%>';
+            return usrrole;
+        }
+
+
+        $(function () {
+            $('#Demo12').perfectScrollbar();
+        });
+
+    </script>
+    <style>
+        /*body {
+            background-color: rgb(236, 236, 236);
+            margin: 0;
+            font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+        }*/
+
+        main {
+            /*position: relative;
+            top: 0;
+            left: 18%;
+            width: 82%;
+            height: 100%;*/
+        }
+
+        .menu {
+            background: #163f53;
+            color: #ffffff;
+            height: 100%;
+            width: 18%;
+            font-size: 16px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            outline: none;
+            overflow-y: auto;
+        }
+
+            .menu .avatar {
+                background: rgba(0, 0, 0, 0.27);
+                padding: 2em 0.5em;
+                text-align: center;
+            }
+
+                .menu .avatar img {
+                    width: 60px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    /*border: 4px solid #ffea92;*/
+                    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+                }
+
+                .menu .avatar h2 {
+                    font-weight: normal;
+                    margin-bottom: 0;
+                }
+
+            .menu ul {
+                list-style: none;
+                padding: 0.5em 0;
+                margin: 0;
+               
+            }
+
+                .menu ul li {
+                    padding: 0.5em 1em 0.5em 3em;
+                    font-size: 0.95em;
+                    font-weight: regular;
+                    background-repeat: no-repeat;
+                    background-position: left 15px center;
+                    background-size: auto 20px;
+                    transition: all 0.15s linear;
+                    cursor: pointer;
+                    /*float: left;*/
+                }
+ 
+
+                    .menu ul li.icon-Queue {
+                        background-image: url("../Images_svg/Dashboard.svg");
+                    }
+
+                    .menu ul li.icon-assign {
+                        background-image: url("../Images_svg/user.svg");
+                    }
+
+                    .menu ul li.icon-schedule {
+                        background-image: url("../Images_svg/hourglass.svg");
+                    }
+
+
+                    .menu ul li.icon-Lender {
+                        background-image: url("../Images_svg/Lender.svg");
+                    }
+
+                    .menu ul li.icon-Borrower {
+                        background-image: url("../Images_svg/Borrower.svg");
+                    }
+
+                    .menu ul li.icon-Appraiser {
+                        background-image: url("../Images_svg/Appraiser.svg");
+                    }
+
+                    .menu ul li.icon-settings {
+                        background-image: url("../Images_svg/tools.svg");
+                    }
+
+                    .menu ul li.icon-userconfig {
+                        background-image: url("../Images_svg/cog.svg");
+                    }
+
+                    .menu ul li.icon-export-arrow {
+                        background-image: url("../Images_svg/export-arrow.svg");
+                    }
+
+                    .menu ul li.icon-value {
+                        background-image: url("../Images_svg/line-graph.svg");
+                    }
+
+                    .menu ul li.car-with-plus {
+                        /*background-image: url("../Images_svg/car.svg");*/
+                        background-image: url("../Images_svg/car-side-view.svg");
+                    }
+
+                    .menu ul li.icon-new-message {
+                        background-image: url("../Images_svg/new-message.svg");
+                    }
+
+                    .menu ul li.circle-with-plus {
+                        background-image: url("../Images_svg/circle-with-plus.svg");
+                    }
+
+                    .menu ul li.logout {
+                        background-image: url("../Images_svg/power-button-off.svg");
+                    }
+
+                    .menu ul li.iconhome {
+                        background-image: url("../Images_svg/clicker.svg");
+                    }
+
+                    .menu ul li.icon-Invoice {
+                        background-image: url("../Images_svg/approve-invoice (3).svg");
+                    }
+
+                    .menu ul li:hover {
+                        background-color: rgba(0, 0, 0, 0.27);
+                        font-size: 1em;
+                    }
+
+                    .menu ul li:focus {
+                        outline: none;
+                    }
+
+        @media screen and (max-width: 900px) and (min-width: 400px) {
+
+            .menu {
+                width: 18%;
+                font-size: 12px;
+            }
+
+            main {
+                /*position: relative;
+                top: 0;
+                left: 18%;
+                width: 82%;
+                height: 100%;*/
+            }
+
+            .menu .avatar {
+                padding: 0.5em;
+                position: relative;
+            }
+
+                .menu .avatar img {
+                    width: 25%;
+                }
+
+                .menu .avatar h2 {
+                    opacity: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: 100px;
+                    margin: 0;
+                    min-width: 200px;
+                    border-radius: 4px;
+                    background: rgba(0, 0, 0, 0.4);
+                    transform: translate3d(-20px, -50%, 0);
+                    transition: all 0.15s ease-in-out;
+                }
+
+                .menu .avatar:hover h2 {
+                    opacity: 1;
+                    transform: translate3d(0px, -50%, 0);
+                }
+
+            .menu ul li {
+                height: 60px;
+                background-position: center center;
+                background-size: 30px auto;
+                position: relative;
+            }
+
+                .menu ul li span {
+                    opacity: 0;
+                    position: absolute;
+                    background: rgba(0, 0, 0, 0.5);
+                    padding: 0.2em 0.5em;
+                    border-radius: 4px;
+                    top: 50%;
+                    left: 80px;
+                    transform: translate3d(-15px, -50%, 0);
+                    transition: all 0.15s ease-in-out;
+                    z-index: auto;
+                }
+
+                    .menu ul li span:before {
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        position: absolute;
+                        top: 50%;
+                        left: -5px;
+                        border-top: 5px solid transparent;
+                        border-bottom: 5px solid transparent;
+                        border-right: 5px solid rgba(0, 0, 0, 0.5);
+                        transform: translateY(-50%);
+                        z-index: auto;
+                    }
+
+                .menu ul li:hover span {
+                    opacity: 1;
+                    transform: translate3d(0px, -50%, 0);
+                    z-index: auto;
+                }
+        }
+
+        @media screen and (max-width: 400px) {
+            body {
+                padding-left: 0;
+            }
+
+            .menu {
+                width: 18%;
+                box-shadow: 0 0 0 100em rgba(0, 0, 0, 0);
+                transform: translate3d(-18%, 0, 0);
+                transition: all 0.3s ease-in-out;
+                overflow: hidden;
+            }
+
+                .menu .smartphone-menu-trigger {
+                    width: 40px;
+                    height: 40px;
+                    position: absolute;
+                    left: 100%;
+                    background: #1e5671;
+                }
+
+                    .menu .smartphone-menu-trigger:before,
+                    .menu .smartphone-menu-trigger:after {
+                        content: '';
+                        width: 50%;
+                        height: 2px;
+                        background: #fff;
+                        border-radius: 10px;
+                        position: absolute;
+                        top: 45%;
+                        left: 50%;
+                        transform: translate3d(-50%, -50%, 0);
+                    }
+
+                    .menu .smartphone-menu-trigger:after {
+                        top: 55%;
+                        transform: translate3d(-50%, -50%, 0);
+                    }
+
+                .menu ul li {
+                    padding: 1em 1em 1em 3em;
+                    font-size: 1.2em;
+                }
+
+                .menu:focus {
+                    transform: translate3d(0, 0, 0);
+                    box-shadow: 0 0 0 100em rgba(0, 0, 0, 0.6);
+                }
+
+                    .menu:focus .smartphone-menu-trigger {
+                        pointer-events: none;
+                    }
+        }
+
+        /*.carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 100%;
+            margin: auto;
+        }
+
+        .peopleCarouselImg img {
+            width: auto;
+            height: 120px;
+            max-height: 120px;
+        }*/
+
+        .custombtn {
+            background-repeat: repeat-x;
+            border: solid;
+            border-color: #f1f1f1;
+            border-width: 1px;
+            background-color: #1b4e66;
+            color: white;
+        }
+
+
+            .custombtn:hover, .custombtn:focus {
+                background-color: rgb(27, 78, 102);
+                background-position: 0 -15px;
+                border-color: #1b4e66;
+                color: #e9e9e9;
+            }
+
+        .custombtn2 {
+            background-repeat: repeat-x;
+            border: solid;
+            border-color: rgb(242, 135, 1);
+            border-width: 1px;
+            background-color: rgb(242, 118, 1);
+            color: white;
+        }
+
+
+            .custombtn2:hover, .custombtn2:focus {
+                background-color: rgb(242, 135, 1);
+                background-position: 0 -15px;
+                border-color: rgb(242, 118, 1);
+                color: white;
+            }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 3px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        }
+
+            .form-control, .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+                background-color: white !important;
+                border-color: grey !important;
+                color: black !important;
+                /*width:auto*/
+            }
+
+            .txtboxsize,.txtboxdatesize,.txtareasize {
+                width: 60%;
+            }
+             .estimatetxtboxsize,.estimatetxtboxdatesize,.estimatetxtareasize {
+                width: 50%;
+            }
+            .navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+/*.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top:-6px;
+}
+
+
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+}*/ 
+
+  .navbar-custom { 
+            background-color: #1e5671; 
+        } 
+        /* Modify brand and text color */ 
+          
+        .navbar-custom .navbar-brand, 
+        .navbar-custom .navbar-text { 
+            color: white; 
+        } 
+      .anchortext {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+        }
+
+        .dropdown-menu > li > a {
+    font-weight: bold !important;
+    color: #2a6496 !important;
+   
+}
+        .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #2d3b48;
+
+   color: white;
+   text-align: center;
+   font-weight:600;
+   z-index:1200;
+}
+
+        /*#cpyright {
+            height: 618px;
+            margin-top: 840px;
+        }*/
+     body {
+   min-height: 400px;
+   margin-bottom: 50px;
+   clear: both;
+}
+
+    </style>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body class="tstclass">
+   
+         <%--   <nav id="Demo12" class="menu" tabindex="0">
+                    <div class="smartphone-menu-trigger"></div>
+                    <header class="avatar">
+                      
+                        <asp:Image ID="Image8" runat="server" />
+                        <h4><span id="lblusername" runat="server"></span></h4>
+                    </header>
+                    <div id="divmenu">
+                        <ul id="list_menu">
+                            
+                            <li tabindex="0" class="icon-new-message" id="list_usr">
+                                <span id="lbregister" href="#list_usrcont" runat="server" data-toggle="collapse">User Registration</span>
+                            </li>
+                            <li class="collapse" id="list_usrcont">
+                                <ul>
+                                    <li id="test1" onclick='fnregredirect("Lender","test1","list_usrcont")' class="icon-Lender">
+                                        <span>Lender</span>
+                                    </li>
+                                    <li id="test2" onclick='fnregredirect("Borrower","test2","list_usrcont")' class="icon-Borrower">
+                                        <span>Borrower</span>
+                                    </li>
+                                    <li id="test3" onclick='fnregredirect("Appraiser","test3","list_usrcont")' class="icon-Appraiser">
+                                        <span>Appraiser</span>
+                                    </li>
+                                </ul>
+                            </li>
+                         
+                            <li tabindex="0" class="circle-with-plus" id="list_prop">
+                                <span id="lbpropcreate"  runat="server" onclick="getPathFromUrl();  fnpageredirect('Appraisalpage.aspx','list_prop')">Property Creation</span>
+                            </li>
+                              <li tabindex="0" class="car-with-plus" id="list_Vehicle_Main">
+                                <span id="lblvechcreate"  href="#list_Vehicle"  data-toggle="collapse" runat="server">Vechicle Appraisal</span>
+                            </li>
+                            <li class="collapse" id="list_Vehicle">
+                                <ul>
+                                    <li id="lstRestype" onclick='fnpageredirect("VehicleAppraisal.aspx","lstRestype","list_Vehicle")' class="icon-Lender">
+                                        <span>Resident type customer</span>
+                                    </li>
+                                    <li id="lstBusnType" onclick='fnpageredirect("VechicleAppraisalBusiness.aspx","lstBusnType","list_Vehicle")' class="icon-Borrower">
+                                        <span>Business type customer</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li tabindex="0" class="icon-assign" id="list_assign">
+                                <span id="btnassignappraiser" runat="server" onclick="getPathFromUrl(); fnpageredirect('Assignappraiser.aspx','list_assign')">Assign Appraiser</span>
+                            </li>
+                            <li tabindex="0" class="icon-Queue" id="list_queue">
+                                <span id="btnApplicationQueue" runat="server" onclick="getPathFromUrl();  fnpageredirect('ApplicationQueue.aspx','list_queue')">Dashboard</span>
+
+                            </li>
+                            <li tabindex="0" class="icon-schedule" id="list_schedule">
+                                <span id="btnScheduleVisit" runat="server" onclick="getPathFromUrl();  fnpageredirect('ScheduleVisit.aspx','list_schedule')">Scheduling</span>
+                            </li>
+                            <li tabindex="0" class="icon-settings" id="list_paramconfig">
+                                <span id="Configparam" runat="server" onclick="getPathFromUrl();  fnpageredirect('AddNewParam.aspx','list_paramconfig')">Configurable Parameters</span>
+                            </li>
+                            <li tabindex="0" class="icon-userconfig" id="list_usrconfig">
+                                <span id="configuser" runat="server" onclick="getPathFromUrl();  fnpageredirect('UserConfig.aspx','list_usrconfig')">User Configuration</span>
+                            </li>
+                            <li tabindex="0" class="icon-export-arrow" id="list_Export">
+                                <span id="spnExportfile" runat="server" onclick="getPathFromUrl();  fnpageredirect('Export-Import.aspx','list_Export')">Export Appraisal</span>
+                            </li>
+                            <li tabindex="0" class="icon-new-message" id="list_Invoice">
+                              
+                                <span id="Span2" href="#list_Inv" runat="server" data-toggle="collapse">Invoice</span>
+                            </li>
+                            <li class="collapse" id="list_Inv">
+                                <ul>
+                                    <li id="Invoicelend" onclick="fnpageredirect('Invoice.aspx','Invoicelend','list_Inv')" class="icon-Invoice">
+                                        <span>Invoice Generation</span>
+                                    </li>
+                                    <li id="Invoice" onclick="fnpageredirect('InvoiceReceipt.aspx','Invoice','list_Inv')" class="icon-Invoice">
+                                        <span>Invoice Receipt</span>
+                                    </li>
+                                    <li id="outstand" onclick="fnpageredirect('AgingReport.aspx','outstand','list_Inv')" class="icon-Invoice">
+                                        <span>Outstanding Report</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li tabindex="0" class="logout" id="list_logout">
+                                <span runat="server" onclick="fnclearsession()">Logout</span>
+                              
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>--%>
+
+                
+<%--<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 2</a>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Dropdown link
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </li>
+  </ul>
+</nav>--%>
+
+           <%-- <nav id="Demo12" class="navbar navbar-expand-sm bg-dark navbar-dark"  tabindex="0" style="position:fixed">
+  <!-- Brand -->
+  
+                 
+  <!-- Links -->
+                 <div id="divmenu">
+                      
+  <ul id="list_menu" class="navbar-nav">
+       <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="lbregister" href="#" id="list_usr" data-toggle="dropdown">
+       User Registration
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item icon-Lender" href="#" id="test1" onclick='fnregredirect("Lender","test1","list_usrcont")'>Lender</a>
+        <a class="dropdown-item icon-Borrower" href="#" id="test2" onclick='fnregredirect("Borrower","test2","list_usrcont")' >Borrower</a>
+        <a class="dropdown-item icon-Appraiser" href="#" id="test3" onclick='fnregredirect("Appraiser","test3","list_usrcont")' >Appraiser</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#" id="lbpropcreate" onclick="getPathFromUrl(); fnpageredirect('Appraisalpage.aspx','list_prop')">Property Creation</a>
+    </li>
+  <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="list_Vehicle_Main" data-toggle="dropdown">
+       Vehicle Appraisal
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" id="lstRestype" onclick='fnpageredirect("VehicleAppraisal.aspx","lstRestype","list_Vehicle")' href="#">Resident type customer</a>
+        <a class="dropdown-item" id="lstBusnType" onclick='fnpageredirect("VechicleAppraisalBusiness.aspx","lstBusnType","list_Vehicle")' href="#">Business type customer</a>
+        
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  id="btnassignappraiser" onclick="getPathFromUrl();fnpageredirect('Assignappraiser.aspx','list_assign')" href="#">Assign Appraisal</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="btnApplicationQueue" onclick="getPathFromUrl();fnpageredirect('ApplicationQueue.aspx','list_queue')" href="#">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  id="btnScheduleVisit" onclick="getPathFromUrl();fnpageredirect('ScheduleVisit.aspx','list_schedule')" href="#">Scheduling</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  id="Configparam" onclick="getPathFromUrl();fnpageredirect('AddNewParam.aspx','list_paramconfig')" href="#">Configuration Parameters</a>
+    </li>
+ <li class="nav-item">
+      <a class="nav-link" id="configuser" onclick="getPathFromUrl();fnpageredirect('UserConfig.aspx','list_usrconfig')" href="#">User Configuration</a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link" id="spnExportfile"  onclick="getPathFromUrl();fnpageredirect('Export-Import.aspx','list_Export')" href="#">Export Appraisal</a>
+    </li>
+
+      <li class="nav-item dropdown" id="list_Invoice">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">
+       Invoice
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item icon-Lender" id="Invoicelend" href="#" onclick="fnpageredirect('Invoice.aspx','Invoicelend','list_Inv')">Invoice Generation</a>
+        <a class="dropdown-item icon-Borrower" id="Invoice" href="#" onclick="fnpageredirect('InvoiceReceipt.aspx','Invoice','list_Inv')">Invoice Receipt</a>
+        <a class="dropdown-item icon-Appraiser"  id="outstand" href="#" onclick="fnpageredirect('AgingReport.aspx','outstand','list_Inv')" >Outstanding Report</a>
+      </div>
+    </li>
+ <li class="nav-item"  id="list_logout">
+      <a class="nav-link" onclick="fnclearsession()" href="#">Logout</a>
+    </li>
+
+
+  </ul></div>
+
+                 <div class="smartphone-menu-trigger"></div>
+                    <header class="avatar">
+                      
+                        <asp:Image ID="Image8" runat="server" />
+                        <h4><span id="lblusername" runat="server"></span></h4>
+                    </header>
+            </nav>--%>
+
+
+     <form id="masterform" runat="server">         
+        <asp:ScriptManager ID="ScriptManager" runat="server">
+        </asp:ScriptManager>
+        
+<%--                      <div class="wrapper">
+            <div>--%>
+   <%--                 
+      <nav id="Demo12" class="col-lg-12 col-sm-12 col-xs-12 col-md-12 navbar navbar-custom "  tabindex="0" style="position:fixed;padding-left: 0px;padding-right: 0px;z-index:300;">
+    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2" style="display: flex;">
+                            <img src="<%=ResolveUrl("~/Images/appslogo.png") %>" class="img-responsive" style="width:25%"/>
+                  <span style="font-size: 20px; color: #ffffff; margin-top:7%;">ValuRite</span>
+                        </div>  
+            
+    
+                 <div id="divmenu" class="col-lg-9 col-sm-9 col-xs-9 col-md-9 collapse navbar-collapse">
+                      
+  <ul id="list_menu" class="nav navbar-nav  navbar-text">
+       <li class="dropdown" id="list_usr">
+      <a class="dropdown-toggle anchortext" id="lbregister" href="#"  data-toggle="dropdown">
+       User Registration <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="#" class="anchortext" id="test1" onclick='fnregredirect("Lender","test1","list_usrcont")'>Lender</a></li>
+      <li><a href="#"  class="anchortext" id="test2" onclick='fnregredirect("Borrower","test2","list_usrcont")' >Borrower</a></li>
+       <li> <a href="#"  class="anchortext" id="test3" onclick='fnregredirect("Appraiser","test3","list_usrcont")' >Appraiser</a></li>
+      
+    </ul>
+</li>
+
+  <li id="list_Vehicle_Main" class="dropdown">
+      <a class="dropdown-toggle anchortext" href="#" id="list_Vehicle" data-toggle="dropdown">
+       Vehicle Appraisal <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+       <li> <a id="lstRestype"   class="anchortext" onclick='fnpageredirect("VehicleAppraisal.aspx","lstRestype","list_Vehicle")' href="#">Resident type customer</a></li>
+       <li> <a id="lstBusnType"  class="anchortext" onclick='fnpageredirect("VechicleAppraisalBusiness.aspx","lstBusnType","list_Vehicle")' href="#">Business type customer</a></li>
+        
+      </ul>
+    </li>
+      <li  id="appraisal_menu" class="dropdown">
+      <a class="dropdown-toggle anchortext" href="#" data-toggle="dropdown">
+       Appraisal <span class="caret"></span>
+      </a>
+           <ul class="dropdown-menu">
+    <li id="list_assign">
+      <a  id="btnassignappraiser"  class="anchortext" onclick="getPathFromUrl();fnpageredirect('Assignappraiser.aspx','list_assign')" href="#">Assign Appraisal</a>
+    </li>
+      <li id="list_prop">
+      <a  href="#" id="lbpropcreate"  class="anchortext" onclick="getPathFromUrl(); fnpageredirect('Appraisalpage.aspx','list_prop')">Property Creation</a>
+    </li>
+      <li id="list_schedule">
+      <a id="btnScheduleVisit"  class="anchortext" onclick="getPathFromUrl();fnpageredirect('ScheduleVisit.aspx','list_schedule')" href="#">Schedule Visit</a>
+    </li>
+        <li id="list_Export">
+      <a id="spnExportfile"  class="anchortext"  onclick="getPathFromUrl();fnpageredirect('Export-Import.aspx','list_Export')" href="#">Export Appraisal</a>
+    </li>
+               </ul>
+          </li>
+    <li id="list_queue">
+      <a id="btnApplicationQueue"  class="anchortext" onclick="getPathFromUrl();fnpageredirect('ApplicationQueue.aspx','list_queue')" href="#">Dashboard</a>
+    </li>
+    
+
+       <li  id="config_User_Param" class="dropdown">
+      <a class="dropdown-toggle anchortext" href="#" data-toggle="dropdown">
+       Configuration <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+     <li id="list_paramconfig"><a  id="Configparam"  class="anchortext" onclick="getPathFromUrl();fnpageredirect('AddNewParam.aspx','list_paramconfig')" href="#">Configuration Parameters</a>
+    </li>
+       <li id="list_usrconfig">
+      <a id="configuser"  class="anchortext" onclick="getPathFromUrl();fnpageredirect('UserConfig.aspx','list_usrconfig')" href="#">User Configuration</a>
+    </li>
+      </ul>
+    </li>
+
+
+ 
+   
+
+      <li class="dropdown" id="list_Invoice">
+      <a class="dropdown-toggle anchortext" href="#" id="list_Inv" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+       Invoice <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a id="Invoicelend"  class="anchortext" href="#" onclick="fnpageredirect('Invoice.aspx','Invoicelend','list_Inv')">Invoice Generation</a></li>
+        <li><a id="Invoice"  class="anchortext" href="#" onclick="fnpageredirect('InvoiceReceipt.aspx','Invoice','list_Inv')">Invoice Receipt</a></li>
+        <li><a id="outstand"  class="anchortext" href="#" onclick="fnpageredirect('AgingReport.aspx','outstand','list_Inv')" >Outstanding Report</a></li>
+      </ul>
+    </li>
+ <li id="list_logout">
+      <a  class="anchortext" onclick="fnclearsession()" href="#">Logout</a>
+    </li>
+
+
+  </ul></div>
+
+                    <div style=" padding-right: 0px;padding-left: 0px;width: auto;float: right;margin-right: 1%;">
+                         <asp:Image ID="Image8" runat="server"  />
+                        <h6><span id="lblusername" runat="server" style="font-weight: bold;color: #ffffff"></span></h6>
+                        <h6><span id="lblCompName" runat="server" style="font-weight: bold;color: #ffffff"></span></h6>
+                    </div>
+                 
+            </nav>--%>
+
+<%--<div class="col-lg-12 col-sm-12 col-xs-12 col-md-12" style="position:fixed;padding-left: 0px;padding-right: 0px;z-index:300;">--%>
+                <div class="topnav" id="myTopnav">
+
+                
+                            <img src="<%=ResolveUrl("~/Images/appslogo.png") %>"  style="height:75px;float:left;margin-right:4%;"/>
+                  <%--<span style="font-size: 20px; color: #ffffff; margin-top:7%;">ValuRite</span>--%>
+                        
+    
+<div id="list_queue">
+  <a href="#" id="btnApplicationQueue"  onclick="getPathFromUrl();fnpageredirect('ApplicationQueue.aspx','list_queue')" >Dashboard</a>
+    </div>
+  <div id="list_usr" class="dropdown">
+    <button class="dropbtn" id="lbregister">User Registration
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#" id="test1" onclick='fnregredirect("Lender","test1","list_usrcont")'>Lender</a>
+      <a href="#" id="test2" onclick='fnregredirect("Borrower","test2","list_usrcont")' >Borrower</a>
+      <a href="#" id="test3" onclick='fnregredirect("Appraiser","test3","list_usrcont")' >Appraiser</a>
+    </div>
+  </div> 
+     
+   <div id="list_Vehicle_Main" class="dropdown">
+    <button id="list_Vehicle" class="dropbtn">Vehicle Appraisal 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+   <a href="#" id="lstRestype"  onclick='fnpageredirect("VehicleAppraisal.aspx","lstRestype","list_Vehicle")'>Resident type customer</a>
+   <a href="#" id="lstBusnType" onclick='fnpageredirect("VechicleAppraisalBusiness.aspx","lstBusnType","list_Vehicle")' >Business type customer</a>       
+    </div>
+  </div> 
+ 
+                     
+   <div  id="appraisal_menu" class="dropdown">
+    <button class="dropbtn">Appraisal 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+  <div id="list_assign"> <a href="#" id="btnassignappraiser" onclick="getPathFromUrl();fnpageredirect('Assignappraiser.aspx','list_assign')">Assign Appraisal</a></div>
+   <div id="list_prop"><a href="#" id="lbpropcreate" onclick="getPathFromUrl(); fnpageredirect('Appraisalpage.aspx','list_prop')">Property Creation</a></div> 
+       <div id="list_schedule"><a href="#" id="btnScheduleVisit" onclick="getPathFromUrl();fnpageredirect('ScheduleVisit.aspx','list_schedule')">Schedule Visit</a> </div>        
+        <div id="list_Export"><a href="#" id="spnExportfile" onclick="getPathFromUrl();fnpageredirect('Export-Import.aspx','list_Export')">Export Appraisal</a></div>       
+    </div>
+  </div> 
+
+   <div  id="config_User_Param" class="dropdown">
+    <button class="dropbtn">Configuration 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+  <div id="list_paramconfig"> <a href="#" id="ConfigParam" onclick="getPathFromUrl();fnpageredirect('AddNewParam.aspx','list_paramconfig')">Configuration Parameters</a></div>
+   <div id="list_usrconfig"><a href="#" id="configuser" onclick="getPathFromUrl();fnpageredirect('UserConfig.aspx','list_usrconfig')" >User Configuration</a></div> 
+    </div>
+  </div> 
+        
+        
+   <div  id="list_Invoice" class="dropdown">
+    <button class="dropbtn" id="list_Inv">Invoice 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+   <a href="#" id="Invoicelend" onclick="fnpageredirect('Invoice.aspx','Invoicelend','list_Inv')">Invoice Generation</a>
+   <a href="#" id="Invoice" onclick="fnpageredirect('InvoiceReceipt.aspx','Invoice','list_Inv')">Invoice Receipt</a> 
+    <a id="outstand" href="#" onclick="fnpageredirect('AgingReport.aspx','outstand','list_Inv')" >Outstanding Report</a>
+    </div>
+  </div> 
+ 
+
+
+  <a id="list_logout" href="#" onclick="fnclearsession()" >Logout</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
+                              <div style=" padding-right: 0px;padding-left: 0px;width: auto;float: right;margin-right: 1%;">
+                         <asp:Image ID="Image8" runat="server"  />
+                        <h6><span id="lblusername" runat="server" style="font-weight: bold;color: #ffffff"></span></h6>
+                        <h6><span id="lblCompName" runat="server" style="font-weight: bold;color: #ffffff"></span></h6>
+                    </div>
+         
+         
+</div>
+
+<%--</div>--%>
+       
+
+
+
+            <main >
+<%--                    <div class="row" id="userlist1" style="background-color: #1e5671;">
+                    </div>--%>
+                    
+            
+                <div style="margin-top:6%;width:100%;left:0px!important; position: absolute;" class="topmargin">
+  <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                  
+                </main>
+            <%--</div>
+        </div>--%>
+
+      
+  
+
+   
+
+        
+        <asp:Label runat="server" ID="hidFamiliares" Style="display: none;" />
+         <div class="footer">
+  <p>&copy; <%: DateTime.Now.Year %> ValuRite - Analytic Brains</p>
+</div>
+    </form>
+  
+
+
+
+
+</body>
+ 
+
+</html>
+

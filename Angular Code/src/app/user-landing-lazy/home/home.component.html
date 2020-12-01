@@ -1,0 +1,321 @@
+<img src="../../assets/images/Property-value.jpg" alt="" class="img-responsive" >
+
+
+<!--<main class="home_page" style="padding-top:60px;">
+    <script>new WOW().init();</script>
+    <section class="landingpage">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                      
+                    <div class="oncology-bg">
+                        <div class="column1 wow zoomIn">
+                            <div class="column-text">
+                                <img src="../../assets/images/onco-icon.png" alt="" class="img-responsive" id="Threpeticname">{{count['therapeutic_class']}} 
+                                <br>
+                                <span>BIOMARKERS</span>
+                                <br>
+                                <p id="Biocount">{{count['biomarker']}}</p>
+                            </div>
+                        </div>
+                        <div class="counts">
+                            <div class="count-1 ">
+                                <div class="count-value ct-effect ct-four">
+                                
+                                    <span id="Appcount">{{count['application']}}</span>
+                                </div>
+                                <p>APPLICATION</p>
+                            </div>
+                            <div class="count-2 ">
+                                <div class="count-value ct-effect ct-three">
+                                    <span id="Drugcount">{{count['drug']}}</span>
+                                </div>
+                                <p>DRUGS</p>
+                            </div>
+                            <div class="count-3 ">
+                                <div class="count-value ct-effect ct-three">
+                                    <span id="Assaycount">{{count['approval_authority']}}</span>
+                                </div>
+                                <p>APPROVED
+                                    <br> ASSAYS</p>
+                            </div>
+                            <div class="count-4">
+                                <div class="count-value ct-effect ct-four">
+                                    <span id="Trailcount">{{count['clinical_trial']}}</span>
+                                </div>
+                                <p>CLINICAL
+                                    <br> TRIALS</p>
+                            </div>
+                            <div class="count-5 ">
+                                <div class="count-value ct-effect ct-three">
+                                    <span id="Ethinicitycount">{{count['ethnicity']}}</span>
+                                </div>
+                                <p>ETHNICITIES</p>
+                            </div>
+                            <div class="count-6 ">
+                                <div class="count-value ct-effect ct-four">
+                                    <span id="Referencecount">{{count['reference']}}</span>
+                                </div>
+                                <p>REFERENCES</p>
+                            </div>
+
+                            <div class="count-8 ">
+                                <div class="count-value ct-effect ct-three">
+                                    <span id="Indicationcount">{{count['indication']}}</span>
+                                </div>
+                                <p>INDICATIONS</p>
+                            </div>
+                        </div>
+                    </div>
+                                <div class="row" style="text-align: center; margin-top: -70px !important;margin-left:70px !important; position:absolute">
+                                <input type="radio" (click)="radiocheckbox(ind)" *ngFor="let radiocount of sliders;let ind = index" id="radio{{ind}}" [checked]="radiocheck === ind" />
+                                </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+                    <div class="discovery_section">
+                        <div class="right-box">
+                            <div class="right-image">
+                                <div class="clickable-icons"> 
+                                    <div class="icon-1" style="z-index: 10;">
+                                        <a id="icon1" class="icon" style="margin-left:23px;"></a>
+                                        <span class="icontext">Search</span>
+                                    </div>
+                                    <div id="le-alert1" class="alert menu-popup fade">
+                                        <button href="#" type="button" class="close">&times;</button>
+                                        <h4>Search</h4>
+                                        <p>Easy to query search interface with different search options</p>
+                                        <ul>
+                                            <li class="">
+                                                <a [routerLink]="['/Search/quickSearch']" style="cursor:pointer;">Quick Search</a>
+                                            </li>
+                                            <li class="">
+                                                <a [routerLink]="['/Search/Basicsearchresult']" style="cursor:pointer">Basic
+                                                    Search</a>
+                                            </li>
+                                            <li class="">
+                                                <a [routerLink]="['/Search/advancedStep1']" style="cursor:pointer">Advanced
+                                                    Search</a>
+                                            </li>
+                                            <li class="">
+                                                <a [routerLink]="['/Search/batchSearch']" style="cursor:pointer">Batch Query</a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="icon-2">
+                                        <a id="icon2" class="icon"></a>
+                                        <span class="icontext">Reports</span>
+                                    </div>
+                                    <div id="le-alert2" class="alert menu-popup fade">
+                                        <button href="#" type="button" class="close">&times;</button>
+                                        <h4>Reports</h4>
+                                        <p>Intuitive and searchable reports for 360 degree biomarker view</p>
+
+                                        <ul>
+                                            <li class="">
+                                                <a [routerLink]="['/Report/diseaseSearch']" style="cursor:pointer">Disease
+                                                    Report</a>
+                                            </li>
+                                            <li class="">
+                                                <a [routerLink]="['/Report/drugSearch']" style="cursor:pointer">Drug Report</a>
+                                            </li>
+                                       
+                                            <li class="">
+                                                <a [routerLink]="['/Report/bioSearch']" style="cursor:pointer">Biomarker
+                                                    Report</a>
+                                            </li>
+                                            <li class="">
+                                                <a [routerLink]="['/Report/ebmReport']" style="cursor:pointer">Biomarker-indication
+                                                    Report</a>
+                                            </li>
+                                           
+                                        </ul>
+                                    </div>
+                                    <div class="icon-3">
+                                        <a id="icon3" class="icon"></a>
+                                        <span class="icontext">Analytics</span>
+                                    </div>
+                                    <div id="le-alert3" class="alert menu-popup fade">
+                                        <button href="#" type="button" class="close">&times;</button>
+                                        <h4>Analytics</h4>
+                                        <p>Uncover insights hidden in the complex biomarker data with Analytic tools</p>
+                
+                                
+                                        <ul>
+                                            <li class="">
+                                                <a [routerLink]="['/Analytic/comparativeAnalysis']" style="cursor:pointer">Comparative
+                                                    Analysis</a>
+                                            </li>
+                                            <li class="">
+                                                <a [routerLink]="['/Analytic/variantAnalysis']" style="cursor:pointer">Variant
+                                                    Analysis</a>
+                                            </li>
+                                            <li class="">
+                                                <a [routerLink]="['/Analytic/heatmapanalytics']" style="cursor:pointer">Heatmap
+                                                    Analytics</a>
+                                            </li>
+                                            <li class="">
+                                                <a [routerLink]="['/Analytic/ChromosomeView']" style="cursor:pointer">Chromosomal
+                                                    View</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="icon-4">
+                                        <a id="icon4" class="icon"  [routerLink]="['/Analytic/dashboardAnalytics']"style="cursor:pointer; margin-left:23px;" ></a>
+                                        <span class="icontext">Dashboards</span>
+                                        
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="area" style="width:100%; height:180px;">
+                                <div class="heading2" style="width:37%; float: left;">
+                                        <h4>Indication wise Statistics</h4>
+                                        <p>No of Indications</p>
+                                        <br>
+                                        <span id="indication"style="color:#2fa699;font-size:19px;">{{landing['Disease_count']}}</span><br>
+                                        <button [routerLink]="['/Statistic/indicationDashboard']">View Details</button>
+        
+                                    </div>
+                            <div style="width:4%;">
+
+                            </div>
+                            <div class="biomark" style="width:21%; float: left;margin-top:7px;">
+                                <br>
+                                <p>No of Biomarkers</p>
+                                <br>
+                               
+                                <span id="biomark"style="color:#2fa699;font-size:19px;">{{landing['biomarker_count']}}</span>
+                            </div>
+                            <div>
+
+                            </div>
+                            <div class="heading1" style="width:37%;  float: left; margin-left:36px;padding-left:24px;">
+                                    <h4>Therapeutic Area wise Statistics</h4>
+                                    <p>No of Therapeutic Areas</p>
+                                    <br>
+                                    <span id="therapeutic class"style="color:#2fa699;font-size:19px;">{{landing['Therapeutic_count']}}</span><br>
+                                    <button [routerLink]="['/Statistic/dashboardView']">View Details</button>
+                                </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hometop_section" style="display: none">
+        <article class="wrapp">
+            <div class="container">
+                <div class="toptitle">
+                    <h3>Explore
+                        <span>Gobiom</span>
+                    </h3>
+                </div>
+                <div class="exp_box">
+                    <div class="boxex">
+                        <div class="boxleft">
+                            <img src="../assets/images/topicon1.png" />
+                            <span>Analytics</span>
+                        </div>
+                        <div class="boxright">
+                            <ul>
+                                <li>Variant Analytics</li>
+                                <li>Heatmap Analytics</li>
+                                <li>Dashboard Analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxex">
+                        <div class="boxleft">
+                            <img src="../assets/images/topicon2.png" />
+                            <span>Reports</span>
+                        </div>
+                        <div class="boxright">
+                            <ul>
+                                <li>Disease Reports </li>
+                                <li>Drug Reports</li>
+                                <li>Biomarker Reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxex">
+                        <div class="boxleft">
+                            <img src="../assets/images/topicon3.png" />
+                            <span>Search</span>
+                        </div>
+                        <div class="boxright">
+                            <ul>
+                                <li>Quick Search</li>
+                                <li>Basic Search</li>
+                                <li>Advanced Search</li>
+                                <li>Batch Query</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center">
+                    <span style="color: brown; font-size: 14px; font-weight: 600">Click to view database statistics for
+                        Therapeutic area : </span>
+                    <a href="#" style="color: blue" [routerLink]="['/dashboardView']">Statistics for Therapeutic Area</a>
+                    <br>
+                    <span style="color: brown; font-size: 14px; font-weight: 600">Click to view database statistics for
+                        Indication : </span>
+                    <a href="#" style="color: blue" [routerLink]="['/indicationDashboard']">Statistics for Indication</a>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section class="homebotsec" style="display: none">
+        <div class="container">
+            <div class="col-sm-3">
+                <div class="varbox">
+                    <div class="vartitle vtitle1">Therapeutic Area</div>
+                    <div class="varno"> {{landing['Therapeutic Area']}}</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="varbox">
+                    <div class="vartitle vtitle2">Diseases</div>
+                    <div class="varno"> {{landing['Disease_name']}}</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="varbox">
+                    <div class="vartitle vtitle3">Biomarkers</div>
+                    <div class="varno">{{landing['biomarker_name']}} </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="varbox">
+                    <div class="vartitle vtitle4">Drugs</div>
+                    <div class="varno">{{landing['drug_name']}}</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="varbox">
+                    <div class="vartitle vtitle5">Genomic Variants </div>
+                    <div class="varno">85 </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="varbox">
+                    <div class="vartitle vtitle6">Safety Toxicity </div>
+                    <div class="varno">{{landing['toxicity_class']}}</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="varbox">
+                    <div class="vartitle vtitle7">Approved Biomarkers & Kits </div>
+                    <div class="varno">{{landing['Kit_id']}}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main> -->

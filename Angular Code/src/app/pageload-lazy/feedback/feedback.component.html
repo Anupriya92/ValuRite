@@ -1,0 +1,99 @@
+<!-- Feedback Page -->
+<div class="modal fade in" id="myModalid" [ngStyle]="{'display':display}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-body">
+      <div class="row" style="background-color:white;">
+        <div class="col-md-5 lgn-pnl-styl1">
+          <div class="row text-center sign-with">
+            <div class="col-md-12">
+              <h3 style="float:left; padding-left:27px; padding-top:38px; color:#ffffff; font-size:28px;"> FEEDBACK </h3>
+            </div>
+            <div class="col-md-12">
+              <div style="bottom:50px ">
+                <h3 style="float:left; text-align: left; padding-left:10px; font-size:16px; font-weight:normal; padding-top:60px; color:#ffffff">Biomarker database for informed clinical & therapeutic decision making</h3>
+              </div>
+              <div style="vertical-align:bottom; text-align:center">
+                <img src="assets/images/login_panel_icons.png" alt="Login Back image"> </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7" style="padding:20px 20px 20px 20px">
+          <button type="button" (click)="callParent('close')" title="close" style="float:right; border:none;">
+            <i class="fa fa-times" style="color:#0099cc;" aria-hidden="true"></i>
+          </button>
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a data-toggle="tab">Feedback</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="LoginPanel" style="padding-top:10px">
+              <form [formGroup]="formdata" (ngSubmit)="loginSubmit(formdata.value)" style="margin-top:2%;" class="form-horizontal">
+                <div class="form-group">
+                  <label for="feedbackusername" class="col-sm-4 control-label"> Name
+                    <span style="color:red;">*</span>
+                  </label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" id="feedbackusername" placeholder="Name" formControlName="username" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="feedbackemailid" class="col-sm-4 control-label"> Email
+                    <span style="color:red;">*</span>
+                  </label>
+                  <div class="col-sm-8">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <input type="email"  formControlName="emailid" id="feedbackemailid" (change)="onKey($event)" class="form-control" placeholder="Email"
+                          required />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="Organization" class="col-sm-4 control-label"> Organization
+                    <span style="color:red;">*</span>
+                  </label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" id="Organization" formControlName="Organization" placeholder="Organization" />
+                  </div>
+                </div>
+                <!-- <div class="form-group">
+                  <label for="feedback" class="col-sm-4 control-label">Type of Feedback
+                    <span style="color:red;">*</span>
+                  </label>
+                  <div class="col-sm-8">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <select id="feedback" class="form-control" formControlName="feedbacktype" required>
+                          <option value="Type of Feedback" hidden>Type of Feedback</option>
+                          <option value="Request for demo">Request for demo</option>
+                          <option value="Pricing inquiry ">Pricing inquiry</option>
+                          <option value="Subscription">Subscription </option>
+                          <option value="Unable to Login">Unable to Login </option>
+                          <option value="Others">Others</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="form-group">
+                  <label for="please detail the feedback" class="col-sm-4 control-label"> Please detail the feedback</label>
+                  <div class="col-sm-8">
+                    <textarea rows="5" class="form-control" formControlName="feedback" id="feedbackDetail" placeholder="Please detail the feedback"> </textarea>
+                  </div>
+                </div>
+                <div class="row" style="margin-top:17%;">
+                  <div class="col-sm-4"> </div>
+                  <div class="col-sm-8">
+                    <button id="userSubmit" type="submit" [disabled]="formdata.valid" class="btn btn-primary btn-md"> Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

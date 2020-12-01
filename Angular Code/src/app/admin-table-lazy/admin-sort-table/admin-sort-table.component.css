@@ -1,0 +1,23 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+
+.dattable {
+    margin-bottom: 0;
+}
+.tablepan{
+margin-top: 0em !important;
+}
+
+.dataTables_scroll
+{
+    overflow:auto !important;
+}
+.pagination{
+    float: right !important;
+}
+.dataTables_paginate  {
+    float: right !important;
+}
+
+
+
+/* \f002 */

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>ValuRite</title>
+
+  <base href="/">
+  <meta name="viewport" content="width=device-width, maximum-scale=1">
+  <link rel="icon" href="assets/img/appslogo_dark.png" type="image/png" />
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/valurite-css/icons.css">
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/ng2select.css"> -->
+  <!-- <script type="text/javascript" src="assets/js/bootstrap.min.js"></script> -->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" /> -->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" /> -->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/custom.css" /> -->
+  <!-- <link href="assets/css/animate.css" rel="stylesheet"> -->
+
+  <!-- <link rel="stylesheet" type="text/css" href="assets/popwindow/popWindow.css" />
+ 
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/popwindow/popWindow.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="assets/valurite-js/responsee.js"></script>
+  <script type="text/javascript" src="assets/owl-carousel/owl.carousel.js"></script>
+  <script type="text/javascript" src="assets/valurite-js/template-scripts.js"></script> 
+ 
+  <script src="assets/valurite-js/jquery.stellar.min.js"></script>
+  <script src="assets/valurite-js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/valurite-js/smoothscroll.js"></script>
+  <script src="assets/valurite-js/custom.js"></script> -->
+  
+</head>
+
+<body style="-ms-overflow-style: scrollbar;">
+    <!-- <link href="../../assets/css/style.css" rel="stylesheet"> -->
+    <!-- ('./assets/NewDesign_Materials/css/style.css') -->
+    <script src="assets/js/ContactForm.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="assets/js/OnScrollFunc.js" type="text/javascript"></script> -->
+    <script src="assets/js/DownButtonFunc.js" type="text/javascript"></script>
+    <script src="assets/js/news-events.js" type="text/javascript"></script>
+    <script src="assets/js/newsFunc.js" type="text/javascript"></script>
+    <script src="assets/js/faqicons.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/SearchFunc.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+    <!-- Login Page CSS and Scripts -->
+    <!-- <link href="./assets/css/select2.min.css" rel="stylesheet" media="all">
+    <script src="./assets/js/select2.min.js" type="text/javascript"></script> -->
+    
+
+  <!-- <link href="../../assets/css/admin.css" rel="stylesheet"> -->
+
+  <!-- <script src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/valurite-js/responsee.js"></script>
+  <script type="text/javascript" src="assets/owl-carousel/owl.carousel.js"></script>
+  <script type="text/javascript" src="assets/valurite-js/template-scripts.js"></script>  -->
+
+  <app-root>Loading...
+  </app-root>
+
+  <!-- <script src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/popwindow/popWindow.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="assets/valurite-js/responsee.js"></script>
+  <script type="text/javascript" src="assets/owl-carousel/owl.carousel.js"></script>
+  <script type="text/javascript" src="assets/valurite-js/template-scripts.js"></script> 
+  <script src="assets/valurite-js/jquery.stellar.min.js"></script>
+  <script src="assets/valurite-js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/valurite-js/smoothscroll.js"></script>
+  <script src="assets/valurite-js/custom.js"></script> --> 
+  <script src="./assets/popwindow/popWindow.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="assets/popwindow/popWindow.css"/>
+  <script>
+
+  const session =  this.getQueryString()
+  // alert(JSON.stringify(session.idleSession))
+  const sessionType = session.idleSession
+
+   if ((sessionStorage.getItem('idle-session-out') != undefined && sessionStorage.getItem('idle-session-out') != '') || sessionType == "kill") {
+   popWindow.dialog('Your session is expired.', popWindow.dialog.typeEnum.info);
+   sessionStorage.setItem('idle-session-out', '');
+       }
+  
+  
+  // if(sessionType == "kill") {
+  //     popWindow.dialog('Your session is expired.', popWindow.dialog.typeEnum.info);
+  //     sessionStorage.setItem('idle-session-out', '');
+  //   }
+  
+
+function getQueryString() {
+var url =  window.location.href;
+var vars = {};
+var hashes = url.split("?")[1];
+var hash = hashes.split('&');
+for (var i = 0; i < hash.length; i++) {
+params=hash[i].split("=");
+vars[params[0]] = params[1];
+}
+return vars;
+}
+  </script>
+</body>
+</html>
+
+

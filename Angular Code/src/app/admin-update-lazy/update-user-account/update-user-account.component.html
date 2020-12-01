@@ -1,0 +1,312 @@
+
+
+<div style="height: auto; min-height: 600px !important; padding-top: 60px; padding-bottom:80px;">
+    <div class="breadcrumsec">
+      <div class="wrapper" style="margin: 0;padding: 0;max-width: -webkit-fill-available;">
+        <ol class="breadcrumb breadresize" style="padding-top: 18px;">
+          <li>
+            <a routerLink="/dashboard">Home</a>
+          </li>
+          <li>
+            <a>User Request</a>
+          </li>
+          <li>
+            <a routerLink="/search">Update User Account</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+   
+  
+    <!--SINGLE USER UPDATE-->
+    <!-- <form *ngIf="showSingle">
+      <fieldset> -->
+        <form style="border-radius: 4px; float  : left; width: 75%;margin-left:28px; ">
+          <div class="row col-lg-12 col-sm-12 col-md-12 col-xs-12 formGroup">
+            <!--ng-Select for Company Dropdown List-->
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4 formGroup">
+              <b>Company</b>
+              <ng-select [multiple]="false" [items]="companies" [disabled]="companyDisabled" (selected)="onCompanyItemSelect($event)" (removed)="onCompanyItemRemoved($event)"
+                name="first" placeholder="" [(ngModel)]="companyName">
+              </ng-select>
+            </div>
+  
+            <!--ng-Select for User Dropdown List-->
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4 formGroup">
+              <b>Users</b>
+              <ng-select [multiple]="false" [items]="users" [disabled]="userDisabled" (selected)="onUserItemSelect($event)" (removed)="onUserItemRemoved($event)"
+                placeholder="" [(ngModel)]="userlogemail" name="userlogemail" [ngClass]="{'browser-default': true, 'bootstrapButton': true, 'btn': false}">
+              </ng-select>
+            </div>
+            <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2 formGroup">
+              <button type="submit" (click)="Onuser_Action()" class="submit-green" value="Submit" style="margin: 20px;margin-left:-15px;">Submit</button>
+            </div>
+            <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2 formGroup">
+              <button type="reset" (click)="Reset_Click()" value="Reset" class="submit-green" style="margin: 20px;margin-left:-87px;">Reset</button>
+            </div>
+          </div>
+        </form>
+      <!-- </fieldset> -->
+      <div *ngIf="singlegrid">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                   
+                        <label> First Name  <span style="color:red;">*</span></label>
+                        <input type="text" class="form-control firstName" maxlength="100" [disabled]="this.userStatus === 'InActive'" (input)="onKey($event)"
+                        id="firstName"  style="width:90%" [(ngModel)]="firstname" [ngModelOptions]="{standalone: true}"
+                        />
+                        <div class="firstnameclass" style="height:10px;">
+                            <h6 id="fNameText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                          </div>
+                   
+                </div>
+                <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                    <!-- <div style="float:left; margin-right:5px; width: 200px;"> -->
+                        <label>last Name  <span style="color:red;">*</span></label>
+                       
+                        <input type="text" class="form-control lastName" name="lastname" [disabled]="this.userStatus === 'InActive'" maxlength="100" id="lastName"
+                        (input)="onKey($event)"  style="width:90%" [(ngModel)]="lastname"  [ngModelOptions]="{standalone: true}"
+                      />
+                      <div class="firstnameclass" style="height:10px;">
+                          <h6 id="lNameText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                        </div>
+                    <!-- </div> -->
+                </div>
+                <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                        <!-- <div style="float:left; margin-right:5px; width: 100px;"> -->
+                            <label>Email Id </label>
+                            <input type="text" class="form-control emailID " id="emailid" readonly name="emailid"  style="width: 180px"
+                            data-toggle="popover"  style="width:90%" [(ngModel)]="emailid" title="{{emailid}}" />
+                        <!-- </div> -->
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                           
+                                <label> Mobile Number  <span style="color:red;">*</span></label>
+                                <input type="text" class="form-control mobileno" id="MobileNo" [disabled]="this.userStatus === 'InActive'" (input)="onKey($event)"
+                                maxlength="100" [(ngModel)]="MobileNo"  style="width:90%" [ngModelOptions]="{standalone: true}" name="MobileNo" 
+                                />
+                                <div class="firstnameclass" style="height:10px;">
+                                    <h6 id="MobileText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                                  </div>
+                        </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                        <label>Address Line 1   <span style="color:red;">*</span></label>
+                        <input type="text" class="form-control address1" id="AddressLine" [disabled]="this.userStatus === 'InActive'" [(ngModel)]="Address1"
+                        (input)="onKey($event)"  style="width:90%" [ngModelOptions]="{standalone: true}" name="address1" 
+                         />
+                         <div class="firstnameclass" style="height:10px;">
+                            <h6 id="addressText1" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                                <label>Address Line 2</label>
+                                <input type="text" class="form-control address2" id="Address2" [disabled]="this.userStatus === 'InActive'" [(ngModel)]="Address2"
+                                maxlength="100"  style="width:90%" [ngModelOptions]="{standalone: true}" name="address2" 
+                                 />
+                                 <div class="firstnameclass" style="height:10px;">
+                                    <h6 id="addressText2" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                                  </div>
+                                </div>
+            <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                <label >Country <span style="color:red;">*</span></label>
+                <br>
+                <select  style="width:90%" id="Country" class=" tempFormContrl Countryname"  [disabled]="this.userStatus === 'InActive'" (change)="onCountrySelect($event.target , 0)">
+                    <option disabled>--Select--</option>
+                    <option *ngFor="let c of CountryList" [value]="c.id">{{c.name}}</option>
+                  </select>
+            </div>
+            <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+            
+                <label >State  <span style="color:red;">*</span></label>
+                <br>
+                <select  style="width:90%" class="form-control Statename" id="State"  [disabled]="this.userStatus === 'InActive'" (change)="onStateItemSelect($event.target)">
+                    <option disabled>--Select--</option>
+                  </select>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                <label >City  <span style="color:red;">*</span></label>
+                <br>
+                <select style="width:90%" class="form-control Cityname" id="CityName"  [disabled]="this.userStatus === 'InActive'" (change)="onCityItemSelect($event.target)">
+                    <option disabled>--Select--</option>
+                  </select>
+            </div>
+           
+                <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                    <label>Area  <span style="color:red;">*</span></label>
+                    <input type="text" class="form-control addressarea" id="area" [disabled]="this.userStatus === 'InActive'" maxlength="100"
+                    (input)="onKey($event)" [(ngModel)]="area" [ngModelOptions]="{standalone: true}" name="area"
+                    style="width:90%" />                       
+                    <div class="firstnameclass" style="height:10px;">
+                        <h6 id="AreaText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                        <label>Land Mark</label>
+                        <input type="text" class="form-control landmark" id="landmark" [disabled]="this.userStatus === 'InActive'" maxlength="100"
+                        (input)="onKey($event)" [(ngModel)]="landmark" [ngModelOptions]="{standalone: true}" name="area"
+                        style="width:90%" />
+                        <div class="firstnameclass" style="height:10px;">
+                            <h6 id="landmarkText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                            <label>Pin Code  <span style="color:red;">*</span></label>
+                            <input type="text" class="form-control pincode" id="pincode" [disabled]="this.userStatus === 'InActive'" maxlength="100"
+                            (input)="onKey($event)" [(ngModel)]="pincode" [ngModelOptions]="{standalone: true}" name="area"
+                             style="width:90%" />
+                             <div class="firstnameclass" style="height:10px;">
+                                <h6 id="pinCodeText" style="margin-top:0px; margin-bottom:0px; color:red;display:none"></h6>
+                              </div>
+                            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                <!-- <div style="float:left; margin-right:5px; width: 262px;"> -->
+                    <label> Company Name  <span style="color:red;">*</span></label>
+                   
+                    <select name="selectedObject" id="companyselected" [disabled]="this.userStatus === 'InActive'" [(ngModel)]="CompanyName"
+                    (change)="onCompanyselect($event)"  class="form-control companyselected" style="width:100%;display:inline-block;">
+                    <option selected disabled>--Select--</option>
+                    <option *ngFor="let company of categories|orderBy : 'CompanyName'" [value]="company.CompanyName">{{company.CompanyName}}</option>
+                  </select>
+                <!-- </div> -->
+            </div>
+            <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                <!-- <div style="float:left; margin-right:5px; width: 200px;"> -->
+                    <label>Contract Reference  <span style="color:red;">*</span></label>
+                   
+                    <select name="selectedref" id="selectedref" [disabled]="this.userStatus === 'InActive'" [(ngModel)]="contractref"
+                    (change)="onchangereference($event)" style="width: 200px" class="form-control selectedref">
+                    <option disabled>--Select--</option>
+                    <option *ngFor="let company of reference" [value]="company">{{company}}</option>
+                  </select>
+                <!-- </div> -->
+            </div>
+            <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" >
+                    <!-- <div style="float:left; margin-right:5px; width: 100px;"> -->
+                        <label>General Alerts </label>
+                        <select id="generalflag" class="form-control generalflag" [disabled]="this.userStatus === 'InActive'" [(ngModel)]="generalflag"
+                        name="generalflag" style="width: 100px">
+                        <option value="" disabled>--Select--</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+  
+                    <!-- </div> -->
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2">
+                        <!-- <div style="float:left; margin-right:5px; width: 200px;"> -->
+                            <label> Start Date </label>
+                            <input type="text" (click)="calendarfetch($event)" [(ngModel)]="startdate" [disabled]="this.userStatus === 'InActive'" name="startdate"
+                            id="startdate" class="form-control onhover startdate" style="width:120px; background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center;"
+                            [ngModelOptions]="{standalone: true}">
+                        <!-- </div>           -->
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" >
+                        <!-- <div style="float:left; margin-right:5px; width: 200px;"> -->
+                            <label>End Date </label>
+                            <input type="text" (click)="calendarfetch($event)" [(ngModel)]="enddate" [disabled]="this.userStatus === 'InActive'" name="enddate"
+                            id="enddate" class="form-control onhover enddate" [ngModelOptions]="{standalone: true}" style="width:120px; background: url(../../assets/images/datepicker.png) no-repeat scroll 96px center;">
+                        <!-- </div>           -->
+                    </div>
+        </div>
+
+<br>
+            <div class="row">
+                <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2">
+                        <div style="float:left; margin-right:5px; width: 200px;">
+                            <label>User Type  <span style="color:red;">*</span></label>
+                            <select id="Usertype" [disabled]="this.userStatus === 'InActive'" class="form-control userType"  (change)="userType($event)"
+                            style="width: 158px"  [(ngModel)]="usertype" name="usertype" >
+                            <option selected disabled value="">--Select--</option>
+                            <option value="Admin">Admin</option>
+                           <option value="Appraiser">Appraiser</option>
+                           <option value="Borrower">Borrower</option>
+                           <option value="Lender">Lender</option>
+                          </select>
+       
+                           
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" style="margin-left: 4%;" >
+                        <div style="float:left; margin-right:5px; width: 200px;">
+                            <label>User Role  <span style="color:red;">*</span></label>
+                            <select id="UserRole" class="form-control Userrole" [disabled]="this.userStatus === 'InActive'" name="userrole" [(ngModel)]="userrole" style="width: auto">
+                                <option selected disabled value="">--Select--</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Comp app without lender">Comp app without lender</option>
+                                <option value="Comp with lender">Comp with lender</option>
+                                <option value="Ind app without lender">Ind app without lender</option>
+                                <option value="User">User</option>
+                              </select>
+           
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2">
+                    <button type="button" id="toggle{{ind}}" (click)="toggle($event)" class="submit-green" value={{userStatus}} [(ngModel)]="userStatus"
+                    name="userStatus" ngDefaultControl [ngModelOptions]="{standalone: true}" style="background-color: #129cca;margin: 26px auto">{{userStatus}}</button>
+                  </div>
+                  </div>
+
+                   
+<br>
+<div id="AssociationTableDiv" style="display:none;">
+    <label> Association Details </label>
+    <div class="container-fluid"  style="border-radius: 5px;">
+         
+        <table  id="associationTable">
+          <thead style="padding-bottom:100%;">
+            <!-- <th>
+              <input [(ngModel)]="mainCheckbox" name="mainCheckboxName" class="styled parentcheck" id="checkbox1" (change)='checkbox($event)'
+                type="checkbox"  [ngModelOptions]="{standalone: true}"/>
+            </th> -->
+            <th>Association Name
+              <span style="color:red;">*</span>
+            </th>
+            <th>Member ID
+              <span style="color:red;">*</span>
+            </th>
+            <th>Action</th>
+               </thead>
+               <tbody style="padding-bottom:100%;">
+            <tr id="rowId{{ind}}"  *ngFor="let i of Rows; let ind = index" style="background-color:#f3f3f3;">
+              <!-- <td>
+                <input type="checkbox" id="chkBox{{ind}}" class="chkGrp" (click)="checkboxloop($event)" />
+              </td> -->
+              <td>
+                <input type="text" id="associationName{{ind}}" maxlength="100" (input)="keyPressevent($event)" class="form-control associationName" name="associationName"
+                value="{{i.AssociationName}}" />
+              </td>
+              <td>
+                <input type="text" id="memberID{{ind}}" maxlength="100" (input)="keyPressevent($event)" class="form-control memberID" name="memberID"
+                value="{{i.memberID}}" />
+              </td>
+              <td>
+                <i class="fa fa-plus-circle" (click)="addAssTable($event)" id="addicon{{ind}}" style=" font-family: FontAwesome; font-size:21px;"></i>
+                <!-- <i class="fa fa-trash" (click)="deleteAssTable($event)" id="deleteIcon{{ind}}" aria-hidden="true" style="font-family: FontAwesome; font-size:21px; "></i> -->
+              </td>
+              </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            <br>
+          
+          <div class="button" style="width:auto;">
+            <button type="button" id="updateBtn" [disabled]="false" class="submit-green" (click)="update_single()" value="Update" style="width: 10%;float:left;margin-left:5px">Update</button>
+            <button type="button" (click)="Onuser_Action()" class="submit-green" value="Cancel Changes" style="width: 10%;float:left;margin-left:15px">Cancel</button>
+          </div>
+        </div>
+      </div>
+    <!-- </form> -->
+  
+  
+  </div>

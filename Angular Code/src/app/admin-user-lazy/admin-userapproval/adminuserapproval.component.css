@@ -1,0 +1,190 @@
+.onhover:hover{
+    cursor: pointer;
+    }
+
+select{
+    width:50%;
+    height: 34px;
+    padding: 1px 2px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+select:focus{
+    border-color:#56aafebd;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px #56aafebd;
+    outline: 0 none;
+}
+.site_btn { 
+    display: inline-block; 
+    background: #56aafebd; 
+    transition: all 0.3s ease 0s; 
+    -webkit-transition: all 0.3s ease 0s;
+     position: relative; 
+     vertical-align: middle; 
+     transform: perspective(1px) translateZ(0); 
+     -webkit-transform: perspective(1px) translateZ(0);
+      border-radius: 3px; 
+      border: none;
+      width: 10%;
+      margin-right: 5%;
+    }
+    .buttoncon{ text-align:right; margin-top:30px;min-height:50px;float:left;width:100%}
+    .buttoncon .resetbutton{ background:#324259;width:140px; padding:10px 0; font-size:14px; text-transform:uppercase; font-family:Proximanova-bold; color:#fff;border-radius: 1em;}
+    .buttoncon .userlog {padding:10px 0px;color:#fff;font-size:15px; font-family:Proximanova-bold; width:200px;margin-left:16px;background-color: #56a8fe;border-radius: 1em;}
+    .buttoncon .continuebut .fa{ float:right;margin: 2px 0 0}
+    .buttoncon .resetbutton:hover{color:#fff}
+    
+    .tempFormContrl:hover {
+        cursor: pointer;
+    }
+    .gridbutton{
+        border: 0;
+        box-shadow: none;
+        border-radius: 4px;
+        margin:0px;
+        padding:10px 0px 1px 0px;
+        background-color:#1d8af7;
+        font: bold; 
+        color:white;
+        font-size: 10px; 
+        font-family: Proximanova-bold;  
+        width: 50px !important;
+        padding: 6px !important;
+        text-transform: none !important;
+        border-radius: .5em;
+    }
+    .input-group {
+        margin-top: 10px;
+      }
+ 
+
+th {
+    border: 1px solid #129cca;
+    padding: 8px;
+}
+
+table {
+    max-width: 100% !important;
+    overflow-x: scroll;
+    background-color: transparent;
+    display: block;
+    margin-bottom: 20px;
+    border: 1.2px #129cca solid;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: internal-center;
+    background-color: #129cca;
+    color: white;
+}
+
+.scroll{
+overflow-x:scroll;
+width: 90em;
+}
+  
+.tempFormContrl
+{
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.tempFormContrl:focus{
+    border-color:#56aafebd;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px #56aafebd;
+    outline: 0 none;
+ }
+ .submit-green[disabled]{
+    background-color: #9ae6dd;
+    color: white;
+    cursor: unset;
+}
+
+.ngxpagination /deep/ {		
+    margin-left: 902px;  		
+}		
+.ngxpagination /deep/ .ngx-pagination .current {		
+    background:#129cca !important;		
+    border-radius: 1px;		
+    padding: 8px 16px;		
+     display: inline-block;		
+  }		
+ 		
+  .ngxpagination /deep/.disabled, .ngxpagination /deep/ .disabled a, .ngxpagination /deep/.disabled a:hover, .ngxpagination /deep/.disabled a:focus {		
+    color: #999;		
+    cursor: not-allowed;		
+    background-color: #fff;		
+    border-color: #ddd;		
+    padding: 8px 16px;		
+    border: 1px solid  #ddd;		
+}		
+.ngxpagination /deep/ a {		
+    color: #428bca;		
+    line-height: 1.428571429;		
+    padding: 8px 16px;		
+    text-decoration: none;		
+    border: 1px solid  #ddd;		
+    position: relative;		
+        
+}		
+        
+.ngxpagination /deep/ a.active {		
+        
+    z-index: 3;		
+    color: white;		
+    border-radius: 5px;		
+    border: 1px solid  #ddd;		
+    line-height: 1.428571429;		
+}		
+        
+.ngxpagination  /deep/ a:hover:not(.active) {		
+    background-color: #ddd;		
+    border-radius: 5px;		
+    border: 1px solid  #ddd;		
+}		
+.ngxpagination  /deep/ ul {		
+margin-top: -20px;	
+float:right;	
+/* margin-bottom: -20px;		 */
+/* margin-left: 875px; 		 */
+}		
+        
+.ngxpagination /deep/ li:first-child a,.pagination /deep/ li:first-child span {		
+    margin-left:0;		
+    border-bottom-left-radius: 4px;		
+    border-top-left-radius: 4px;		
+}		
+.ngxpagination /deep/ li:last-child a,.pagination /deep/ li:last-child span {		
+    border-top-right-radius:4px;		
+    border-bottom-right-radius:4px		
+}
+
+@media (min-width: 1200px) {
+    ol.breadresize {
+   margin-top: 0%;
+  } 
+ }
+ @media (max-width: 1024px) { 
+          ol.breadresize {
+     margin-top: 3%;
+     width:150%;
+  }
+ }

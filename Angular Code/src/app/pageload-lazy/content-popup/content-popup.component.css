@@ -1,0 +1,14 @@
+@media (min-width: 1200px) { 
+    .acontent {
+    
+     width:950px !important;
+     height:580px !important;
+  }
+ }
+ @media (max-width: 1200px) { 
+    .acontent {
+    
+     width:90% !important;
+     height:580px !important;
+  }
+ }

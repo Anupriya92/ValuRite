@@ -1,0 +1,56 @@
+/* Navigation menu bar */
+@media screen and (min-width: 768px) {
+    .modal-dialog {
+        left: 0%;
+    }
+}
+.col-sm-8{
+    height:50px;
+}
+    .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 100%;
+    }
+    a
+    {
+        color: #0099cc !important;
+    }
+    a:hover{
+        color:#35a99d !important;
+    }
+    .active:after {
+        content: "" !important;
+        color: #324259 !important;
+    }
+    .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
+        background-color: #086066;
+       }
+    .lgn-btn-styl
+    {
+        border:2px #177e85 solid; background-color:#fff; border-radius: 8px; height:43px
+    }
+
+.lgn-pnl-styl1
+{
+    border-right: 1px dotted #C2C2C2;
+    padding-right: 30px; 
+    background-color:#0099cc; 
+    height:490px;
+}
+
+.lgn-hdr-styll
+{
+    float:left; 
+    padding-left:10px; 
+    color:#ffffff; 
+    font-size:40px;
+}
+.form-group {
+    margin-bottom: 0px !important;
+}
+
+.form-horizontal .control-label
+{
+    text-align:left;
+} 

@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12" style="margin-left: 10px; margin-top: 2%;">
+      <legend>Logged-in Users</legend>
+    </div>
+  </div>
+  <!-- SORT TABLE with Results fetched from DB displayed here-->
+  <div class="row">
+    <admin-sort-table *ngIf='sortTableFlag' id="loggedInUsersSortTable" [tabledata]="jsonData"></admin-sort-table>
+  </div>
+  <!--Error Message-->
+  <div class="row">
+    <p *ngIf="errorMsgFlag" style="color: red; text-align: center;"> No records found</p>
+  </div>
+</div>
